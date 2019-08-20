@@ -22,3 +22,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('home', 'HomeController@index');
 
 });
+Route::get('store', 'StoreController@create');
