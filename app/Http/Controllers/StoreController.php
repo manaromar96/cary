@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Country;
+use App\Store;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -13,7 +15,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        $stores = Store::all();
+        return view('store.index', compact('stores'));
     }
 
     /**
@@ -34,7 +37,12 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('name');
+        $address = $request->input('address');
+        $carsNumber = $request->input('carsNumber');
+
+        $insert = Store::create($request->all());
+        return redirect('store');
     }
 
     /**
@@ -45,7 +53,8 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        //
+        $store = Store::find($id);
+        return view('store.show', compact('store'));
     }
 
     /**
@@ -56,7 +65,8 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $store = Store::find($id);
+        return view('store.edit', compact('store'));
     }
 
     /**
@@ -68,7 +78,16 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $name = $request->input('name');
+        $address = $request->input('address');
+        $carsNumber = $request->input('carsNumber');
+
+        $store = Store::find($id);
+        $store->name = $name;
+        $store->address = $address;
+        $store->carsNumber = $carsNumber;
+        $update = $store->save();
+        return redirect('store');
     }
 
     /**
@@ -79,6 +98,7 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Store::find($id)->delete();
+        return redirect('store')->with(['success' => 'Item has been deleted']);
     }
 }

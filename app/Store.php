@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
+
+    protected $fillable = ['name', 'address','carsNumber'];
+    protected $guarded = ['_method'];
+
     public function cars(){
         $this->hasMany(Car::class);
     }

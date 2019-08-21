@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('home', 'HomeController@index');
+    Route::resource('/store', 'StoreController');
 
 });
-Route::get('store', 'StoreController@create');
+
