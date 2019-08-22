@@ -3,6 +3,11 @@
 @section('title','List of stores')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -43,10 +48,13 @@
                                                class="btn btn-sm btn-primary">
                                                 <i class="fe fe-eye"></i>
                                             </a>
-                                            <a href="{{ route('store.destroy',$store->id) }}"
-                                               class="btn btn-sm btn-danger">
-                                                <i class="fe fe-trash"></i>
-                                            </a>
+                                            <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-inline">
+                                                @csrf
+                                                {{ method_field('delete') }}
+                                                <button class="btn btn-sm btn-danger" type="submit">
+                                                    <i class="fe fe-trash"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

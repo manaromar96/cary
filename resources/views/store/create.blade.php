@@ -8,13 +8,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form role="form">
+                <form action="{{ route('store.store') }}"  method="post" >
+                    @csrf
                     <div class="form-group">
 
                         <label for=" storeName">
                             Store Name
                         </label>
-                        <input type="text" class="form-control" id="storeName" />
+                        <input type="text" class="form-control" id="storeName" name="name" />
                     </div>
 
                     <div class="form-group">
@@ -22,7 +23,7 @@
                         <label for=" storeAddress">
                             Store Address
                         </label>
-                        <input type="text" class="form-control" id="storeAddress" />
+                        <input type="text" class="form-control" id="storeAddress" name="address" />
                     </div>
 
                     <div class="form-group">
@@ -30,7 +31,7 @@
                         <label for=" carNumber">
                             Car Number
                         </label>
-                        <input type="number" class="form-control" id="carNumber" />
+                        <input type="number" class="form-control" id="carNumber" name="carsNumber" />
                     </div>
 
                     <button type="submit" class="btn btn-primary">

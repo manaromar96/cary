@@ -37,12 +37,12 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        $name = $request->input('name');
-        $address = $request->input('address');
-        $carsNumber = $request->input('carsNumber');
-
-        $insert = Store::create($request->all());
-        return redirect('store');
+        $store = new Store;
+        $store->name = $request->name;
+        $store->address =$request->address;
+        $store->carsNumber = $request->carsNumber;
+        $store->save();
+        return redirect('store')->with('success', 'Store has been added');
     }
 
     /**

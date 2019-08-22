@@ -19,12 +19,12 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Store Address</label>
-                            <input type="text" class="form-control" placeholder="Country code" name="code" value="{{ $store->address }}"/>
+                            <input type="text" class="form-control" placeholder="Country code" name="address" value="{{ $store->address }}"/>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">No. of Cars</label>
-                            <input type="text" class="form-control" placeholder="Country code" name="code" value="{{ $store->carsNumber }}"/>
+                            <input type="text" class="form-control" placeholder="Country code" name="carsNumber" value="{{ $store->carsNumber }}"/>
                         </div>
 
                         <div class="form-footer">
