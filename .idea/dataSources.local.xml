@@ -2,7 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="@localhost" uuid="b3f82728-baa7-4fe9-84f5-d87f79c5d38a">
-      <database-info product="MariaDB" version="10.3.16-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1" dbms="MARIADB" exact-version="10.3.16" exact-driver-version="2.4">
+      <database-info product="MariaDB" version="10.3.16-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
