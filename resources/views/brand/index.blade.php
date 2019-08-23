@@ -30,25 +30,25 @@
                             @if(count($brands)>0)
                                 @foreach($brands as $brand)
                                     <tr>
-                                        <td>{{ $brands->id }}</td>
+                                        <td>{{ $brand->id }}</td>
                                         <td>
-                                            <a href="{{ route('brnd.show',$brand->id) }}">
+                                            <a href="{{ route('brand.show',$brand->id) }}">
                                                 {{ $brand->name }}
                                             </a>
                                         </td>
-                                        <td>{{ $store->address }}</td>
-                                        <td>{{ $store->carsNumber }}</td>
+                                        <td>{{ $brand->logo }}</td>
+
 
                                         <td>
-                                            <a href="{{ route('store.edit',$store->id) }}"
+                                            <a href="{{ route('brand.edit',$brand->id) }}"
                                                class="btn btn-sm btn-warning">
                                                 <i class="fe fe-edit"></i>
                                             </a>
-                                            <a href="{{ route('store.show',$store->id) }}"
+                                            <a href="{{ route('brand.show',$brand->id) }}"
                                                class="btn btn-sm btn-primary">
                                                 <i class="fe fe-eye"></i>
                                             </a>
-                                            <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-inline">
+                                            <form action="{{ route('brand.destroy',$brand->id) }}" method="post" class="form-inline">
                                                 @csrf
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-sm btn-danger" type="submit">

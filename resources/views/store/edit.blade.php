@@ -15,16 +15,16 @@
                         @csrf
                         <div class="form-group">
                             <label class="form-label">Store Name</label>
-                            <input type="text" class="form-control" placeholder="Country Name" name="name" value="{{ $store->name }}"/>
+                            <input type="text" class="form-control" placeholder="Store Name" name="name" value="{{ $store->name }}"/>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Store Address</label>
-                            <input type="text" class="form-control" placeholder="Country code" name="address" value="{{ $store->address }}"/>
+                            <input type="text" class="form-control" placeholder="Address" name="address" value="{{ $store->address }}"/>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">No. of Cars</label>
-                            <input type="text" class="form-control" placeholder="Country code" name="carsNumber" value="{{ $store->carsNumber }}"/>
+                            <input type="text" class="form-control"  name="carsNumber" value="{{ $store->carsNumber }}"/>
                         </div>
 
                         <div class="form-footer">
