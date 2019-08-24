@@ -48,7 +48,7 @@
                                                class="btn btn-sm btn-primary">
                                                 <i class="fe fe-eye"></i>
                                             </a>
-                                            <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-inline">
+                                            <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-check-inline">
                                                 @csrf
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-sm btn-danger" type="submit">

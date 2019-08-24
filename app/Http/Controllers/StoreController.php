@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Country;
+use App\Http\Requests\ValidationRequest;
 use App\Store;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,7 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationRequest $request)
     {
         $store = new Store;
         $store->name = $request->name;
