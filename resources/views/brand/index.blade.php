@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title','List of stores')
+@section('title','List of brands')
 
 @section('content')
     @if (session('success'))
@@ -36,7 +36,7 @@
                                                 {{ $brand->name }}
                                             </a>
                                         </td>
-                                        <td>{{ $brand->logo }}</td>
+                                        <td> <img src="../storage/public/brand/logo/{{$brand->logo}}" alt="KIA" width="50px" height="50px"></td>
 
 
                                         <td>
@@ -48,7 +48,7 @@
                                                class="btn btn-sm btn-primary">
                                                 <i class="fe fe-eye"></i>
                                             </a>
-                                            <form action="{{ route('brand.destroy',$brand->id) }}" method="post" class="form-inline">
+                                            <form action="{{ route('brand.destroy',$brand->id) }}" method="post" class="form-check-inline">
                                                 @csrf
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-sm btn-danger" type="submit">

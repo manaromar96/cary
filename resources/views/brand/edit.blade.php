@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title','Edit a brand Car')
+@section('title','Edit a car brand')
 
 @section('content')
     <div class="row">

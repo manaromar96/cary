@@ -44,12 +44,13 @@ class BrandController extends Controller
 
             $logo = $request->file('logo');
             //dd($logo);
+            $path = $request->file('logo')->store('brand/logo');
 
-            new CarBrand([
-                'logo' => $logo->store('brand/logo')
-            ]);
+           // new CarBrand([
+            //    'logo' => $logo->store('brand/logo')
+            //]);
             }
-        $brand->logo= $logo->getClientOriginalName();
+        $brand->logo= $path;
         $brand->save();
 
         return redirect('brand')->with('success', 'Car Brand has been added');
