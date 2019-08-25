@@ -6,6 +6,8 @@ use App\Country;
 use App\Http\Requests\ValidationRequest;
 use App\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class StoreController extends Controller
 {
@@ -17,6 +19,8 @@ class StoreController extends Controller
     public function index()
     {
         $stores = Store::all();
+
+        // $stores = Store::where('user_id', Auth::id())->get();
         return view('store.index', compact('stores'));
     }
 
