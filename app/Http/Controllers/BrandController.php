@@ -38,17 +38,20 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $brand = new CarBrand;
-        if($request->hasfile('logo'))
-        {
-            $file = $request->file('logo');
-            $name=time().$file->getClientOriginalName();
-            $file->move(public_path().'/images/', $name);
-            $brand->logo = $name;
-        }
-
         $brand->name = $request->name;
 
+        if ($request->hasFile('logo')) {
+
+            $logo = $request->file('logo');
+            //dd($logo);
+
+            new CarBrand([
+                'logo' => $logo->store('brand/logo')
+            ]);
+            }
+        $brand->logo= $logo->getClientOriginalName();
         $brand->save();
+
         return redirect('brand')->with('success', 'Car Brand has been added');
     }
 
