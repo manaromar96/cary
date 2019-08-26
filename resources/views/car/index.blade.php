@@ -44,7 +44,7 @@
                                         </td>
                                         <td>{{ $car->model }}</td>
                                         <td>{{ $car->color }}</td>
-                                        <td>{{ $car->price }}</td>
+                                        <td>{{ $car->price }}$</td>
 
 
 

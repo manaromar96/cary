@@ -20,7 +20,7 @@
                         <td>{{ $car->color }}</td>
 
 
-                        <td>{{ $car->price }}</td>
+                        <td>{{ $car->price }}$</td>
 
                     </tr>
                 </table>
