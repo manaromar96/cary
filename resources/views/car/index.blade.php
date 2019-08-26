@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title','List of models')
+@section('title','List of Cars')
 
 @section('header')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -17,44 +17,47 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">List of Car model</h3>
+                    <h3 class="card-title">List of Cars</h3>
                 </div>
                 <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table card-table table-striped table-vcenter models">
+                    <table class="table card-table table-striped table-vcenter cars">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>ModelYear</th>
-                            <th>VIN</th>
-
-
+                            <th>Car Brand</th>
+                            <th>Car car</th>
+                            <th>Color</th>
+                            <th>Price</th>
                             <th width="20%" class="text-center">Actions</th>
                         </tr>
                         </thead>
                         <tobody>
-                            @if(count($models)>0)
-                                @foreach($models as $model)
+                            @if(count($cars)>0)
+                                @foreach($cars as $car)
                                     <tr>
-                                        <td>{{ $model->id }}</td>
+                                        <td>{{ $car->id }}</td>
                                         <td>
-                                            <a href="{{ route('model.show',$model->id) }}">
-                                                {{ $model->modelYear }}
+                                            <a href="{{ route('car.show',$car->id) }}">
+                                                {{ $car->type }}
                                             </a>
                                         </td>
-                                        <td>{{ $model->VIN }}</td>
+                                        <td>{{ $car->model }}</td>
+                                        <td>{{ $car->color }}</td>
+                                        <td>{{ $car->price }}</td>
+
 
 
                                         <td>
-                                            <a href="{{ route('model.edit',$model->id) }}"
+                                            <a href="{{ route('car.edit',$car->id) }}"
                                                class="btn btn-sm btn-warning">
                                                 <i class="fe fe-edit"></i>
                                             </a>
-                                            <a href="{{ route('model.show',$model->id) }}"
+                                            <a href="{{ route('car.show',$car->id) }}"
                                                class="btn btn-sm btn-primary">
                                                 <i class="fe fe-eye"></i>
                                             </a>
-                                            <form action="{{ route('model.destroy',$model->id) }}" method="post"  class="form-check-inline">
+                                            <form action="{{ route('car.destroy',$car->id) }}" method="post"  class="form-check-inline">
                                                 @csrf
                                                 {{ method_field('delete') }}
                                                 <button class="btn btn-sm btn-danger" type="submit">
@@ -82,7 +85,7 @@
 
     <script>
         $(document).ready(function () {
-            $('.models').DataTable();
+            $('.cars').DataTable();
         });
     </script>
 @endsection

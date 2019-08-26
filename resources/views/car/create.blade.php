@@ -22,7 +22,7 @@
                         <label for=" model">
                            Car model:
                         </label>
-                        <input type="number" class="form-control" id="model" name="model" />
+                        <input type="date" class="form-control" id="model" name="model" />
                     </div>
 
 
