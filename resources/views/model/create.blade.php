@@ -15,7 +15,7 @@
                         <label for=" modelYear">
                             model Year
                         </label>
-                        <input type="date" class="form-control" id="modelYear" name="modelYear" />
+                        <input type="number" class="form-control" id="modelYear" name="modelYear" />
                     </div>
 
 

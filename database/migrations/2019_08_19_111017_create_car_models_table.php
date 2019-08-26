@@ -17,7 +17,7 @@ class CreateCarModelsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('modelYear');
             $table->integer('VIN');
-            $table->unsignedBigInteger('brand_id');
+            $table->unsignedBigInteger('brand_id')->nullable();
 
             $table->foreign('brand_id')->references('id')->on('car_brands')->onDelete('cascade');
             $table->timestamps();
