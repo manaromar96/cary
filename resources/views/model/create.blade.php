@@ -27,6 +27,14 @@
                         <input type="number" name="VIN">
                     </div>
 
+                    <div class="form-group">   // بدو تعديل الي يصير ياخد خيارات البراند
+
+                        <label for=" brand_id">
+                            Car brand
+                        </label>
+                        <input type="text" name="brand_id">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">
                         Add model
                     </button>

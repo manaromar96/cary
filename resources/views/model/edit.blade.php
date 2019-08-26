@@ -18,10 +18,8 @@
                             <input type="text" class="form-control"  name="modelYear" value="{{ $model->modelYear }}"/>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-4"></div>
-                            <div class="form-group col-md-4">
-                                <input type="file" name="VIN" value="{{$model->VIN}}" >
-                            </div>
+                            <label class="form-label">model VIN</label>
+                            <input type="text" class="form-control"  name="VIN" value="{{ $model->VIN }}"/>
                         </div>
 
 
