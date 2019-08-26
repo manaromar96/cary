@@ -1,6 +1,7 @@
 @extends('layout.master')
 
 @section('title','List of stores')
+
 @section('header')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
