@@ -2,6 +2,11 @@
 
 @section('title','List of models')
 
+@section('header')
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+@endsection
+
 @section('content')
     @if (session('success'))
         <div class="alert alert-success">
@@ -14,8 +19,9 @@
                 <div class="card-header">
                     <h3 class="card-title">List of Car model</h3>
                 </div>
+                <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table card-table table-striped table-vcenter">
+                    <table class="table card-table table-striped table-vcenter models">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -66,7 +72,17 @@
                         </tobody>
                     </table>
                 </div>
+                </div>
             </div>
         </div>
     </div>
+@endsection
+@section('footer')
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.models').DataTable();
+        });
+    </script>
 @endsection
