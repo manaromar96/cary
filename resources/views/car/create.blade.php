@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title','Create Car model')
+@section('title','Adding a Car')
 
 
 @section('content')
@@ -13,14 +13,14 @@
                     <div class="form-group">
 
                         <label for=" type">
-                            model
+                           Car Brand:
                         </label>
                         <input type="text" class="form-control" id="type" name="type" />
                     </div>
 
                     <div class="form-group">
                         <label for=" model">
-                            model
+                           Car model:
                         </label>
                         <input type="number" class="form-control" id="model" name="model" />
                     </div>
@@ -29,7 +29,7 @@
                     <div class="form-group">
 
                         <label for="color">
-                            Color
+                          Color:
                         </label>
                         <input type="text" name="color">
                     </div>
@@ -37,7 +37,7 @@
                     <div class="form-group">
 
                         <label for="price">
-                            Price
+                            Price:
                         </label>
                         <input type="number" name="price">
                     </div>
