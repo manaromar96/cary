@@ -5,11 +5,23 @@
             <div class="table-responsive">
                 <table class="table">
                     <tr>
-                        <th>model Year</th>
-                        <td>{{ $model->modelYear }}</td>
+                        <th>Car Brand</th>
+                        <th>Car Model</th>
+                        <th>Color</th>
+                        <th>Price</th>
                     </tr>
-                        <th>VIN</th>
-                        <td>{{ $model->VIN }}</td>
+                    <tr>
+                        <td>{{ $car->type }}</td>
+                    
+
+                        <td>{{ $car->model }}</td>
+
+
+                        <td>{{ $car->color }}</td>
+
+
+                        <td>{{ $car->price }}</td>
+
                     </tr>
                 </table>
             </div>
@@ -17,7 +29,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <a class="btn btn-lg btn-primary" href="{{ route('model.index') }}">Back to model list</a>
+            <a class="btn btn-lg btn-primary" href="{{ route('car.index') }}">Back to car list</a>
         </div>
     </div>
 @endsection
