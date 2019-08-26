@@ -65,7 +65,7 @@ class ModelController extends Controller
      */
     public function edit($id)
     {
-        $model = Store::find($id);
+        $model = CarModel::find($id);
         return view('model.edit', compact('model'));
     }
 

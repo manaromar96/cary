@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/store', 'StoreController');
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
-
+    Route::resource('/car', 'CarController');
 
 });
 

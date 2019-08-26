@@ -1,0 +1,53 @@
+@extends('layout.master')
+
+@section('title','Create Car model')
+
+
+@section('content')
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{{ route('car.store') }}"  method="post" >
+                    @csrf
+                    <div class="form-group">
+
+                        <label for=" type">
+                            model
+                        </label>
+                        <input type="text" class="form-control" id="type" name="type" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for=" model">
+                            model
+                        </label>
+                        <input type="number" class="form-control" id="model" name="model" />
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="color">
+                            Color
+                        </label>
+                        <input type="text" name="color">
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="price">
+                            Price
+                        </label>
+                        <input type="number" name="price">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Add Car
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
