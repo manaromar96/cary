@@ -37,14 +37,14 @@ class StoreController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(ValidationRequest $request)
     {
         $store = new Store;
         $store->name = $request->name;
-        $store->address =$request->address;
+        $store->address = $request->address;
         $store->carsNumber = $request->carsNumber;
         $store->save();
         return redirect('store')->with('success', 'Store has been added');
@@ -53,7 +53,7 @@ class StoreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +65,7 @@ class StoreController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -77,8 +77,8 @@ class StoreController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -98,12 +98,24 @@ class StoreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         Store::find($id)->delete();
         return redirect('store')->with(['success' => 'Item has been deleted']);
+    }
+
+    function getStores()
+    {
+        $stores = Store::all();
+        return  datatables()->of($stores)->addColumn('city', function ($row) {
+            return 'gaza';
+        })     ->toJson();
+//
+//->editColumn('duration',function($row){
+//    return $row->duration.' Days';
+//})
     }
 }
