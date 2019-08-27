@@ -13,14 +13,20 @@
                     <div class="form-group">
 
                         <label for=" type">
-                           Car Brand:
+                            Car Brand:
                         </label>
-                        <input type="text" class="form-control" id="type" name="type" />
+                        <select name="type" class="form-control">
+                            <option disabled selected>Please Select</option>
+
+                            @foreach($brands as $brand)
+                                <option id="{{$brand->id}}"> {{$brand->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for=" model">
-                           Car model:
+                            Car model:
                         </label>
                         <input type="date" class="form-control" id="model" name="model" />
                     </div>
@@ -29,7 +35,7 @@
                     <div class="form-group">
 
                         <label for="color">
-                          Color:
+                            Color:
                         </label>
                         <input type="text" name="color">
                     </div>

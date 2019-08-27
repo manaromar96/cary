@@ -78,6 +78,8 @@
                                                     @lang('auth.store_accountant')
                                                 @elseif($role->name=='Employee')
                                                       @lang('auth.store_employee')
+                                                    @elseif ($role->name ='Administrator')
+                                                    @lang('auth.store_administrator')
                                                 @else
                                                      @lang('auth.buy_car')
                                                 @endif

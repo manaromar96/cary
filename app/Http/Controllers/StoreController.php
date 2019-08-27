@@ -107,16 +107,21 @@ class StoreController extends Controller
         return redirect('store')->with(['success' => 'Item has been deleted']);
     }
 
-    function getStores()
+    function getStores(Request $request)
     {
-        $stores = Store::all();
-        return  datatables()->of($stores)->addColumn('city', function ($row) {
-            return 'gaza';
-        })     ->toJson();
+
+        if($request->ajax()){
+            $stores = Store::all();
+            return  datatables()->of($stores)->addColumn('city', function ($row) {
+                return 'gaza';
+            })     ->toJson();
+        }
 //
+        echo 'reject';
 //->editColumn('duration',function($row){
 //    return $row->duration.' Days';
 //})
     }
+//
 
 }

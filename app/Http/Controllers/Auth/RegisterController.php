@@ -75,7 +75,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $roles = Role::whereIn('name',['Manager','Employee','Accountant','Client'])->get();
+        $roles = Role::whereIn('name',['Manager','Employee','Accountant','Client','Administrator'])->get();
         return view('auth.register', compact('roles'));
 
     }
