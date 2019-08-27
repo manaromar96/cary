@@ -118,4 +118,5 @@ class StoreController extends Controller
 //    return $row->duration.' Days';
 //})
     }
+
 }

@@ -86,7 +86,15 @@
             // $('.stores').DataTable();
             $('#store_table').DataTable({
                 serverSide: true,
+                // processing: true,
+
                 ajax: '{{ url('getStores') }}',
+                // ajax:
+                // {
+                //     url: "postStores",
+                //     method: "POST"
+                // },
+
                 columns:[
                     {data:'id'},
                     {data:'name'},

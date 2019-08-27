@@ -19,11 +19,13 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 Route::group(['middleware' => 'auth'], function () {
+
     Route::get('home', 'HomeController@index');
     Route::resource('/store', 'StoreController');
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
     Route::get('/getStores', 'StoreController@getStores');
+
 });
 
