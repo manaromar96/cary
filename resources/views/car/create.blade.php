@@ -32,7 +32,7 @@
                             <option disabled selected>Please Select</option>
 
                             @foreach($models as $model)
-                                <option id="{{$model->id}}"> {{$model->model}}</option>
+                                <option id="{{$model->id}}"> {{$model->modelYear}}</option>
                             @endforeach
                         </select>
                     </div>
