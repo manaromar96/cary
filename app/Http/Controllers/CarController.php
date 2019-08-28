@@ -24,9 +24,11 @@ class CarController extends Controller
     public function create()
     {
 
+        $models = CarModel::all();
         $brands = CarBrand::all();
 
-        return view('car.create',compact('brands'));
+
+        return view('car.create',compact('models','brands'));
 
     }
 
