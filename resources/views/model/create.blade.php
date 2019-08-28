@@ -15,7 +15,7 @@
                         <label for=" modelYear">
                             model Year
                         </label>
-                        <input type="number" class="form-control" id="modelYear" name="modelYear" />
+                        <input type="date" class="form-control" id="modelYear" name="modelYear" />
                     </div>
 
 
@@ -24,16 +24,9 @@
                         <label for=" VIN">
                             Car VIN
                         </label>
-                        <input type="number" name="VIN">
+                        <input type="text" name="VIN">
                     </div>
 
-                    <div class="form-group">   // بدو تعديل الي يصير ياخد خيارات البراند
-
-                        <label for=" brand_id">
-                            Car brand
-                        </label>
-                        <input type="text" name="brand_id">
-                    </div>
 
                     <button type="submit" class="btn btn-primary">
                         Add model
