@@ -28,7 +28,13 @@
                         <label for=" model">
                             Car model:
                         </label>
-                        <input type="date" class="form-control" id="model" name="model" />
+                        <select name="model" class="form-control">
+                            <option disabled selected>Please Select</option>
+
+                            @foreach($models as $model)
+                                <option id="{{$model->id}}"> {{$model->model}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
 
