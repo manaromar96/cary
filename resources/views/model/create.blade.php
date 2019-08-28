@@ -27,6 +27,21 @@
                         <input type="text" name="VIN">
                     </div>
 
+                    <div class="form-group">
+
+                        <label for=" brand_id">
+                            Car Brand:
+                        </label>
+                        <select name="brand_id" class="form-control">
+                            <option disabled selected>Please Select</option>
+
+                            @foreach($brands as $brand)
+                                <option id="{{$brand->id}}"> {{$brand->id}} </option>
+                                <!--هنا في مشكلة بدي اسم البراند هو الي يظهر -->
+                            @endforeach
+                        </select>
+                    </div>
+
 
                     <button type="submit" class="btn btn-primary">
                         Add model

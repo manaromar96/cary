@@ -26,7 +26,10 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('brand.create');
+        $brands = CarBrand::all();
+
+
+        return view('brand.create',compact('brands'));
     }
 
     /**

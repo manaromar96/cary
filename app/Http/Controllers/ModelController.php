@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CarBrand;
 use App\CarModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -19,6 +20,8 @@ class ModelController extends Controller
         return view('model.index', compact('models'));
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +29,9 @@ class ModelController extends Controller
      */
     public function create()
     {
-        return view('model.create');
+
+        $brands = CarBrand::all();
+        return view('model.create',compact('brands'));
 
     }
 
@@ -41,6 +46,7 @@ class ModelController extends Controller
         $model = new CarModel;
         $model->modelYear = $request->modelYear;
         $model->VIN =$request->VIN;
+        $model->brand_id =$request->brand_id;
         $model->save();
         return redirect('model')->with('success', 'Model has been added');
     }
