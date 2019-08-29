@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CarBrand;
 use App\Store;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -40,22 +41,18 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+
+        dd($request);
         $brand = new CarBrand;
         $brand->name = $request->name;
 
         if ($request->hasFile('logo')) {
 
             $logo = $request->file('logo');
-            //dd($logo);
             $path = $request->file('logo')->store('brand/logo');
 
-           // new CarBrand([
-            //    'logo' => $logo->store('brand/logo')
-            //]);
-
-            $brand->logo= $path;
-            }
-
+        }
+        $brand->logo= $path;
         $brand->save();
 
         return redirect('brand')->with('success', 'Car Brand has been added');
@@ -120,5 +117,11 @@ class BrandController extends Controller
 
         $brand=CarBrand::find($id)->delete();
         return redirect('brand')->with('success','Car Brand has been  deleted');
+    }
+    public function weather(){
+        $client = new Client();
+        $request = $client->request('get', 'https://samples.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=b6907d289e10d714a6e88b30761fae22');
+        $response = $request->getBody()->getContents();
+        dd(json_decode($response));
     }
 }
