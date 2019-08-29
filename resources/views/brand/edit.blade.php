@@ -10,7 +10,7 @@
                     <h3 class="card-title">Edit A Brand Car </h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('brand.update',$brand->id) }}" method="post">
+                    <form action="{{ route('brand.update',$brand->id) }}" method="post"  enctype="multipart/form-data">
                         {{ method_field('put') }}
                         @csrf
                         <div class="form-group">

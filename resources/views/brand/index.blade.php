@@ -42,8 +42,9 @@
                                 </td>
 
                                 <td>  <a href="{{ route('brand.show',$brand->id) }}" class="mb-3">
-                                        <img src="{{asset('storage/'.$brand->logo )}}"alt="KIA" width="50px" height="50px"></td>
+                                        <img src="{{asset('storage/'.$brand->logo )}}" width="50px" height="50px">
                                 </a>
+                                </td>
 
                                 <td>
                                     <a href="{{ route('brand.edit',$brand->id) }}"

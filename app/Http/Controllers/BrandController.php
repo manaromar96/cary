@@ -42,7 +42,6 @@ class BrandController extends Controller
     public function store(Request $request)
     {
 
-        //dd($request);
         $brand = new CarBrand;
         $brand->name = $request->name;
 
@@ -93,13 +92,11 @@ class BrandController extends Controller
     public function update(Request $request, $id)
     {
         $brand = CarBrand::find($id);
-        if ($request->hasfile('logo')) {
-            $file = $request->file('logo');
-            $name = time() . $file->getClientOriginalName();
-            $file->move(public_path() . '/images/', $name);
-            $brand->logo = $name;
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $path = $request->file('logo')->store('brand/logo');
+            $brand->logo= $path;
         }
-
         $brand->name = $request->input('name');
 
         $update = $brand->save();
