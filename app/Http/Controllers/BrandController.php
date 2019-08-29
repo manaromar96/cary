@@ -52,8 +52,10 @@ class BrandController extends Controller
            // new CarBrand([
             //    'logo' => $logo->store('brand/logo')
             //]);
+
+            $brand->logo= $path;
             }
-        $brand->logo= $path;
+
         $brand->save();
 
         return redirect('brand')->with('success', 'Car Brand has been added');
