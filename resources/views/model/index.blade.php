@@ -27,6 +27,7 @@
                             <th>ID</th>
                             <th>ModelYear</th>
                             <th>VIN</th>
+                            <th>Brand</th>
 
 
                             <th width="20%" class="text-center">Actions</th>
@@ -43,6 +44,7 @@
                                             </a>
                                         </td>
                                         <td>{{ $model->VIN }}</td>
+                                        <td>{{ $model->brand->name }}</td>
 
 
                                         <td>

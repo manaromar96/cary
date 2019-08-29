@@ -36,8 +36,7 @@
                             <option disabled selected>Please Select</option>
 
                             @foreach($brands as $brand)
-                                <option id="{{$brand->id}}"> {{$brand->id}} </option>
-                                <!--هنا في مشكلة بدي اسم البراند هو الي يظهر -->
+                                <option value="{{$brand->id}}"> {{$brand->name}} </option>
                             @endforeach
                         </select>
                     </div>

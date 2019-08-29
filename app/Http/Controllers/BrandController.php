@@ -42,7 +42,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);
+        //dd($request);
         $brand = new CarBrand;
         $brand->name = $request->name;
 

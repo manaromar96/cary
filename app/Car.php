@@ -12,7 +12,7 @@ class Car extends Model
     public function client(){
         $this->belongsTo(Client::class);
     }
-    public function brand(){
+    public function brands(){
         $this->belongsTo(CarBrand::class);
     }
 
