@@ -36,15 +36,15 @@
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
+                <!--    <a class="header-brand" href="./index.html">
                         <img src="{{ asset('assets/demo/brand/tabler.svg') }}" class="header-brand-img"
                              alt="tabler logo">
-                    </a>
+                    </a> -->
                     <div class="d-flex order-lg-2 ml-auto">
-                        <div class="nav-item d-none d-md-flex">
+                       <!-- <div class="nav-item d-none d-md-flex">
                             <a href="https://github.com/tabler/tabler" class="btn btn-sm btn-outline-primary"
                                target="_blank">Source code</a>
-                        </div>
+                        </div> -->
                         <div class="dropdown d-none d-md-flex">
                             <a class="nav-link icon" data-toggle="dropdown">
                                 <i class="fe fe-bell"></i>
@@ -83,7 +83,7 @@
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                                 <span class="avatar" style="background-image: url({{asset('demo/faces/female/25.jpg')}}})"></span>
                                 <span class="ml-2 d-none d-lg-block">
-                      <span class="text-default">Jane Pearson</span>
+                      <span class="text-default">Esraa & Manar</span>
                       <small class="text-muted d-block mt-1">Administrator</small>
                     </span>
                             </a>
