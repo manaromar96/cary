@@ -26,7 +26,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Car Brand</th>
-                            <th>Car car</th>
+                            <th>Car Model</th>
                             <th>Color</th>
                             <th>Price</th>
                             <th width="20%" class="text-center">Actions</th>
