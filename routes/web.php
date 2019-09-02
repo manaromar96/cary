@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'StoreController@index');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('home', 'HomeController@index');
@@ -27,7 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/car', 'CarController');
     Route::get('/getStores', 'StoreController@getStores');
     Route::get('weather','BrandController@weather');
-    Route::get('/pages','PagesController@index');
     Route::get('/contact', 'PagesController@contact');
     Route::get('/about', 'PagesController@about');
 
