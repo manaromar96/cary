@@ -12,16 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/', 'StoreController@index');
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('home', 'HomeController@index');
-    Route::resource('/store', 'StoreController');
+    Route::resource('/store', 'StoreController')->middleware('IsAdmin');
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
