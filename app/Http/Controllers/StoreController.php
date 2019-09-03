@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Country;
 use App\Http\Requests\ValidationRequest;
+use App\ImageStore;
 use App\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,11 +43,17 @@ class StoreController extends Controller
      */
     public function store(ValidationRequest $request)
     {
-        $store = new Store;
-        $store->name = $request->name;
-        $store->address = $request->address;
-        $store->carsNumber = $request->carsNumber;
-        $store->save();
+        $store= Store::create($request->all());
+        if ($request->hasFile('path')) {
+            $images = $request->file('path');
+            $imagesPath = [];
+            foreach ($images as $image) {
+                $imagesPath [] = new ImageStore([
+                    'path' => $image->store('store/images')
+                ]);
+            }
+            $store->images()->saveMany($imagesPath);
+        }
         return redirect('store')->with('success', 'Store has been added');
     }
 
@@ -83,14 +90,31 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $store = Store::find($id);
+//        $store= Store::update($request->input()->all());
+
         $name = $request->input('name');
         $address = $request->input('address');
         $carsNumber = $request->input('carsNumber');
 
-        $store = Store::find($id);
         $store->name = $name;
         $store->address = $address;
         $store->carsNumber = $carsNumber;
+
+        if ($request->hasFile('path')) {
+            $images = $request->file('path');
+            foreach ($images as $image) {
+                $imagesPath [] = new ImageStore([
+                    'path' => $image->store('store/images')
+                ]);
+            }
+                $store->images()->saveMany($imagesPath);
+
+
+
+
+        }
+
         $update = $store->save();
         return redirect('store');
     }
