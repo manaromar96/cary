@@ -10,7 +10,7 @@
                     <h3 class="card-title">Edit A STORE</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('store.update',$store->id) }}" method="post">
+                    <form action="{{ route('store.update',$store->id) }}" method="post" enctype="multipart/form-data" >
                         {{ method_field('put') }}
                         @csrf
                         <div class="form-group">
@@ -25,6 +25,12 @@
                         <div class="form-group">
                             <label class="form-label">No. of Cars</label>
                             <input type="text" class="form-control"  name="carsNumber" value="{{ $store->carsNumber }}"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <input type="file" name="path[]" value="{{$store->path}}" multiple="multiple">
+                            </div>
                         </div>
 
                         <div class="form-footer">

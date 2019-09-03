@@ -11,9 +11,13 @@ class Store extends Model
     protected $guarded = ['_method'];
 
     public function cars(){
-        $this->hasMany(Car::class);
+       return $this->hasMany(Car::class);
     }
     public function installments(){
-        $this->hasMany(Installment::class);
+       return $this->hasMany(Installment::class);
+    }
+
+    public function images(){
+        return $this->hasMany(ImageStore::class);
     }
 }
