@@ -121,4 +121,20 @@ class BrandController extends Controller
         $response = $request->getBody()->getContents();
         dd(json_decode($response));
     }
+    function currency()
+    {
+        $client = new Client();
+        $request = $client->request('get', 'https://api.exchangeratesapi.io/latest?base=USD');
+        $response = $request->getBody()->getContents();
+        dd(json_decode($response));
+
+    }
+    function prayerTimes()
+    {
+        $client = new Client();
+        $request = $client->request('get', 'http://api.aladhan.com/v1/calendarByCity?city=gaza&country=Palesine&method=2&month=08&year=2018');
+        $response = $request->getBody()->getContents();
+        dd(json_decode($response));
+    }
+
 }

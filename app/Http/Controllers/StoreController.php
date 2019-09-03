@@ -107,7 +107,7 @@ class StoreController extends Controller
         return redirect('store')->with(['success' => 'Item has been deleted']);
     }
 
-    function getStores(Request $request)
+   /* function getStores(Request $request)
     {
 
         if($request->ajax()){
@@ -121,7 +121,7 @@ class StoreController extends Controller
 //->editColumn('duration',function($row){
 //    return $row->duration.' Days';
 //})
-    }
+    }*/
 //
 
 }

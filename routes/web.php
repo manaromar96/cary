@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/car', 'CarController');
     Route::get('/getStores', 'StoreController@getStores');
     Route::get('weather','BrandController@weather');
+    Route::get('currency','BrandController@currency');
+    Route::get('prayer','BrandController@prayerTimes');
     Route::get('/pages','PagesController@index');
     Route::get('/contact', 'PagesController@contact');
     Route::get('/about', 'PagesController@about');
