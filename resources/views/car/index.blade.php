@@ -1,5 +1,6 @@
 @extends('layout.master')
-
+@section('nav')
+@endsection
 @section('title','List of Cars')
 
 @section('header')
