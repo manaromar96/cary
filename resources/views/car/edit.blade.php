@@ -14,19 +14,19 @@
                         {{ method_field('put') }}
                         @csrf
                         <div class="form-group">
-                            <label class="form-label">Car Brand</label>
+                            <label class="form-label">Car Brand :</label>
                             <input type="text" class="form-control"  name="type" value="{{ $car->type }}"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Car Model</label>
+                            <label class="form-label">Car Model :</label>
                             <input type="date" class="form-control"  name="model" value="{{ $car->model }}"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Color</label>
+                            <label class="form-label">Color :</label>
                             <input type="text" class="form-control"  name="color" value="{{ $car->color }}"/>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Price</label>
+                            <label class="form-label">Price :</label>
                             <input type="number" class="form-control"  name="price" value="{{ $car->price }}"/>
                         </div>
 
