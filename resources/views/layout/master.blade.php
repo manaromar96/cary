@@ -25,7 +25,10 @@
     <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet"/>
 
 
+
     <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{asset('js/jquery.slides.min.js')}}"></script>
+
 
 
     @yield('header')
