@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.index')
 
 @section('title','Edit a car model')
 

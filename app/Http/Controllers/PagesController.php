@@ -8,22 +8,22 @@ class PagesController extends Controller
 {
     public function index() {
         //$data = 'This is my data';
-        // return view('pages.index')->with('data', $data );
-        // return view('pages.index', ['data'=>$data ] );
-        //return view('pages.index', compact('data') );
-        return view('pages.index');
+        // return view('page.index')->with('data', $data );
+        // return view('page.index', ['data'=>$data ] );
+        //return view('page.index', compact('data') );
+        return view('page.index');
     }
     public function stores(){
-        return view('pages.stores');
+        return view('page.stores');
     }
     public function cars() {
-        return view('pages.cars');
+        return view('page.cars');
     }
     public function about(){
-        return view('pages.about');
+        return view('page.about');
     }
     public function contact() {
-        return view('pages.contact');
+        return view('page.contact');
     }
 
 

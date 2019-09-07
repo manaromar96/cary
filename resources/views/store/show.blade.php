@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.index')
 @section('header')
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -145,7 +145,7 @@
 
 <h1 align="center">{{$store->name}}</h1>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -161,14 +161,9 @@
             <?php $class = $loop->first ? 'item active': 'item'; ?>
 
                 <div class="{{$class}}">
-                    <div>
-
-
-{{--            <div class="item ">--}}
-                <img src="{{asset('storage/'.$image->path)}}" alt="store image">
-                    </div>
-            </div>
-            @endforeach
+                        <img src="{{asset('storage/'.$image->path)}}" alt="store image">
+                </div>
+        @endforeach
 
 
     </div>

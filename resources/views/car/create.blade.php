@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.index')
 
 @section('title','Adding a Car')
 
@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{ route('car.store') }}"  method="post" >
+                <form action="{{ route('car.store') }}"  method="post" enctype="multipart/form-data" >
                     @csrf
                     <div class="form-group">
 
@@ -53,6 +53,19 @@
                         </label>
                         <input type="number" name="price">
                     </div>
+                    <div class="form-group">
+
+                        <label for=" photo">
+                            Car images
+                        </label> <br>
+
+                        <label for="exampleInputFile">
+                            File input
+                        </label>
+                        <input class="form-control-file" id="exampleInputFile" type="file" name='photo' multiple="multiple"/>
+
+                    </div>
+
 
                     <button type="submit" class="btn btn-primary">
                         Add Car

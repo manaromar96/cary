@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\CarImages;
 use App\CarModel;
+use App\ImageStore;
+use App\Store;
 use Illuminate\Http\Request;
 use App\CarBrand;
 
@@ -40,12 +43,20 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $car = new Car;
-        $car->type = $request->type;
-        $car->model = $request->model;
-        $car->color = $request->color;
-        $car->price = $request->price;
-        $car->save();
+
+        $car= Car::create($request->all());
+        if ($request->hasFile('photo')) {
+            $images = $request->file('photo');
+            $imagesPath = [];
+            foreach ($images as $image) {
+                $imagesPath [] = new CarImages([
+                    'photo' => $image->store('car/images')
+                ]);
+            }
+                $car->carImages()->saveMany($imagesPath);
+            }
+
+
         return redirect('car')->with('success', 'Car has been added');
     }
 

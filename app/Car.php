@@ -6,14 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
+    protected $fillable=['type','model','price','color'];
     public function store(){
-        $this->belongsTo(Store::class);
+        return $this->belongsTo(Store::class);
     }
     public function client(){
-        $this->belongsTo(Client::class);
+     return   $this->belongsTo(Client::class);
     }
     public function brands(){
-        $this->belongsTo(CarBrand::class);
+      return  $this->belongsTo(CarBrand::class);
     }
-
+    public function carImages(){
+        return  $this->hasMany(CarImages::class);
+    }
 }

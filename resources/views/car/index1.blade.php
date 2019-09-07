@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.index')
 
 @section('title','List of Cars')
 

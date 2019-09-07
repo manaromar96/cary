@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('admin', 'AdminController@index');
     Route::get('home', 'HomeController@index');
     Route::resource('/store', 'StoreController');
     Route::resource('/brand', 'BrandController');
@@ -29,7 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('weather','BrandController@weather');
     Route::get('currency','BrandController@currency');
     Route::get('prayer','BrandController@prayerTimes');
-    Route::get('/pages','PagesController@index');
+    Route::get('/page','PagesController@index');
     Route::get('/contact', 'PagesController@contact');
     Route::get('/about', 'PagesController@about');
 

@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.index')
 
 @section('title','List of brands')
 
@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">List of Car Brand</h3>
+                    <h3 class="card-title">List of Car Brands</h3>
                 </div>
                 <div class="card-body">
                     <div class="tableesp-ronsive">
@@ -49,17 +49,17 @@
                                 <td>
                                     <a href="{{ route('brand.edit',$brand->id) }}"
                                        class="btn btn-sm btn-warning">
-                                        <i class="fe fe-edit"></i>
+                                        <i class="fe fe-edit form-check-inline"></i>
                                     </a>
                                     <a href="{{ route('brand.show',$brand->id) }}"
                                        class="btn btn-sm btn-primary">
-                                        <i class="fe fe-eye"></i>
+                                        <i class="fe fe-eye form-check-inline"></i>
                                     </a>
                                     <form action="{{ route('brand.destroy',$brand->id) }}" method="post" class="form-check-inline">
                                         @csrf
                                         {{ method_field('delete') }}
                                         <button class="btn btn-sm btn-danger" type="submit">
-                                            <i class="fe fe-trash"></i>
+                                            <i class="fe fe-trash form-check-inline"></i>
                                         </button>
                                     </form>
                                 </td>

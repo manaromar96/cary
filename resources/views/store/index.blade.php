@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layout.index')
 
 @section('title','List of stores')
 
@@ -24,12 +24,11 @@
                         <table class="table" id="store_table">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th width="15px">ID</th>
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>CarsNumber</th>
-                       <!--         <th>City</th>  -->
-                                <th width="20%" class="text-center">Actions</th>
+                                <th>Actions</th>
 
 
                             </tr>
@@ -47,20 +46,20 @@
                                             <td>{{ $store->address }}</td> 
                                             <td>{{ $store->carsNumber }}</td> 
 
-                                            <td> 
+                                            <td>
                                                 <a href="{{ route('store.edit',$store->id) }}" 
-                                                  class="btn btn-sm btn-warning"> 
-                                                    <i class="fe fe-edit"></i> 
+                                                  class="btn btn-sm btn-warning">
+                                                    <i class="fe fe-edit  form-check-inline"></i>
                                                 </a> 
                                                 <a href="{{ route('store.show',$store->id) }}" 
-                                                 class="btn btn-sm btn-primary"> 
-                                                    <i class="fe fe-eye"></i> 
+                                                 class="btn btn-sm btn-primary">
+                                                    <i class="fe fe-eye form-check-inline"></i>
                                                 </a> 
-                                               <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-check-inline"> 
+                                               <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-check-inline">
                                                      @csrf 
                                                      {{ method_field('delete') }} 
-                                                     <button class="btn btn-sm btn-danger" type="submit"> 
-                                                         <i class="fe fe-trash"></i> 
+                                                     <button class="btn btn-sm btn-danger" type="submit">
+                                                         <i class="fe fe-trash form-check-inline"></i>
                                                      </button> 
                                                  </form> 
                                              </td> 
