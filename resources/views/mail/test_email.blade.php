@@ -1,1 +1,1 @@
-مرحبا ابلة منااار :D
+HELLO {{$user->name}} , NICE TO SEE YOU :)
