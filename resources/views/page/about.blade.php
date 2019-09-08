@@ -1,7 +1,8 @@
 @extends('layout.index')
 
 @section('title'," About Us ")
-
+@section('nav')
+    @endsection
 @section('content')
 
     <h1> <em>Who are we ?!</em></h1>

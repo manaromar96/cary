@@ -1,7 +1,8 @@
 @extends('layout.index')
 
 @section('title'," Contact Us ")
-
+@section('nav')
+@endsection
 @section('content')
 
     <h1>Talk to us</h1>
