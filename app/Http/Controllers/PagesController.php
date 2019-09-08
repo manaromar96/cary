@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestEmail;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -24,6 +27,13 @@ class PagesController extends Controller
     }
     public function contact() {
         return view('page.contact');
+    }
+
+    function sendEmail()
+    {
+        $user = User::first();
+        $email = Mail::to('eng.manar.2016@gmail.com')->send(new TestEmail($user));
+        dd($email);
     }
 
 

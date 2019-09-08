@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+ const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -10,6 +10,9 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
+mix.styles([
+    'public/assetss/vendor/datatables/dataTables.bootstrap4.css',
+    'public/assetss/css/sb-admin.css'
+],'public/css/style.css').version();
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

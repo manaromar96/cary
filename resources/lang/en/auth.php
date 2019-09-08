@@ -21,7 +21,7 @@ return [
     'store_accountant'=> 'Accountant',
     'store_employee'=> 'Employee',
     'store_administrator'=>'Administrator',
-    'buy_car'=>'Client',
+    'store_client'=>'Client',
     'user_type' => 'User Type'
 
 

@@ -72,17 +72,7 @@
                                         <option value="-1">Please select</option>
                                         @foreach($roles as $role)
                                             <option value="{{ $role->id }}">
-                                                @if($role->name=='Manager')
-                                                    @lang('auth.store_manager')
-                                                @elseif($role->name=='Accountant')
-                                                    @lang('auth.store_accountant')
-                                                @elseif($role->name=='Employee')
-                                                      @lang('auth.store_employee')
-                                                    @elseif ($role->name ='Administrator')
-                                                    @lang('auth.store_administrator')
-                                                @else
-                                                     @lang('auth.buy_car')
-                                                @endif
+                                                {{$role->name}}
                                             </option>
                                         @endforeach
 

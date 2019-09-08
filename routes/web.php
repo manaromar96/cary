@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('/', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('admin', 'AdminController@index');
     Route::get('home', 'HomeController@index');
     Route::resource('/store', 'StoreController');
     Route::resource('/brand', 'BrandController');
@@ -33,8 +32,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/page','PagesController@index');
     Route::get('/contact', 'PagesController@contact');
     Route::get('/about', 'PagesController@about');
+    Route::get('sendEmail','PagesController@sendEmail');
 
 
 
 });
+Route::resource('/store', 'StoreController')->middleware('isAdmin');
+
+
 

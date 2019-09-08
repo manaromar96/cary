@@ -15,10 +15,12 @@
         <link href="{{asset('assetss/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="{{asset('assetss/vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('assetss/vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">--}}
 
     <!-- Custom styles for this template-->
-    <link href="{{asset('assetss/css/sb-admin.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('assetss/css/sb-admin.css')}}" rel="stylesheet">--}}
+
+    <link href="{{ mix('css/style.css') }}" rel="stylesheet"/>
 
 </head>
 
@@ -103,15 +105,15 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Login Screens:</h6>
-                <a class="dropdown-item" href="{{route('login')}}">Login</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/login">Login</a>
                 <a class="dropdown-item" href="{{route('register')}}">Register</a>
-{{--                <a class="dropdown-item" href="{{route('passwords.reset')}}">Forgot Password</a>--}}
+                <a class="dropdown-item" href="{{ route('password.request') }}">Forgot Password</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Other Pages:</h6>
                 <a class="dropdown-item" href="{{route('store.index')}}">Stores</a>
                 <a class="dropdown-item" href="{{route('car.index')}}">Cars</a>
-               <a class="dropdown-item" href="">About us</a>
-               <a class="dropdown-item" href="">Contact</a>
+               <a class="dropdown-item" href="http://127.0.0.1:8000/about">About us</a>
+               <a class="dropdown-item" href="http://127.0.0.1:8000/contact">Contact</a>
 
             </div>
         </li>
@@ -747,7 +749,18 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+
+{{--                <a class="btn btn-primary" href="http://127.0.0.1:8000/login">Logout</a>--}}
+                    <a class="btn btn-primary" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
             </div>
         </div>
     </div>
@@ -761,7 +774,7 @@
 <script src="{{asset('assetss/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
 <!-- Page level plugin JavaScript-->
-<script src="{{asset('assetss/vendor/chart.js/Chart.min.js')}}"></script>
+{{--<script src="{{asset('assetss/vendor/chart.js/Chart.min.js')}}"></script>--}}
 <script src="{{asset('assetss/vendor/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{asset('assetss/vendor/datatables/dataTables.bootstrap4.js')}}"></script>
 
@@ -770,8 +783,9 @@
 
 <!-- Demo scripts for this page-->
 <script src="{{asset('assetss/js/demo/datatables-demo.js')}}"></script>
-<script src="{{asset('assetss/js/demo/chart-area-demo.js')}}"></script>
+{{--<script src="{{asset('assetss/js/demo/chart-area-demo.js')}}"></script>--}}
 
+@yield('footer')
 </body>
 
 </html>
