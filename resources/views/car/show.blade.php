@@ -3,27 +3,28 @@
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <th>Car Brand</th>
-                        <th>Car Model</th>
-                        <th>Color</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td>{{ $car->type }}</td>
-                    
+{{--                <table class="table">--}}
+{{--                    <tr>--}}
+{{--                        <th>Car Brand</th>--}}
+{{--                        <th>Car Model</th>--}}
+{{--                        <th>Color</th>--}}
+{{--                        <th>Price</th>--}}
+{{--                    </tr>--}}
+{{--                    <tr>--}}
+{{--                        <td>{{ $car->type }}</td>--}}
+{{--                    --}}
 
-                        <td>{{ $car->model }}</td>
-
-
-                        <td>{{ $car->color }}</td>
+{{--                        <td>{{ $car->model }}</td>--}}
 
 
-                        <td>{{ $car->price }}$</td>
+{{--                        <td>{{ $car->color }}</td>--}}
 
-                    </tr>
-                </table>
+
+{{--                        <td>{{ $car->price }}$</td>--}}
+
+{{--                    </tr>--}}
+{{--                </table>--}}
+
             </div>
         </div>
     </div>
