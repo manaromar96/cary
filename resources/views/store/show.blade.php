@@ -62,7 +62,7 @@
             <div class="col-md-12">
                 <dl>
                     <dt>
-                                <h4>Addres : {{$store->address}}</h4> <br>
+                                <h4>Address : {{$store->address}}</h4> <br>
                     </dt>
                     <dt>
                                 <h4>Cars in store : {{$store->carsNumber}}</h4> <br>

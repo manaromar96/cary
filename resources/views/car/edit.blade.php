@@ -10,7 +10,7 @@
                     <h3 class="card-title">Edit Car details </h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('car.update',$car->id) }}" method="post">
+                    <form action="{{ route('car.update',$car->id) }}" method="post"  enctype="multipart/form-data">
                         {{ method_field('put') }}
                         @csrf
                         <div class="form-group">
@@ -29,6 +29,14 @@
                             <label class="form-label">Price :</label>
                             <input type="number" class="form-control"  name="price" value="{{ $car->price }}"/>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <input type="file" name="photo[]" value="{{$car->photo}}" multiple="multiple">
+                            </div>
+                        </div>
+
 
 
                         <div class="form-footer">

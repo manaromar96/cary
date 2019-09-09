@@ -4,6 +4,10 @@
 
 
     <style>
+        #myCarousel{
+            width: 1140px;
+            height: 1000px;
+        }
         .carousel-inner img{
             width: 1140px;
             height: 540px;
@@ -13,11 +17,9 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
+                 <h1 align="center">{{$car->type}}</h1>
 
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+                 <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
 
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -32,9 +34,9 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
 
-                        @foreach($car->carImages as $image)
+                        @foreach($car->carImages as $carImage)
                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                <img src="{{asset('storage/'.$image->photo)}}" alt="store image">
+                                <img src="{{asset('storage/'.$carImage->photo)}}" alt="car image">
                             </div>
                     @endforeach
 
@@ -78,32 +80,11 @@
                     <div class="row">
                         <div class="col-md-6">
 
-                            <a class="btn btn-success btn-block active" href="{{ route('car.index') }}">Back to store list</a>
+                            <a class="btn btn-success btn-block active" href="{{ route('car.index') }}">Back to cars list</a>
                         </div>
                     </div>
                 </div>
 
-                {{--                <table class="table">--}}
-{{--                    <tr>--}}
-{{--                        <th>Car Brand</th>--}}
-{{--                        <th>Car Model</th>--}}
-{{--                        <th>Color</th>--}}
-{{--                        <th>Price</th>--}}
-{{--                    </tr>--}}
-{{--                    <tr>--}}
-{{--                        <td>{{ $car->type }}</td>--}}
-{{--                    --}}
-
-{{--                        <td>{{ $car->model }}</td>--}}
-
-
-{{--                        <td>{{ $car->color }}</td>--}}
-
-
-{{--                        <td>{{ $car->price }}$</td>--}}
-
-{{--                    </tr>--}}
-{{--                </table>--}}
 
 
             </div>

@@ -93,13 +93,23 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $car = Car::find($id);
+
         $type= $request->input('type');
         $model= $request->input('model');
         $color= $request->input('color');
         $price= $request->input('price');
+        if ($request->hasFile('photo')) {
+            $images = $request->file('photo');
+            foreach ($images as $image) {
+                $imagesPath [] = new CarImages([
+                    'photo' => $image->store('car/images')
+                ]);
+            }
+            $car->carImages()->saveMany($imagesPath);
 
-
-        $car = Car::find($id);
+        }
         $car->type = $type;
         $car->model = $model;
         $car->color =$color;
