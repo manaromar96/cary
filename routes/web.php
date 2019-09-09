@@ -38,8 +38,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 Route::resource('/store', 'StoreController')->middleware('isAdmin');
+//Route::resource('/client', 'ClientController')->middleware('isClient');
+
 Route::get('/client', function () {
-    return view('clientProfile');
+    return view('client.profile');
 })->middleware('isClient');
 
 

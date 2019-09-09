@@ -19,7 +19,7 @@ class IsClient
         //$request->user() === Auth::user()
         //dd($user);
         // if the user is admin
-        if ($user && $user->role_id==5) {
+        if ($user && $user->role_id==2) {
             return $next($request);
         }
         else { // else: redirect to login page/dashboard page/error page/ unauthorized page
