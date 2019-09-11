@@ -27,15 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $brands = CarBrand::all();
-        $models = CarModel::all();
+//        $brands = CarBrand::all();
+//        $models = CarModel::all();
 //        $clients = Client::all();
 
-        if(Auth::user()->role_id == 2){
-           return view('client.profile','clients');
+        if(Auth::user()->role_id == 5){
+           return view('client.profile');
         }
-        if(Auth::user()->role_id == 1){
-            return redirect('manager/profile');
+        if(Auth::user()->role_id == 2){
+            return redirect('/manager');
         }
         else
             return view('home');

@@ -19,13 +19,13 @@
         <!-- Personal Info -->
         <ul class="personal-info">
             <li>
-                <p> <span> Name : </span>{{$user->name}}</p>
+                <p> <span> Name : </span>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
             </li>
+{{--            <li>--}}
+{{--                <p> <span> Phone : </span>{{\Illuminate\Support\Facades\Auth::user()->phone}}</p>--}}
+{{--            </li>--}}
             <li>
-                <p> <span> Phone : </span>{{$user->phone}}</p>
-            </li>
-            <li>
-                <p> <span> E-mail : </span> <a href="#.">{{$user->email}}</a> </p>
+                <p> <span> E-mail : </span> <a href="#.">{{\Illuminate\Support\Facades\Auth::user()->email}}</a> </p>
             </li>
         </ul>
 
@@ -37,23 +37,35 @@
                 <div class="col-md-12">
                     <div class="page-header">
                         <h1>
-                            {{$user->name}}! <small>Do Your Action : </small>
+                            {{\Illuminate\Support\Facades\Auth::user()->name}}! <small>Do Your Action : </small>
                         </h1>
                     </div>
                     <div class="btn-group" role="group">
 
-                        <button class="btn btn-secondary" type="button">
+                        <a href="/store">
+                        <button  class="btn btn-secondary" type="button">
                             View Your Store
                         </button>
+                        </a>
+
+                        <a href="/store/create">
                         <button class="btn btn-secondary" type="button">
-                            Add New Store
+                          Add New Store
                         </button>
+                        </a>
+
+                        <a href="/car">
                         <button class="btn btn-secondary" type="button">
                             View Your Cars
                         </button>
+                        </a>
+
+
+                        <a href="car/create">
                         <button class="btn btn-secondary" type="button">
-                            Add New Car
+                          Add New Car
                         </button>
+                        </a>
                     </div>
                 </div>
             </div>

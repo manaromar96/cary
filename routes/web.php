@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 });
-Route::resource('/store', 'StoreController')->middleware('isAdmin');
+Route::resource('/store', 'StoreController');
 //Route::resource('/client', 'ClientController')->middleware('isClient');
 
 Route::get('/client', function () {
@@ -45,3 +45,6 @@ Route::get('/client', function () {
 })->middleware('isClient');
 
 
+Route::get('/manager', function () {
+    return view('manager.profile');
+});
