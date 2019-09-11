@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\CarBrand;
+use App\CarModel;
+use App\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,11 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $brands = CarBrand::all();
+        $models = CarModel::all();
+//        $clients = Client::all();
+
         if(Auth::user()->role_id == 2){
-            return view('client.profile');
+           return view('client.profile','clients');
         }
-        elseif(Auth::user()->role_id == 1){
-            return view('car.create');
+        if(Auth::user()->role_id == 1){
+            return redirect('manager/profile');
         }
         else
             return view('home');

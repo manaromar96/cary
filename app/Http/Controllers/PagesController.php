@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestEmail;
 use App\User;
+use App\Events\UserRegistrationEvent;
 
 class PagesController extends Controller
 {
@@ -31,9 +32,14 @@ class PagesController extends Controller
 
     function sendEmail()
     {
-        $user = User::first();
-        $email = Mail::to('eng.manar.2016@gmail.com')->send(new TestEmail($user));
-        dd($email);
+
+//        $user = User::first();
+      //  $email = Mail::to('eng.manar.2016@gmail.com')->send(new TestEmail($user));
+        //dd($email);
+        $event =event(new UserRegistrationEvent());
+        dd($event);
+
+
     }
 
 

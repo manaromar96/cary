@@ -19,13 +19,13 @@
                  <!-- Personal Info -->
                  <ul class="personal-info">
                      <li>
-                         <p> <span> Name : </span>client->name</p>
+                         <p> <span> Name : </span>{{$client->name}}</p>
                      </li>
                      <li>
-                         <p> <span> Phone : </span>client->phone</p>
+                         <p> <span> Phone : </span>{{$client->phone}}</p>
                      </li>
                      <li>
-                         <p> <span> E-mail : </span> <a href="#.">client->email</a> </p>
+                         <p> <span> E-mail : </span> <a href="#.">{{$client->email}}</a> </p>
                      </li>
                  </ul>
 

@@ -21,6 +21,19 @@
 {{--    <link href="{{asset('assetss/css/sb-admin.css')}}" rel="stylesheet">--}}
 
     <link href="{{ mix('css/style.css') }}" rel="stylesheet"/>
+<style>
+    .sidebar{
+        background-color: #cf75a4;
+    }
+    .bg-dark{
+        background-color : #cf75a4 !important;
+    }
+    .btn-primary{
+        background-color: #cf75a4;
+        border-color: white;
+    }
+</style>
+
 
 </head>
 
