@@ -65,8 +65,9 @@ class StoreController extends Controller
      */
     public function show($id)
     {
+
         $store = Store::find($id);
-        return view('store.show', compact('store','stores'));
+        return view('store.show', compact('store'));
     }
 
     /**
@@ -130,7 +131,11 @@ class StoreController extends Controller
         Store::find($id)->delete();
         return redirect('store')->with(['success' => 'Item has been deleted']);
     }
-
+    public function cars($id){
+        $store = Store::find($id);
+        $cars = $store->cars ;
+        return view('car.index',compact('cars'));
+    }
    /* function getStores(Request $request)
     {
 

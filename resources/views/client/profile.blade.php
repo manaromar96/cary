@@ -29,6 +29,13 @@
                      </li>
                  </ul>
 
+
+            <a href="/store">
+            <button  class="btn btn-primary" type="button">
+                View Your Store
+            </button>
+             </a>
+
     </div>
 
 @endsection

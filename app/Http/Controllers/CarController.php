@@ -29,9 +29,9 @@ class CarController extends Controller
 
         $models = CarModel::all();
         $brands = CarBrand::all();
+        $stores = Store::all();
 
-
-        return view('car.create',compact('models','brands'));
+        return view('car.create',compact('models','brands','stores'));
 
     }
 
@@ -69,9 +69,9 @@ class CarController extends Controller
     public function show($id)
     {
         $car = Car::find($id);
-        return view('car.show', compact('car'));
+        $store = Store::find($id);
+        return view('car.show', compact('car','store'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -129,4 +129,12 @@ class CarController extends Controller
         Car::find($id)->delete();
         return redirect('car')->with(['success' => 'car has been deleted']);
     }
+
+    public function buy($id){
+        $car = Car::find($id);
+        $store = $car->store ;
+
+        return view('car.buy',compact('car'));
+    }
 }
+

@@ -118,15 +118,15 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <h6 class="dropdown-header">Login Screens:</h6>
-                <a class="dropdown-item" href="http://127.0.0.1:8000/login">Login</a>
+                <a class="dropdown-item" href="{{route('login')}}">Login</a>
                 <a class="dropdown-item" href="{{route('register')}}">Register</a>
                 <a class="dropdown-item" href="{{ route('password.request') }}">Forgot Password</a>
                 <div class="dropdown-divider"></div>
                 <h6 class="dropdown-header">Other Pages:</h6>
                 <a class="dropdown-item" href="{{route('store.index')}}">Stores</a>
                 <a class="dropdown-item" href="{{route('car.index')}}">Cars</a>
-               <a class="dropdown-item" href="http://127.0.0.1:8000/about">About us</a>
-               <a class="dropdown-item" href="http://127.0.0.1:8000/contact">Contact</a>
+               <a class="dropdown-item" href="{{route('about')}}">About us</a>
+               <a class="dropdown-item" href="{{route('contact')}}">Contact</a>
 
             </div>
         </li>

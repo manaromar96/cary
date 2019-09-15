@@ -30,14 +30,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('currency','BrandController@currency');
     Route::get('prayer','BrandController@prayerTimes');
     Route::get('/page','PagesController@index');
-    Route::get('/contact', 'PagesController@contact');
-    Route::get('/about', 'PagesController@about');
+    Route::get('/contact', 'PagesController@contact')->name('contact');
+    Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
 
 
 
 });
 Route::resource('/store', 'StoreController');
+Route::get('/store/show-cars/{id}', 'StoreController@cars')->name('store.showCars');
+Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
+
 //Route::resource('/client', 'ClientController')->middleware('isClient');
 
 Route::get('/deploy','deployController@index');

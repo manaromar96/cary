@@ -76,7 +76,9 @@
                 <a class="btn btn-success btn-block active" href="{{ route('store.index') }}">Back to store list</a>
             </div>
             <div class="col-md-6">
-                <a class="btn btn-success btn-block active" href="##">Cars List</a>
+{{--                <a class="btn btn-success btn-block active" href="{{url('car/{{$id}}')}}">Cars List</a>--}}
+
+                <a class="btn btn-success btn-block active" href="{{route('store.showCars',[$store->id])}}">Cars List</a>
 
             </div>
         </div>

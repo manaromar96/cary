@@ -61,6 +61,8 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
+                            <h3>Car Details: </h3>
+                            <hr>
                             <dl>
                                 <dt>
                                     <h4>Car Brand : {{$car->type}}</h4> <br>
@@ -79,8 +81,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
+                            <a class="btn btn-success btn-block active" href="{{route('car.buyCar',[$car->id]) }}">Buy This Car</a>
 
-                            <a class="btn btn-success btn-block active" href="{{ route('car.index') }}">Back to cars list</a>
+                            <a class="btn btn-success btn-block active" href="{{route('store.showCars',[$car->store->id])}}">Back to store cars</a>
                         </div>
                     </div>
                 </div>
