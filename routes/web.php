@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::resource('/store', 'StoreController');
 //Route::resource('/client', 'ClientController')->middleware('isClient');
+
 Route::get('/deploy','deployController@index');
 
 Route::get('/client', function () {
