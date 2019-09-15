@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Validator;
 class AuthenticationController extends Controller
 {
     public $successStatus = 200;
+
+
     function login(Request $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
