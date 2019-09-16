@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
-//    Route::resource('/user', 'UserController');
+    Route::resource('/user', 'UserController');
     Route::get('/getStores', 'StoreController@getStores');
     Route::get('weather','BrandController@weather');
     Route::get('currency','BrandController@currency');
