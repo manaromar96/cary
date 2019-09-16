@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
     Route::get('/visitor', 'VisitorController@index');
+    Route::get('/user/create', 'UserController@create');
+
     Route::get('profile','HomeController@profile')->name('user.profile');
 //    Route::post('updateProfile',function (){
 //        return view('user.profile');
