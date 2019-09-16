@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('dashboardLayout.master')
 
 @section('title','Edit a car brand')
 

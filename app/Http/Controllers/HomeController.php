@@ -40,4 +40,9 @@ class HomeController extends Controller
         else
             return view('home');
     }
+
+    public function profile(){
+        $user = auth()->user();
+        return view('user.profile',compact('user'));
+    }
 }

@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('dashboardLayout.master')
 @section('content')
     <div class="row">
         <div class="col-12">
