@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
+//    Route::resource('/user', 'UserController');
     Route::get('/getStores', 'StoreController@getStores');
     Route::get('weather','BrandController@weather');
     Route::get('currency','BrandController@currency');
@@ -34,8 +35,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
     Route::get('/visitor', 'VisitorController@index');
+    Route::get('/user', 'UserController@index');
     Route::get('/user/create', 'UserController@create');
-
+    Route::get('/user/store', 'UserController@store')->name('user.store');
     Route::get('profile','HomeController@profile')->name('user.profile');
 //    Route::post('updateProfile',function (){
 //        return view('user.profile');

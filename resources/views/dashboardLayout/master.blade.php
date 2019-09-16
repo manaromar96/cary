@@ -69,10 +69,6 @@
             margin-top: -95px;
             padding-top: 46px;
         }
-        .card{
-            background-color:honeydew;
-
-        }
     </style>
 
 </head>
