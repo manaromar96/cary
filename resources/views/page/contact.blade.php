@@ -1,14 +1,23 @@
 @extends('dashboardLayout.master')
 
-@section('title'," Contact Us ")
-@section('nav')
-@endsection
-@section('content')
+@section('title','Content Us')
 
-    <h1>Talk to us</h1>
-    <label > <strong>Email :</strong></label>
-    <span>eng.esraa93@hotmail.com</span>
-    <br>
-    <label><strong>Mobile :</strong></label>
-    <span>+970 599XX XXXX</span>
-@endsection
+
+@section('content')
+<form action="{{ route('contact.store') }}"  method="post" >
+@csrf
+<div class="form-group">
+    <label>Name :</label>
+    <input type="text" name="name" class="form-control">
+</div>
+    <div class="form-group">
+        <label>Email :</label>
+        <input type="text" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Message :</label>
+        <textarea name="message" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    @endsection

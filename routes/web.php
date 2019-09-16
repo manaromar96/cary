@@ -30,10 +30,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('currency','BrandController@currency');
     Route::get('prayer','BrandController@prayerTimes');
     Route::get('/page','PagesController@index');
-    Route::get('/contact', 'PagesController@contact')->name('contact');
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
     Route::get('/visitor', 'VisitorController@index');
+    Route::get('/user', 'UserController@index');
     Route::get('/user/create', 'UserController@create');
 
     Route::get('profile','HomeController@profile')->name('user.profile');
@@ -61,3 +61,5 @@ Route::get('/client', function () {
 Route::get('/manager', function () {
     return view('manager.profile');
 });
+Route::get('/contact', 'PagesController@contact');
+Route::post('/contact', 'PagesController@store')->name('contact.store');

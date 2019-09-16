@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\TestEmail;
 use App\User;
 use App\Events\UserRegistrationEvent;
+use App\ContactUs;
 
 class PagesController extends Controller
 {
@@ -29,6 +30,30 @@ class PagesController extends Controller
     public function contact() {
         return view('page.contact');
     }
+
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+        ContactUS::create($request->all());
+        Mail::send('mail.mail',
+            array(
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'user_message' => $request->get('message')
+            ), function($message)
+            {
+                $message->from('carylara2019@gmail.com');
+                $message->to('eng.manar.2016@gmail.com', 'Admin')->subject(' Feedback');
+            });
+        return back()->with('success', 'Thanks for contacting us!');
+
+    }
+
 
     function sendEmail()
     {
