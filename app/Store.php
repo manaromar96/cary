@@ -20,4 +20,7 @@ class Store extends Model
     public function images(){
         return $this->hasMany(ImageStore::class);
     }
+    public  function user(){
+        return $this->hasMany(Store::class );
+    }
 }
