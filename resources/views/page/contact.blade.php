@@ -1,10 +1,17 @@
 @extends('dashboardLayout.master')
 
 @section('title','Content Us')
+@section('header')
+    <style>
+        .contactForm{
+            margin-top: 132px;
+            padding-left: 30px;
+        }
+    </style>
 
 
 @section('content')
-<form action="{{ route('contact.store') }}"  method="post" >
+<form action="{{ route('contact.store') }}"  method="post"  class="contactForm">
 @csrf
 <div class="form-group">
     <label>Name :</label>
