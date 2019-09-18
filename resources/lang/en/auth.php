@@ -18,9 +18,9 @@ return [
     'login' => 'Sign-in',
     'find_car' => 'Find a Car',
     'store_manager'=> 'Manager',
-    'store_accountant'=> 'Accountant',
-    'store_employee'=> 'Employee',
-    'store_administrator'=>'Administrator',
+//    'store_accountant'=> 'Accountant',
+//    'store_employee'=> 'Employee',
+//    'store_administrator'=>'Administrator',
     'store_client'=>'Client',
     'user_type' => 'User Type'
 

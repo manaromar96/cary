@@ -6,6 +6,29 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
 @endsection
+@section('jsHeader')
+    <script src="//js.pusher.com/5.0/pusher.min.js"></script>
+    <script>
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+        var pusher = new Pusher('13d7f2f360d1a07bc65d', {
+            cluster: 'ap2',
+            forceTLS: true
+        });
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+            var result = JSON.parse(JSON.stringify(data));
+            console.log(result);
+            var storesTable = $('#store_table tbody');
+            storesTable.prepend("<tr>" +
+                "<td>"+result.store.id+"</td>"+
+                "<td>"+result.store.name+"</td>"+
+                "<td>"+result.store.address+"</td>"+
+                "<td>"+result.store.carsNumber+"</td>"+
+                +"</tr>");
+        });
+    </script>
+@endsection
 
 @section('content')
     @if (session('success'))

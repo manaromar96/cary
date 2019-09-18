@@ -3,6 +3,8 @@
     <style>
         .infoForm{
             margin: 150px;
+            margin-top: 60px;
+
         }
         .kt-grid__item kt-grid__item--fluid kt-app__content{
             background-color: honeydew;
@@ -13,18 +15,34 @@
             margin-left: 280px;
             margin-top: -56px;
         }
+        .contentform {
+            margin-top: -94px;
+        }
+        .nav{
+            margin-top: 100px;
+            margin-bottom: 0px;
+            padding-left: 35px;
+        }
+
     </style>
 @section('content')
-<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid contentform">
 
-
-
-        <!--Begin:: App Content-->
-        <div class="kt-grid__item kt-grid__item--fluid kt-app__content">
-
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/store">Store</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Your Car</a>
+            </li>
+        </ul>
 
                         <form class="kt-form kt-form--label-right infoForm">
+
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="kt-section__body">
@@ -37,7 +55,7 @@
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <input class="form-control" type="text" value="Nick">
+                                                <input class="form-control" type="text" value="{{\Illuminate\Support\Facades\Auth::user()->name}}">
                                             </div>
                                         </div>
 
@@ -52,7 +70,7 @@
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                                    <input type="text" class="form-control" value="+35278953712" placeholder="Phone" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}" placeholder="Phone" aria-describedby="basic-addon1">
                                                 </div>
                                                 <span class="form-text text-muted">We'll never share your email with anyone else.</span>
                                             </div>
@@ -62,7 +80,7 @@
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                    <input type="text" class="form-control" value="nick.bold@loop.com" placeholder="Email" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" placeholder="Email" aria-describedby="basic-addon1">
                                                 </div>
                                             </div>
                                         </div>
@@ -82,11 +100,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <br>
+                            <br>
+
                         </form>
-                    </div>
-                </div>
-        <!--End:: App Content-->
+        </div>
+    </div>
 
 
-</div>
-    @endsection
+
+
+
+@endsection

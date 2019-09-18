@@ -1,6 +1,13 @@
 @extends('dashboardLayout.master')
 
 @section('title','Create a new Store')
+@section('header')
+    <style>
+        .storeForm{
+            padding-left: 35px;
+        }
+    </style>
+@endsection
 
 
 @section('content')
@@ -16,7 +23,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{ route('store.store') }}"  method="post" enctype="multipart/form-data" >
+                <form action="{{ route('store.store') }}"  method="post" enctype="multipart/form-data"  class="storeForm">
                     @csrf
                     <div class="form-group">
 

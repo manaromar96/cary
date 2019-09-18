@@ -43,6 +43,15 @@ class HomeController extends Controller
 
     public function profile(){
         $user = auth()->user();
-        return view('user.profile',compact('user'));
+
+
+        if ($user && $user->role_id==1) {
+            return view('manager.profile',compact('user'));
+        }
+        else {
+            return view('user.profile',compact('user'));
+        }
+//        return view('user.profile',compact('user'));
+
     }
 }

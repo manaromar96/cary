@@ -7,6 +7,7 @@ use App\Store;
 use App\User;
 use Illuminate\Http\Request;
 
+
 class UserController extends Controller
 {
     /**
@@ -17,7 +18,16 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return  view('user.index',compact('users'));
+//        @foreach($users as $user)
+//            if ($user && $user->role_id==1) {
+//            return view('manager.index',compact('users'));
+//        }
+//            else {
+//            return view('user.index',compact('users'));
+//        }
+//        @endforeach
+        return view('user.index',compact('users'));
+
     }
 
     /**
@@ -115,5 +125,10 @@ class UserController extends Controller
     {
         $user=User::find($id)->delete();
         return redirect('user')->with('success','User has been  deleted');
+    }
+    public function userStore($id){
+        $user =User::find($id);
+        $store =$user->store;
+        return view('store.index',compact('store'));
     }
 }

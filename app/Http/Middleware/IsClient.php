@@ -16,14 +16,12 @@ class IsClient
     public function handle($request, Closure $next)
     {
         $user = $request->user();
-        //$request->user() === Auth::user()
-        //dd($user);
-        // if the user is admin
+
         if ($user && $user->role_id==2) {
-            return $next($request);
+            return redirect('/profile');
         }
-        else { // else: redirect to login page/dashboard page/error page/ unauthorized page
-            return redirect('/home');
+        else {
+            return redirect('/manger');
         }
     }
 

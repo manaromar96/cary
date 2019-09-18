@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
     Route::resource('/user', 'UserController');
+    Route::get('/manager', 'UserController@index')->name('manager.index');
+
     Route::get('/getStores', 'StoreController@getStores');
     Route::get('weather','BrandController@weather');
     Route::get('currency','BrandController@currency');
@@ -35,10 +37,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
     Route::get('/visitor', 'VisitorController@index');
-    Route::get('/user', 'UserController@index');
-    Route::get('/user/create', 'UserController@create');
-    Route::get('/user/store', 'UserController@store')->name('user.store');
+//    Route::get('/user', 'UserController@index');
+//    Route::get('/user/create', 'UserController@create');
+//    Route::get('/user/store', 'UserController@store')->name('user.store');
     Route::get('profile','HomeController@profile')->name('user.profile');
+
+    Route::get('/pusher', 'BrandController@pusher');
+
+
 //    Route::post('updateProfile',function (){
 //        return view('user.profile');
 //    })->name('user.profile');
@@ -49,6 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::resource('/store', 'StoreController');
 Route::get('/store/show-cars/{id}', 'StoreController@cars')->name('store.showCars');
+Route::get('/user/show-store/{id}', 'UserController@userStore')->name('user.showStore');
+
 Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
 
 //Route::resource('/client', 'ClientController')->middleware('isClient');
@@ -63,3 +71,5 @@ Route::get('/client', function () {
 Route::get('/manager', function () {
     return view('manager.profile');
 });
+Route::get('/contact', 'PagesController@contact');
+Route::post('/contact', 'PagesController@store')->name('contact.store');

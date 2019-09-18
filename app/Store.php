@@ -21,6 +21,6 @@ class Store extends Model
         return $this->hasMany(ImageStore::class);
     }
     public  function user(){
-        return $this->hasMany(Store::class );
+        return $this->belongsTo(User::class );
     }
 }

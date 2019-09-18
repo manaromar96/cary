@@ -1,12 +1,9 @@
 @extends('dashboardLayout.master')
 @section('header')
 <style>
-     .order-table tr th:last-child{
-         text-align: left;
-     }
-     .order-table tr td:last-child{
-         text-align: left;
-     }
+    /*.content{*/
+    /*    margin-top: 103px;*/
+    /*}*/
 </style>
 @endsection
 @section('content')
@@ -21,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Clients Table</strong>
+                            <strong class="card-title">Managers Table</strong>
                         </div>
                         <div class="table-stats order-table ov-h">
                             <table class="table ">
@@ -30,29 +27,30 @@
                                          <th class="serial">#</th>
                                          <th class="avatar">Avatar</th>
                                          <th>Name</th>
-                                         <th>email</th>
-                                         <th>phone</th>
+                                         <th>Store</th>
+                                         <th>Address</th>
+                                         <th>Car Numbers</th>
                                      </tr>
                                 </thead>
                                 <tbody>
 
                                     @if(count($users)>0)
                                          @foreach($users as $user)
-                                             @if($user->role_id == 2)
+                                             @if($user->role_id == 1)
                                               <tr>
-                                                   <td>{{$user->id}}</td>
+                                                   <td class="serial">{{$user->id}}</td>
                                                     <td class="avatar">
                                                     <div class="round-img">
                                                           <a href="#"><img class="rounded-circle" src="{{asset('storage/'.$user->avatar )}}" alt=""></a>
                                                      </div>
                                                     </td>
-                                                    <td>  <span>{{$user->name}}</span> </td>
+                                                    <td>  <span class="name">{{$user->name}}</span> </td>
+                                                    <td> @if($user->store)<span class="store">{{$user->store->name}}</span>@endif </td>
                                                     <td>
-                                                        <span>{{$user->email}}</span>
+                                                        @if($user->store)<span class="address">{{$user->store->address}}</span>@endif
                                                      </td>
                                                      <td>
-
-                                                         <span>{{$user->phone}}</span>
+                                                         @if($user->store)<span class="count">{{$user->store->carsNumber}}</span>@endif
                                                      </td>
 
                                                 </tr>

@@ -12,12 +12,18 @@
             width: 1140px;
             height: 540px;
         }
+        .carType{
+            padding-right: 209px;
+        }
+        .carDetails{
+            margin-top: -450px;
+        }
     </style>
 
 @endsection
 
 @section('content')
-                 <h1 align="center">{{$car->type}}</h1>
+                 <h1 class="carType" align="center">{{$car->type}}</h1>
 
                  <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
 
@@ -58,7 +64,7 @@
 
                 <br>
 
-                <div class="container-fluid">
+                <div class="container-fluid carDetails">
                     <div class="row">
                         <div class="col-md-12">
                             <h3>Car Details: </h3>

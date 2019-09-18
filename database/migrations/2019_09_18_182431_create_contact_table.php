@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterAvatarUserTable extends Migration
+class CreateContactTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AlterAvatarUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')->nullable();
+        Schema::create('contact_us', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->text('message');
+            $table->timestamps();
         });
     }
 
@@ -25,9 +29,6 @@ class AlterAvatarUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('avatar');
-        });
-
+        Schema::dropIfExists('contact_us');
     }
 }

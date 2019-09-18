@@ -6,6 +6,7 @@ use App\CarBrand;
 use App\Store;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use App\Events\PusherEvent;
 
 class BrandController extends Controller
 {
@@ -135,6 +136,10 @@ class BrandController extends Controller
         $request = $client->request('get', 'http://api.aladhan.com/v1/calendarByCity?city=gaza&country=Palesine&method=2&month=08&year=2018');
         $response = $request->getBody()->getContents();
         dd(json_decode($response));
+    }
+    function pusher(){
+        event(new PusherEvent('Hi'));
+
     }
 
 }

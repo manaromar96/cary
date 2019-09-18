@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>@yield('title','Cary') - CaryStore</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,9 +26,17 @@
     <link rel="stylesheet" href="{{asset('dashboard/assets/css/style.css')}}">
     <link href="{{asset('dashboard/assets/css/charts/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/assets/css/lib/vector-map/jqvmap.min.css')}}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+
     @yield('header')
+    @yield('jsHeader')
+
 
     <style>
+        body{
+            font-family: 'PT Serif', serif;
+
+        }
         #weatherWidget .currentDesc {
             color: #ffffff!important;
         }
@@ -71,6 +79,12 @@
         }
         .card{
             background-color:honeydew;
+
+        }
+        .content {
+            margin-top: 104px;
+            padding-left: 35px;
+            background-color: honeydew;
 
         }
     </style>
@@ -277,7 +291,11 @@
         </div>
     </header><!-- /header -->
     <!-- Header-->
+    <div class="content">
         @yield('content')
+
+
+    </div>
 
 {{--    <div class="content pb-0">--}}
 
