@@ -41,7 +41,8 @@
             </li>
         </ul>
 
-                        <form class="kt-form kt-form--label-right infoForm">
+                        <form class="kt-form kt-form--label-right infoForm" action="{{url('user/{id}/edit') }}"  method="post" enctype="multipart/form-data method=">
+                            @csrf
 
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
@@ -55,7 +56,7 @@
                                         <div class="form-group row">
                                             <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
                                             <div class="col-lg-9 col-xl-6">
-                                                <input class="form-control" type="text" value="{{\Illuminate\Support\Facades\Auth::user()->name}}">
+                                                <input class="form-control" type="text" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
                                             </div>
                                         </div>
 
@@ -70,7 +71,7 @@
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                                    <input type="text" class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}" placeholder="Phone" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->phone}}" placeholder="Phone" aria-describedby="basic-addon1" readonly>
                                                 </div>
                                                 <span class="form-text text-muted">We'll never share your email with anyone else.</span>
                                             </div>
@@ -80,7 +81,7 @@
                                             <div class="col-lg-9 col-xl-6">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                    <input type="text" class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" placeholder="Email" aria-describedby="basic-addon1">
+                                                    <input type="text" class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" placeholder="Email" aria-describedby="basic-addon1" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,7 +95,10 @@
                                         <div class="col-lg-3 col-xl-3">
                                         </div>
                                         <div class="col-lg-9 col-xl-9">
-                                            <button type="reset" class="btn btn-primary">update</button>&nbsp;
+                                            <a href="{{ route('user.edit',$user->id) }}">
+
+                                                <button type="reset" class="btn btn-warning">update</button>
+                                            </a>
                                             <button type="reset" class="btn btn-secondary">Cancel</button>
                                         </div>
                                     </div>
@@ -102,7 +106,6 @@
                             </div>
                             <br>
                             <br>
-
                         </form>
         </div>
     </div>

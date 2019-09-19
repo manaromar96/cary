@@ -49,22 +49,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-
+//        $user = new User();
+        $user= User::create($request->all());
+//
+//        $user->name = $request->name;
+//        $user->email = $request->email;
+//        $user->password = $request->password;
+//        $user->phone= $request->phone;
 
         if ($request->hasFile('avatar')) {
 
             $avatar = $request->file('avatar');
             $path = $request->file('avatar')->store('user/avatar');
-
+            $user->avatar= $path;
+            $user->save();
         }
-        $user->avatar= $path;
-        $user->save();
 
-        return redirect('user')->with('success', 'Manager has been added');
+
+        return redirect('user')->with('success', 'User has been added');
     }
 
     /**
@@ -102,17 +104,19 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        if ($request->hasFile('avatar')) {
-            $logo = $request->file('avatar');
-            $path = $request->file('avatar')->store('user/avatar');
-            $user->avatar= $path;
-        }
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
+            if ($request->hasFile('avatar')) {
+                $logo = $request->file('avatar');
+                $path = $request->file('avatar')->store('user/avatar');
+                $user->avatar = $path;
+            }
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->password = $request->input('password');
+            $user->phone = $request->input('password');
 
-        $update = $user->save();
-        return redirect('user');
+            $update = $user->save();
+            return view('user.edit');
+
     }
 
     /**
@@ -126,9 +130,9 @@ class UserController extends Controller
         $user=User::find($id)->delete();
         return redirect('user')->with('success','User has been  deleted');
     }
-    public function userStore($id){
+    public function userCars($id){ ////Not done yet
         $user =User::find($id);
-        $store =$user->store;
-        return view('store.index',compact('store'));
+        $cars =$user->cars;
+        return view('user.car',compact('cars'));
     }
 }

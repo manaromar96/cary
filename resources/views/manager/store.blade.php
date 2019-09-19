@@ -34,8 +34,8 @@
                             </tr>
                             </thead>
                             <tobody></tobody>
-                            @if(count($stores)>0)
-                                @foreach($stores as $store)
+                            @if(count($store)!= 0)
+{{--                                @foreach($stores as $store)--}}
                                     <tr>
                                         <td>{{ $store->id }}</td>
                                         <td>
@@ -64,7 +64,7 @@
                                             </form>
                                         </td>
                                     </tr>
-                                @endforeach
+{{--                                @endforeach--}}
                             @else
                                 <tr>
                                     <td colspan="3">No data</td>

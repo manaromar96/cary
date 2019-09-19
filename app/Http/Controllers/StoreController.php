@@ -21,7 +21,7 @@ class StoreController extends Controller
     {
         $stores = Store::all();
 
-        // $stores = Store::where('user_id', Auth::id())->get();
+//        $stores = Store::where('user_id', Auth::id())->get();
         return view('store.index', compact('stores'));
     }
 

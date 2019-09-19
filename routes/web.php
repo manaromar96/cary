@@ -26,7 +26,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
     Route::resource('/user', 'UserController');
-    Route::get('/manager', 'UserController@index')->name('manager.index');
+    Route::resource('/manager', 'ManagerController');
+
+    Route::get('/user', 'UserController@index')->name('user.index');
+    Route::get('/manager', 'ManagerController@index')->name('manager.index');
+
+//    Route::get('/user', 'UserController@index')->name('user.index');
 
     Route::get('/getStores', 'StoreController@getStores');
     Route::get('weather','BrandController@weather');
@@ -43,7 +48,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/pusher', 'BrandController@pusher');
 
-
 //    Route::post('updateProfile',function (){
 //        return view('user.profile');
 //    })->name('user.profile');
@@ -54,7 +58,8 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::resource('/store', 'StoreController');
 Route::get('/store/show-cars/{id}', 'StoreController@cars')->name('store.showCars');
-Route::get('/user/show-store/{id}', 'UserController@userStore')->name('user.showStore');
+Route::get('/manager/show-store/{id}', 'ManagerController@managerStore')->name('manager.showStore');
+Route::get('/store/show-storeCars/{id}', 'ManagerController@storeCars')->name('manager.storeCars');
 
 Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
 
@@ -67,8 +72,8 @@ Route::get('/client', function () {
 })->middleware('isClient');
 
 
-Route::get('/manager', function () {
-    return view('manager.profile');
-});
+//Route::get('/manager', function () {
+//    return view('manager.profile');
+//});
 Route::get('/contact', 'PagesController@contact');
 Route::post('/contact', 'PagesController@store')->name('contact.store');

@@ -105,31 +105,35 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Users</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
+{{--                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>--}}
+{{--                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>--}}
+{{--                        <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>--}}
 
-                        <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                        <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                        <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                        <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                        <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                        <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
+{{--                        <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>--}}
+{{--                        <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>--}}
+{{--                        <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>--}}
+{{--                        <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>--}}
+{{--                        <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>--}}
+                        <li><i class="fa fa-th"></i><a href="/manager">Managers</a></li>
+                        <li><i class="fa fa-file-word-o"></i><a href="/user">Clients</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                        <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="/brand">Car Brands</a></li>
+                        <li><i class="fa fa-table"></i><a href="/model">Car Models</a></li>
+                        <li><i class="fa fa-table"></i><a href="/car">Cars</a></li>
+                        <li><i class="fa fa-table"></i><a href="/store">Stores</a></li>
+
+
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="/manager/create">Manager Form</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="/user/create">Client Form</a></li>
                     </ul>
                 </li>
 
@@ -165,9 +169,9 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
+                        <li><i class="menu-icon fa fa-sign-in"></i><a href="/login">Login</a></li>
                         <li><i class="menu-icon fa fa-sign-in"></i><a href="{{route('register')}}">Register</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{asset('dashboard/assets/pages/pages-forget.html')}}">Forget Pass</a></li>
                     </ul>
                 </li>
             </ul>
@@ -272,7 +276,8 @@
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i>My Profile</a>
+
+                        <a class="nav-link" href="/profile"><i class="fa fa-user"></i>My Profile</a>
 
                         <a class="nav-link" href="#"><i class="fa fa-bell-o"></i>Notifications <span class="count">13</span></a>
 

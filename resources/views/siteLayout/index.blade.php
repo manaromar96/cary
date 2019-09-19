@@ -264,12 +264,12 @@
         <nav class="sidebar_nav">
             <ul>
                 <li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">stores<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">bands<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">models<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">cars<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">about<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">contact<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/store">stores<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/brand">bands<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/model">models<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/car">cars<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/about">about<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/contact">contact<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
             </ul>
         </nav>
 
