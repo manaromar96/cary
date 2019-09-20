@@ -82,30 +82,4 @@
 @section('footer')
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-{{--    <script>--}}
-{{--        $(document).ready(function () {--}}
-{{--            // $('.stores').DataTable();--}}
-{{--            $('#store_table').DataTable({--}}
-{{--                serverSide: true,--}}
-{{--                // processing: true,--}}
-
-{{--                ajax: '{{ url('getStores') }}',--}}
-{{--                // ajax:--}}
-{{--                // {--}}
-{{--                //     url: "postStores",--}}
-{{--                //     method: "POST"--}}
-{{--                // },--}}
-
-{{--                columns:[--}}
-{{--                    {data:'id'},--}}
-{{--                    {data:'name'},--}}
-{{--                    {data:'address'},--}}
-{{--                    {data:'carsNumber'},--}}
-{{--                    {data:'city'},--}}
-
-{{--                ],--}}
-{{--            });--}}
-{{--        });--}}
-
-{{--    </script>--}}
 @endsection

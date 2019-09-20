@@ -3,6 +3,7 @@
     <style>
         .card{
             background-color:honeydew;
+            margin-top: 10px;
 
         }
         .manager_form{
