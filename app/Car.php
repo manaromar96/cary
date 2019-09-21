@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    protected $fillable=['type','model','price','color'];
+    protected $fillable=['type','model','price','color','user_id','store_id'];
     public function store(){
         return $this->belongsTo(Store::class);
     }

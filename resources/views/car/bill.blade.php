@@ -123,13 +123,13 @@
                             <input type="text" id="name" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
                             <label for="email"><i class="fa fa-envelope"></i>Your Email</label>
                             <input type="text" id="email" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
-                            <label for="name"><i class="fa fa-user"></i>Store Manager</label>
-                            <input type="text" id="name" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
-                            <label for="email"><i class="fa fa-envelope"></i>Manager Email</label>
-                            <input type="text" id="email" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
+{{--                            <label for="name"><i class="fa fa-user"></i>Store Manager</label>--}}
+{{--                            <input type="text" id="name" name="name" value="{{$car->store->user->name}}" readonly>--}}
+                            <label for="email"><i class="fa fa-envelope"></i>Store Name</label>
+                            <input type="text" id="email" name="email" value="{{$car->store->name}}" readonly>
 
                             <label for="address"><i class="fa fa-address-card-o"></i> Address</label>
-{{--                            <input type="text" id="address" name="address" value="{{\App\Car::get()->$car->store->address}}">--}}
+                            <input type="text" id="address" name="address" value="{{$car->store->address}}" readonly>
 
 
                         </div>
@@ -143,15 +143,15 @@
                             <input type="date" id="model" name="model" value="{{$car->model}}" readonly>
                             <label for="color">Color</label>
                             <input type="text" id="color" name="color" placeholder="{{$car->color}}" readonly>
-                            <label for="city"><i class="fa fa-money"></i> Price</label>
-                            <input type="number" id="price" name="price" value="{{$car->price}}" readonly>
+                            <label for="price" ><i class="fa fa-money"></i> Price</label>
+                            <input type="number" class="price" id="price" name="price" value="{{$car->price}}" readonly>
                         </div>
 
                     </div>
                     <label>
                         <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                     </label>
-                    <input type="submit" value="Continue to checkout" class="btn">
+                    <input type="submit" value="Done" class="btn">
                 </form>
             </div>
         </div>

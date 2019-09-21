@@ -31,8 +31,8 @@ class HomeController extends Controller
 //        $models = CarModel::all();
 //        $clients = Client::all();
 
-        if(Auth::user()->role_id == 5){
-           return view('client.profile');
+        if(Auth::user()->role_id == 1){
+           return redirect('profile');
         }
         if(Auth::user()->role_id == 2){
             return redirect('/manager');

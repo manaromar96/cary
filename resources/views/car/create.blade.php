@@ -25,6 +25,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label for=" store">
+                            Car Store:
+                        </label>
+                        <select name="store" class="form-control">
+                            <option disabled selected>Please Select</option>
+
+                            @foreach($stores as $store)
+                                <option id="{{$store->id}}"> {{$store->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for=" model">
                             Car model:
                         </label>
@@ -36,6 +48,7 @@
                             @endforeach
                         </select>
                     </div>
+
 
 
                     <div class="form-group">

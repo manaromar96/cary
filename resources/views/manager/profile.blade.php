@@ -95,11 +95,11 @@
                                 </a>
                             </div>
                             <div class="col-md-3">
-{{--                                <a href="{{route('manager.storeCars',[$store->id])}}">--}}
+                                <a href="{{route('manager.showCars',[\Illuminate\Support\Facades\Auth::user()->id])}}">
                                     <button type="button" class="btn btn-success">
                                     View Your Cars
                                 </button>
-{{--                                </a>--}}
+                                </a>
                             </div>
                             <div class="col-md-3">
                                 <a href="car/create">

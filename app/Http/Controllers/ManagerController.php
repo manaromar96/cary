@@ -132,10 +132,8 @@ class ManagerController extends Controller
 
 
         $user =User::find($id);
-        $store=$user->store;
-        //$store = Store::find($id);
-        $cars = $store->cars ;
-        return view('car.index',compact('cars','store'));
+        $cars = $user->cars ;
+        return view('manager.cars',compact('cars'));
     }
 
 

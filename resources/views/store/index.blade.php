@@ -67,7 +67,7 @@
                                                </a> 
                                            </td> 
                                             <td>{{ $store->address }}</td> 
-                                            <td>{{ $store->carsNumber }}</td> 
+                                            <td class="count">{{ $store->carsNumber }}</td>
 
                                             <td>
                                                 <a href="{{ route('store.edit',$store->id) }}" 

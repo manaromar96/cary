@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/user', 'UserController@index');
 //    Route::get('/user/create', 'UserController@create');
 //    Route::get('/user/store', 'UserController@store')->name('user.store');
-    Route::get('profile','HomeController@profile')->name('user.profile');
+    Route::get('/profile','HomeController@profile')->name('user.profile');
 
     Route::get('/pusher', 'BrandController@pusher');
 
@@ -62,6 +62,7 @@ Route::resource('/store', 'StoreController');
 Route::get('/store/show-cars/{id}', 'StoreController@cars')->name('store.showCars');
 Route::get('/manager/show-store/{id}', 'ManagerController@managerStore')->name('manager.showStore');
 Route::get('/store/show-storeCars/{id}', 'ManagerController@storeCars')->name('manager.storeCars');
+Route::get('/manager/show-cars/{id}', 'ManagerController@storeCars')->name('manager.showCars');
 
 Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
 Route::get('/car/bill/{id}', 'CarController@bill')->name('car.carBill');
@@ -70,9 +71,9 @@ Route::get('/car/bill/{id}', 'CarController@bill')->name('car.carBill');
 
 Route::get('/deploy','deployController@index');
 
-Route::get('/client', function () {
-    return view('client.profile');
-})->middleware('isClient');
+//Route::get('/client', function () {
+//    return view('client.profile');
+//})->middleware('isClient');
 
 
 //Route::get('/manager', function () {

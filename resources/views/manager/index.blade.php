@@ -37,7 +37,7 @@
                                     @if(count($users)>0)
                                          @foreach($users as $user)
                                              @if($user->role_id == 1)
-                                              <tr class="col-md-4">
+                                              <tr class="col-md-3">
                                                    <td class="serial">{{$user->id}}</td>
                                                     <td class="avatar">
                                                     <div class="round-img">
@@ -45,7 +45,7 @@
                                                      </div>
                                                     </td>
                                                     <td>  <span class="name">{{$user->name}}</span> </td>
-{{--                                                  <td><span><a  href="{{ route ('user.profile')}}">View Profile</a></span></td>--}}
+                                                  <td><span><a  href="{{ route ('user.profile')}}">View Profile</a></span></td>
 {{--                                                    <td> @if($user->store)<span class="store">{{$user->store->name}}</span>@endif </td>--}}
 {{--                                                    <td>--}}
 {{--                                                        @if($user->store)<span class="address">{{$user->store->address}}</span>@endif--}}

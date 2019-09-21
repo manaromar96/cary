@@ -263,12 +263,15 @@
         <!-- Sidebar Navigation -->
         <nav class="sidebar_nav">
             <ul>
-                <li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="/store">stores<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="/brand">bands<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="/model">models<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="/car">cars<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="/about">about<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="##">home</a></li>
+{{--                <li><a href="/store">stores<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
+{{--                <li><a href="/brand">bands<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
+{{--                <li><a href="/model">models<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
+{{--                <li><a href="/car">cars<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
+
+                <li><a href="/register">Register<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/login">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="#aboutUs">about<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 <li><a href="/contact">contact<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
             </ul>
         </nav>
@@ -282,14 +285,14 @@
         </div>
 
         <!-- Cart -->
-        <div class="cart d-flex flex-row align-items-center justify-content-start">
-            <div class="cart_icon"><a href="cart.html">
-                    <img src="{{asset('aStar/images/bag.png')}}" alt="">
-                    <div class="cart_num">2</div>
-                </a></div>
-            <div class="cart_text">bag</div>
-            <div class="cart_price">$39.99 (1)</div>
-        </div>
+{{--        <div class="cart d-flex flex-row align-items-center justify-content-start">--}}
+{{--            <div class="cart_icon"><a href="cart.html">--}}
+{{--                    <img src="{{asset('aStar/images/bag.png')}}" alt="">--}}
+{{--                    <div class="cart_num">2</div>--}}
+{{--                </a></div>--}}
+{{--            <div class="cart_text">bag</div>--}}
+{{--            <div class="cart_price">$39.99 (1)</div>--}}
+{{--        </div>--}}
     </div>
 
     <!-- Home -->
@@ -399,9 +402,9 @@
                     <div class="col text-center">
                         <div class="categories_list_container">
                             <ul class="categories_list d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="categories.html">new stores</a></li>
-                                <li><a href="categories.html">recommended brands</a></li>
-                                <li><a href="categories.html">Last Offers</a></li>
+                                <li><a href="/store">new stores</a></li>
+                                <li><a href="/brand">recommended brands</a></li>
+                                <li><a href="##">Last Offers</a></li>
                             </ul>
                         </div>
                     </div>
@@ -568,7 +571,7 @@
 
     <footer class="footer">
         <div class="footer_content">
-            <div class="section_container">
+            <div class="section_container" id="aboutUs">
                 <div class="container">
                     <div class="row">
 
@@ -600,9 +603,9 @@
                                 <div class="footer_title">questions</div>
                                 <div class="footer_list">
                                     <ul>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Stores</a></li>
-                                        <li><a href="#">Owner</a></li>
+                                        <li><a href="/store">Stores</a></li>
+                                        <li><a href="/car">Cars</a></li>
+                                        <li><a href="/brand">Brands</a></li>
                                         <li><a href="#">Blog</a></li>
                                         <li><a href="#">Support</a></li>
                                         <li><a href="#">Terms of Use</a></li>
@@ -650,7 +653,7 @@
                                         <li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Your Company Ltd</div></li>
                                         <li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68</div></li>
                                         <li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>+53 345 7953 32453</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>office@youremail.com</div></li>
+                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>caryLara2019@hotmail.com</div></li>
                                     </ul>
                                 </div>
                             </div>
