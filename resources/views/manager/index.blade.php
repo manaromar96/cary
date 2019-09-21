@@ -27,6 +27,7 @@
                                          <th class="serial">#</th>
                                          <th class="avatar">Avatar</th>
                                          <th>Name</th>
+                                         <th>Phone</th>
                                          <th>Profile</th>
 {{--                                         <th>Address</th>--}}
 {{--                                         <th>Car Numbers</th>--}}
@@ -45,7 +46,9 @@
                                                      </div>
                                                     </td>
                                                     <td>  <span class="name">{{$user->name}}</span> </td>
-                                                  <td><span><a  href="{{ route ('user.profile')}}">View Profile</a></span></td>
+                                                  <td>  <span class="phone">{{$user->phone}}</span> </td>
+
+                                                  <td><span><a  href="{{route('manager.show',[$user->id])}}">View Profile</a></span></td>
 {{--                                                    <td> @if($user->store)<span class="store">{{$user->store->name}}</span>@endif </td>--}}
 {{--                                                    <td>--}}
 {{--                                                        @if($user->store)<span class="address">{{$user->store->address}}</span>@endif--}}
