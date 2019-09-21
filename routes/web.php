@@ -64,6 +64,7 @@ Route::get('/manager/show-store/{id}', 'ManagerController@managerStore')->name('
 Route::get('/store/show-storeCars/{id}', 'ManagerController@storeCars')->name('manager.storeCars');
 
 Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
+Route::get('/car/bill/{id}', 'CarController@bill')->name('car.carBill');
 
 //Route::resource('/client', 'ClientController')->middleware('isClient');
 

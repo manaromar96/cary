@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-6">
 
-                <a class="btn btn-success btn-block active" href="##">Confirm</a>
+                <a class="btn btn-success btn-block active" href="{{route('car.carBill',[$car->id])}}">Confirm</a>
             </div>
         </div>
     </div>

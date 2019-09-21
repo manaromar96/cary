@@ -136,5 +136,10 @@ class CarController extends Controller
 
         return view('car.buy',compact('car'));
     }
+    public function bill($id){
+        $car = Car::find($id);
+        $store = $car->store;
+        return view('car.bill',compact('car'));
+    }
 }
 
