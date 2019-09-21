@@ -16,9 +16,9 @@
             <strong>Client</strong> Edit Form
         </div>
         <div class="card-body card-block">
-            <form action="{{ route('manager.update'),$user->id }}"  method="post" enctype="multipart/form-data method=" class="">
-                {{ method_field('put') }}
+            <form action="{{ route('user.clientProfile')}}"  method="post" enctype="multipart/form-data method=" class="">
                 @csrf
+
                 <div class="form-group"><label for="nf-name" class=" form-control-label">Name :</label><input type="text" id="nf-name" name="nf-name" placeholder="Enter Name.." class="form-control"><span class="help-block">Please enter your name</span></div>
                 <div class="form-group"><label for="nf-email" class=" form-control-label">Email :</label><input type="email" id="nf-email" name="nf-email" placeholder="Enter Email.." class="form-control"><span class="help-block">Please enter your email</span></div>
                 <div class="form-group"><label for="nf-password" class=" form-control-label">Password :</label><input type="password" id="nf-password" name="nf-password" placeholder="Enter Password.." class="form-control"><span class="help-block">Please enter your password</span></div>

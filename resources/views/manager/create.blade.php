@@ -16,9 +16,9 @@
             <strong>Manager</strong> Form
         </div>
         <div class="card-body card-block">
-            <form action="{{ route('user.store') }}"  method="post" enctype="multipart/form-data" >
+            <form action="{{ route('manager.store') }}"  method="post" enctype="multipart/form-data" >
                 @csrf
-
+                <input type="hidden" value="1" name="role_id">
                 <div class="form-group"><label for="name" class=" form-control-label">Name :</label><input type="text" id="name" name="name" placeholder="Enter Name.." class="form-control"><span class="help-block">Please enter your name</span></div>
                 <div class="form-group"><label for="email" class=" form-control-label">Email :</label><input type="email" id="email" name="email" placeholder="Enter Email.." class="form-control"><span class="help-block">Please enter your email</span></div>
                 <div class="form-group"><label for="password" class=" form-control-label">Password :</label><input type="password" id="password" name="password" placeholder="Enter Password.." class="form-control"><span class="help-block">Please enter your password</span></div>

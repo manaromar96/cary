@@ -21,15 +21,15 @@
                             <strong class="card-title">Managers Table</strong>
                         </div>
                         <div class="table-stats order-table ov-h">
-                            <table class="table ">
+                            <table class="table">
                                 <thead>
-                                    <tr>
+                                    <tr class="col-md-3">
                                          <th class="serial">#</th>
                                          <th class="avatar">Avatar</th>
                                          <th>Name</th>
-                                         <th>Store</th>
-                                         <th>Address</th>
-                                         <th>Car Numbers</th>
+                                         <th>Profile</th>
+{{--                                         <th>Address</th>--}}
+{{--                                         <th>Car Numbers</th>--}}
                                      </tr>
                                 </thead>
                                 <tbody>
@@ -37,7 +37,7 @@
                                     @if(count($users)>0)
                                          @foreach($users as $user)
                                              @if($user->role_id == 1)
-                                              <tr>
+                                              <tr class="col-md-4">
                                                    <td class="serial">{{$user->id}}</td>
                                                     <td class="avatar">
                                                     <div class="round-img">
@@ -45,19 +45,20 @@
                                                      </div>
                                                     </td>
                                                     <td>  <span class="name">{{$user->name}}</span> </td>
-                                                    <td> @if($user->store)<span class="store">{{$user->store->name}}</span>@endif </td>
-                                                    <td>
-                                                        @if($user->store)<span class="address">{{$user->store->address}}</span>@endif
-                                                     </td>
-                                                     <td>
-                                                         @if($user->store)<span class="count">{{$user->store->carsNumber}}</span>@endif
-                                                     </td>
+{{--                                                  <td><span><a  href="{{ route ('user.profile')}}">View Profile</a></span></td>--}}
+{{--                                                    <td> @if($user->store)<span class="store">{{$user->store->name}}</span>@endif </td>--}}
+{{--                                                    <td>--}}
+{{--                                                        @if($user->store)<span class="address">{{$user->store->address}}</span>@endif--}}
+{{--                                                     </td>--}}
+{{--                                                     <td>--}}
+{{--                                                         @if($user->store)<span class="count">{{$user->store->carsNumber}}</span>@endif--}}
+{{--                                                     </td>--}}
 
                                                 </tr>
                                               @endif
                                          @endforeach
                                     @else
-                                                 <tr>
+                                                 <tr class="col-md-4">
                                                      <td colspan="3">No data</td>
                                                 </tr>
                                      @endif

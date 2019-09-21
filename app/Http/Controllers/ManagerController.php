@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Store;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ManagerController extends Controller
 {
@@ -39,7 +40,6 @@ class ManagerController extends Controller
     public function store(Request $request)
     {
         $user = new User();
-
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
@@ -51,7 +51,6 @@ class ManagerController extends Controller
 
             $avatar = $request->file('avatar');
             $path = $request->file('avatar')->store('manager/avatar');
-
         }
         $user->avatar= $path;
         $user->save();
@@ -91,21 +90,19 @@ class ManagerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $user = User::find($id);
+        $user = Auth::user();
         if ($request->hasFile('avatar')) {
             $logo = $request->file('avatar');
-            $path = $request->file('avatar')->store('user/avatar');
-            $user->avatar = $path;
+            $path = $request->file('avatar')->store('manager/avatar');
+            $user->avatar= $path;
         }
+
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
-        $user->phone = $request->input('password');
-        $user->store->name = $request->input('name');
-        $user->store->address = $request->input('address');
-        $user->store->carsNumber = $request->input('carsNumber');
+        $user->phone = $request->input('phone');
 
 
         $update = $user->save();
@@ -128,8 +125,8 @@ class ManagerController extends Controller
     public function managerStore($id){
 
         $user =User::find($id);
-        $store =$user->store;
-        return view('manager.store',compact('store'));
+        $stores =$user->stores;
+        return view('manager.store',compact('stores'));
     }
     public function storeCars($id){
 

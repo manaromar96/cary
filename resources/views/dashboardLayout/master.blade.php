@@ -79,6 +79,7 @@
         }
         .card{
             background-color:honeydew;
+            margin-top: 10px;
 
         }
         .content {

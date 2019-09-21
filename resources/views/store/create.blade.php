@@ -25,6 +25,7 @@
             <div class="col-md-12">
                 <form action="{{ route('store.store') }}"  method="post" enctype="multipart/form-data"  class="storeForm">
                     @csrf
+                    <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                     <div class="form-group">
 
                         <label for=" storeName">

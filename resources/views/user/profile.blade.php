@@ -41,9 +41,8 @@
             </li>
         </ul>
 
-                        <form class="kt-form kt-form--label-right infoForm" action="{{ route('manager.update',$user->id) }}"  method="post" enctype="multipart/form-data method=">
+                        <form class="kt-form kt-form--label-right infoForm" >
                             @csrf
-
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="kt-section__body">

@@ -26,6 +26,7 @@ class UserController extends Controller
 //            return view('user.index',compact('users'));
 //        }
 //        @endforeach
+
         return view('user.index',compact('users'));
 
     }
@@ -66,6 +67,7 @@ class UserController extends Controller
         }
 
 
+
         return redirect('user')->with('success', 'User has been added');
     }
 
@@ -78,7 +80,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('user.profile', compact('user'));
+        return view('profile', compact('user'));
 
     }
 

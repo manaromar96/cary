@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+Route::get('/', 'VisitorController@index');
 
-Route::get('/', 'PagesController@index');
+Route::get('/page', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('home', 'HomeController@index');
@@ -27,9 +25,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/car', 'CarController');
     Route::resource('/user', 'UserController');
     Route::resource('/manager', 'ManagerController');
+//    Route::get('/profile',function($id){
+//        return view('manager.index',compact('id'));
+//    })->name('profile');
+    Route::post('edit-profile','ManagerController@update')->name('manager.editProfile');
+    Route::post('editClient','UserController@update')->name('user.clientProfile');
 
     Route::get('/user', 'UserController@index')->name('user.index');
-    Route::get('/manager', 'ManagerController@index')->name('manager.index');
+//    Route::get('/manager', 'ManagerController@index')->name('manager.index');
 
 //    Route::get('/user', 'UserController@index')->name('user.index');
 
@@ -40,7 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/page','PagesController@index');
     Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
-    Route::get('/visitor', 'VisitorController@index');
 //    Route::get('/user', 'UserController@index');
 //    Route::get('/user/create', 'UserController@create');
 //    Route::get('/user/store', 'UserController@store')->name('user.store');

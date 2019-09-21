@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
 
-    protected $fillable = ['name', 'address','carsNumber'];
+    protected $fillable = ['name', 'address','carsNumber','user_id'];
     protected $guarded = ['_method'];
 
     public function cars(){

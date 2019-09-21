@@ -70,9 +70,9 @@ class PagesController extends Controller
                 'user_message' => $request->get('message')
             ), function($message)
             {
-                $Email= Auth::user()->email;
+
                 $message->from('carylara2019@gmail.com');
-                $message->to($Email, 'Admin')->subject(' Feedback');
+                $message->to(Auth::user()->email, 'Admin')->subject(' Feedback');
             });
         return back()->with('success', 'Thanks for contacting us!');
     }
