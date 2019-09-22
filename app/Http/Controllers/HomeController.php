@@ -44,7 +44,6 @@ class HomeController extends Controller
     public function profile(){
         $user = auth()->user();
 
-
         if ($user && $user->role_id==1) {
             return view('manager.profile',compact('user'));
         }

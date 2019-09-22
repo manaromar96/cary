@@ -15,7 +15,7 @@ class AlterUserIdCarsTable extends Migration
     {
         Schema::table('cars', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->nullable();
-
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -26,8 +26,13 @@ class AlterUserIdCarsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::table('cars', function (Blueprint $table) {
+            $table->dropForeign('user_id');
             $table->dropColumn('user_id');
         });
+        Schema::enableForeignKeyConstraints();
+
     }
 }

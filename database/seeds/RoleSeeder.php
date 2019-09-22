@@ -17,12 +17,7 @@ class RoleSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('roles')->insert([
             'name' => 'Manager',
         ]);
-        \Illuminate\Support\Facades\DB::table('roles')->insert([
-            'name' => 'Employee',
-        ]);
-        \Illuminate\Support\Facades\DB::table('roles')->insert([
-            'name' => 'Accountant',
-        ]);
+
         \Illuminate\Support\Facades\DB::table('roles')->insert([
             'name' => 'Client',
         ]);

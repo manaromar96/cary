@@ -69,6 +69,11 @@ class ManagerController extends Controller
         $user =User::find($id);
         return view('manager.profile',compact('user'));
     }
+    public function showProfile($id)
+    {
+        $user =User::find($id);
+        return view('manager.show',compact('user'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -129,11 +134,16 @@ class ManagerController extends Controller
         return view('manager.store',compact('stores'));
     }
     public function storeCars($id){
-
-
-        $user =User::find($id);
-        $cars = $user->cars ;
+          //dd($id);
+        $store =Store::find($id);
+        $cars = $store->cars ;
         return view('manager.cars',compact('cars'));
+    }
+    public function managerCars($id){
+        $user = User::find($id);
+        //dd($user);
+        $cars = $user->cars;
+        return view('manager.showManagerCars',compact('cars'));
     }
 
 

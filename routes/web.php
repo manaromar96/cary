@@ -12,8 +12,10 @@
 */
 
 
+
 Auth::routes();
 Route::get('/', 'VisitorController@index');
+
 
 Route::get('/page', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
@@ -24,7 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
     Route::resource('/user', 'UserController');
-    Route::resource('/manager', 'ManagerController');
+    Route::resource('/sale', 'SaleController');
+
 //    Route::get('/profile',function($id){
 //        return view('manager.index',compact('id'));
 //    })->name('profile');
@@ -32,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('editClient','UserController@update')->name('user.clientProfile');
 
     Route::get('/user', 'UserController@index')->name('user.index');
+
 //    Route::get('/manager', 'ManagerController@index')->name('manager.index');
 
 //    Route::get('/user', 'UserController@index')->name('user.index');
@@ -47,6 +51,8 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/user/create', 'UserController@create');
 //    Route::get('/user/store', 'UserController@store')->name('user.store');
     Route::get('/profile','HomeController@profile')->name('user.profile');
+    Route::resource('/manager', 'ManagerController');
+    Route::get('/manager/show/{id}','ManagerController@showprofile')->name('manager.show');
 
     Route::get('/pusher', 'BrandController@pusher');
 
@@ -63,6 +69,9 @@ Route::get('/store/show-cars/{id}', 'StoreController@cars')->name('store.showCar
 Route::get('/manager/show-store/{id}', 'ManagerController@managerStore')->name('manager.showStore');
 Route::get('/store/show-storeCars/{id}', 'ManagerController@storeCars')->name('manager.storeCars');
 Route::get('/manager/show-cars/{id}', 'ManagerController@storeCars')->name('manager.showCars');
+Route::get('/manager/showCars/{id}', 'ManagerController@managerCars')->name('managerShowCars');
+Route::get('/yourCar/{id}','UserController@yourCar')->name('getYourCar');
+Route::post('/yourCar/{id}','UserController@yourCar')->name('yourCar');
 
 Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
 Route::get('/car/bill/{id}', 'CarController@bill')->name('car.carBill');

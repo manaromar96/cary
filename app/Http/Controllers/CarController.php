@@ -44,6 +44,7 @@ class CarController extends Controller
     public function store(Request $request)
     {
 
+       // dd($request);
         $car= Car::create($request->all());
         if ($request->hasFile('photo')) {
             $images = $request->file('photo');
@@ -133,6 +134,7 @@ class CarController extends Controller
     public function buy($id){
         $car = Car::find($id);
         $store = $car->store ;
+        $user= $car->user;
 
         return view('car.buy',compact('car'));
     }

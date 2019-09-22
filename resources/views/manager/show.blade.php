@@ -37,6 +37,7 @@
         </ul>
 
     </div>
+
     <div class="actions">
 
         <div class="container-fluid">
@@ -46,16 +47,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
-                                <a href="{{route('manager.showStore',[\Illuminate\Support\Facades\Auth::user()->id])}}">
+                                <a href="{{route('manager.showStore',[$user->id])}}">
                                     <button type="button" class="btn btn-success">
                                         View User Store
-                                    </button>
-                                </a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="{{route('manager.showCars',[\Illuminate\Support\Facades\Auth::user()->id])}}">
-                                    <button type="button" class="btn btn-success">
-                                        View User Cars
                                     </button>
                                 </a>
                             </div>

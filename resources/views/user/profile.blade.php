@@ -37,12 +37,11 @@
                 <a class="nav-link" href="/store">Store</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Your Car</a>
+                <a class="nav-link" href="{{route('getYourCar',[\Illuminate\Support\Facades\Auth::id()])}}">Your Car</a>
             </li>
         </ul>
 
-                        <form class="kt-form kt-form--label-right infoForm" >
-                            @csrf
+                        <div class="kt-form kt-form--label-right infoForm"  >
                             <div class="kt-portlet__body">
                                 <div class="kt-section kt-section--first">
                                     <div class="kt-section__body">
@@ -94,10 +93,7 @@
                                         <div class="col-lg-3 col-xl-3">
                                         </div>
                                         <div class="col-lg-9 col-xl-9">
-                                            <a href="{{ route('user.edit',$user->id) }}">
-
-                                                <button type="reset" class="btn btn-warning">update</button>
-                                            </a>
+                                            <a href="{{ route('user.edit',$user->id) }}" class="btn btn-warning">update</a>
                                             <button type="reset" class="btn btn-secondary">Cancel</button>
                                         </div>
                                     </div>
@@ -105,7 +101,8 @@
                             </div>
                             <br>
                             <br>
-                        </form>
+                        </div>
+
         </div>
     </div>
 

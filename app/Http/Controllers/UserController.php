@@ -6,6 +6,7 @@ use App\CarBrand;
 use App\Store;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -117,7 +118,7 @@ class UserController extends Controller
             $user->phone = $request->input('password');
 
             $update = $user->save();
-            return view('user.edit');
+            return redirect()->back();
 
     }
 
@@ -132,9 +133,14 @@ class UserController extends Controller
         $user=User::find($id)->delete();
         return redirect('user')->with('success','User has been  deleted');
     }
-    public function userCars($id){ ////Not done yet
-        $user =User::find($id);
+
+    public function yourCar(Request $request ,$id){ ////Not done yet
+        //dd($id);
+        $user =Auth::user();
         $cars =$user->cars;
-        return view('user.car',compact('cars'));
+
+       // dd($cars);
+        return view('user.yourCar',compact('cars','user'));
+
     }
 }

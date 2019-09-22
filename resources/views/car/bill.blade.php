@@ -113,8 +113,8 @@
     <div class="row">
         <div class="col-75">
             <div class="container">
-                <form action="/action_page.php">
-
+                <form action="{{route('yourCar',[\Illuminate\Support\Facades\Auth::id()])}}" method="post">
+@csrf
                     <div class="row">
                         <div class="col-50">
                             <h3>Billing Address</h3>
@@ -151,7 +151,7 @@
                     <label>
                         <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                     </label>
-                    <input type="submit" value="Done" class="btn">
+                    <button type="submit" value="Done" class="btn"> Done</button>
                 </form>
             </div>
         </div>

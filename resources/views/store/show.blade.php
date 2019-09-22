@@ -78,7 +78,7 @@
             <div class="col-md-6">
 {{--                <a class="btn btn-success btn-block active" href="{{url('car/{{$id}}')}}">Cars List</a>--}}
 
-                <a class="btn btn-success btn-block active" href="{{route('store.showCars',[$store->id])}}">Cars List</a>
+                <a class="btn btn-success btn-block active" href="{{route('manager.showCars',[$store->id])}}">Cars List</a>
 
             </div>
         </div>

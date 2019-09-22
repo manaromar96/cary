@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInstallmentsTable extends Migration
+class CreateSalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,14 @@ class CreateInstallmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('installments', function (Blueprint $table) {
+        Schema::create('sales', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->float('paymentDate');
-            $table->float('deserveAmount');
-            $table->float('remainingAmount');
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('store_id');
-            $table->unsignedBigInteger('sale_id');
-
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->unsignedBigInteger('car_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
-            $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -37,6 +33,6 @@ class CreateInstallmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('installments');
+        Schema::dropIfExists('sales');
     }
 }

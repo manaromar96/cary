@@ -10,6 +10,7 @@
             <div class="col-md-12">
                 <form action="{{ route('car.store') }}"  method="post" enctype="multipart/form-data" >
                     @csrf
+                    <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                     <div class="form-group">
 
                         <label for=" type">
@@ -28,11 +29,11 @@
                         <label for=" store">
                             Car Store:
                         </label>
-                        <select name="store" class="form-control">
+                        <select name="store_id" class="form-control">
                             <option disabled selected>Please Select</option>
 
                             @foreach($stores as $store)
-                                <option id="{{$store->id}}"> {{$store->name}}</option>
+                                <option value="{{$store->id}}"> {{$store->name}}</option>
                             @endforeach
                         </select>
                     </div>

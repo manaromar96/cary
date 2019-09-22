@@ -20,7 +20,7 @@ return [
     'store_manager'=> 'Manager',
 //    'store_accountant'=> 'Accountant',
 //    'store_employee'=> 'Employee',
-//    'store_administrator'=>'Administrator',
+    'store_administrator'=>'Administrator',
     'store_client'=>'Client',
     'user_type' => 'User Type'
 
