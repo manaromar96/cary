@@ -31,21 +31,25 @@ class HomeController extends Controller
 //        $models = CarModel::all();
 //        $clients = Client::all();
 
-        if(Auth::user()->role_id == 1){
-           return redirect('profile');
-        }
-        if(Auth::user()->role_id == 2){
-            return redirect('/manager');
-        }
-        else
-            return view('home');
+//        if(Auth::user()->role_id == 2){
+//        return redirect('/manager');
+//    }
+//        if(Auth::user()->role_id == 3){
+//            return redirect('/profile');
+//        }
+//        else
+//            return view('home');
     }
 
     public function profile(){
         $user = auth()->user();
 
-        if ($user && $user->role_id==1) {
+        if ($user && $user->role_id==1){
+            return view('admin.profile',compact('user'));
+        }
+        elseif ($user && $user->role_id==2){
             return view('manager.profile',compact('user'));
+
         }
         else {
             return view('user.profile',compact('user'));

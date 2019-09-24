@@ -80,11 +80,13 @@
                             <input type="checkbox"> Agree the terms and policy
                         </label>
                     </div>
-
+                    <div class="form-group">
+                        <label>Phone </label>
+                        <input id="phone" type="number" class="form-control "name="phone" autofocus>
+                    </div>
 
                     <div class="form-group ">
                         <label for="user_type">{{ __('auth.user_type') }}</label>
-
                         <div class="col-md-12">
                             <select name="role_id" class="form-control" required>
                                 <option value="-1">Please select</option>

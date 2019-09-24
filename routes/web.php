@@ -20,13 +20,15 @@ Route::get('/', 'VisitorController@index');
 Route::get('/page', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('home', 'HomeController@index');
+
+    Route::get('/profile', 'HomeController@profile');
 //    Route::resource('/store', 'StoreController');
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
     Route::resource('/car', 'CarController');
     Route::resource('/user', 'UserController');
     Route::resource('/sale', 'SaleController');
+    Route::resource('/admin', 'AdminController');
 
 //    Route::get('/profile',function($id){
 //        return view('manager.index',compact('id'));
@@ -50,7 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/user', 'UserController@index');
 //    Route::get('/user/create', 'UserController@create');
 //    Route::get('/user/store', 'UserController@store')->name('user.store');
-    Route::get('/profile','HomeController@profile')->name('user.profile');
+//    Route::get('/profile','HomeController@profile')->name('user.profile');
     Route::resource('/manager', 'ManagerController');
     Route::get('/manager/show/{id}','ManagerController@showprofile')->name('manager.show');
 

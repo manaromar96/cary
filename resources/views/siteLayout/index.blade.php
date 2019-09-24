@@ -263,7 +263,7 @@
         <!-- Sidebar Navigation -->
         <nav class="sidebar_nav">
             <ul>
-                <li><a href="##">home</a></li>
+                <li><a href="/profile">home</a></li>
 {{--                <li><a href="/store">stores<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
 {{--                <li><a href="/brand">bands<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
 {{--                <li><a href="/model">models<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--}}
@@ -313,7 +313,7 @@
 {{--                                <div class="home_discount_text">Discount on the</div>--}}
 {{--                            </div>--}}
                             <div class="home_title">The Fast and the Furious</div>
-                            <div class="button button_1 home_button trans_200"><a href="categories.html">Shop NOW!</a></div>
+                            <div class="button button_1 home_button trans_200"><a href="{{route('store.index')}}">Shop NOW!</a></div>
                         </div>
                     </div>
                 </div>
