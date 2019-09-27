@@ -1088,7 +1088,15 @@
 {{--    });  // End of Document Ready --}}
 {{--</script>--}}
 
-
+{{--<script>--}}
+{{--    $('#dynamic-select').bind('change', function () { // bind change event to select--}}
+{{--        var url = $(this).val(); // get selected value--}}
+{{--        if (url != '') { // require a URL--}}
+{{--            window.location = url; // redirect--}}
+{{--        }--}}
+{{--        return false;--}}
+{{--    });--}}
+{{--</script>--}}
 
 
 <div id="container">

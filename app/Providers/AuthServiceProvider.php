@@ -26,9 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-//        Gate::define('create-post-job', function ($user) {
-//            return $user->is_admin == 1;
-//        });
+        Gate::define('buy-car', function ($user) {
+            return $user->role_id == 3;
+        });
 
         Passport::routes();
         //

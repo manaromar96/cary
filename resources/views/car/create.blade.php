@@ -16,12 +16,14 @@
                         <label for=" type">
                             Car Brand:
                         </label>
-                        <select name="type" class="form-control">
+                        <select name="type" dynamic-select class="form-control" >
                             <option disabled selected>Please Select</option>
 
                             @foreach($brands as $brand)
                                 <option id="{{$brand->id}}"> {{$brand->name}}</option>
                             @endforeach
+{{--                            <option value="{{route('brand.create')}}"><p onclick=""></p>Add New Brand</option>--}}
+
                         </select>
                     </div>
 
@@ -45,8 +47,10 @@
                             <option disabled selected>Please Select</option>
 
                             @foreach($models as $model)
-                                <option id="{{$model->id}}"> {{$model->modelYear}}</option>
+                                <option id="{{$model->id}}"> {{($model->modelYear)}}</option>
                             @endforeach
+
+{{--                            Carbon\Carbon::parse--}}
                         </select>
                     </div>
 
@@ -67,8 +71,8 @@
                         </label>
                         <input type="number" name="price">
                     </div>
-                    <div class="form-group">
 
+                    <div class="form-group">
                         <label for=" photo">
                             Car images
                         </label> <br>
@@ -76,8 +80,7 @@
                         <label for="exampleInputFile">
                             File input
                         </label>
-                        <input class="form-control-file" id="exampleInputFile" type="file" name='photo' multiple="multiple"/>
-
+                        <input class="form-control-file" id="exampleInputFile" type="file" name='photo[]' multiple="multiple"/>
                     </div>
 
 

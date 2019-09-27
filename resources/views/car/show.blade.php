@@ -87,8 +87,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <a class="btn btn-success btn-block active" href="{{route('car.buyCar',[$car->id]) }}">Buy This Car</a>
+                            @canany(['buy-car'])
 
+                            <a class="btn btn-success btn-block active" href="{{route('car.buyCar',[$car->id]) }}">Buy This Car</a>
+                            @endcanany
                             <a class="btn btn-success btn-block active" href="{{route('store.showCars',[$car->store->id])}}">Back to store cars</a>
                         </div>
                     </div>
