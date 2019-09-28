@@ -47,11 +47,13 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
+                                @if($user->role_id==2)
                                 <a href="{{route('manager.showStore',[$user->id])}}">
                                     <button type="button" class="btn btn-success">
                                         View User Store
                                     </button>
                                 </a>
+                                    @endif
                             </div>
                         </div>
                     </div>

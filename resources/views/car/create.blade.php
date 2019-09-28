@@ -16,13 +16,13 @@
                         <label for=" type">
                             Car Brand:
                         </label>
-                        <select name="type" dynamic-select class="form-control" >
+                        <select name="type" id="dynamic-select" class="form-control" >
                             <option disabled selected>Please Select</option>
 
                             @foreach($brands as $brand)
                                 <option id="{{$brand->id}}"> {{$brand->name}}</option>
                             @endforeach
-{{--                            <option value="{{route('brand.create')}}"><p onclick=""></p>Add New Brand</option>--}}
+                            <option class="newBrand" value="{{route('brand.create')}}">Add New Brand</option>
 
                         </select>
                     </div>
@@ -43,12 +43,13 @@
                         <label for=" model">
                             Car model:
                         </label>
-                        <select name="model" class="form-control">
+                        <select name="model" id="model"  class="form-control">
                             <option disabled selected>Please Select</option>
 
                             @foreach($models as $model)
-                                <option id="{{$model->id}}"> {{($model->modelYear)}}</option>
+                                <option id="{{$model->id}}"> {{Carbon\Carbon::parse($model->modelYear)->format("Y")}}</option>
                             @endforeach
+                            <option class="newModel" value="{{route('model.create')}}">Add New model</option>
 
 {{--                            Carbon\Carbon::parse--}}
                         </select>

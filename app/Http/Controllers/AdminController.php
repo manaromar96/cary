@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
+use App\Role;
+use App\Store;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -82,5 +86,21 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function showAllStore()
+    {
+            $stores =Store::all();
+        return view('manager.store',compact('stores'));
+}
+    public function register()
+    {
+
+        $roles = Role::whereIn('name',['Manager','Client'])->get();
+        return view('admin.register', compact('roles'));
+    }
+    protected function createRegister(Request $request)
+    {
+        $users= User::create($request->all());
+        return redirect('admin')->with('success', 'User has been added');
     }
 }

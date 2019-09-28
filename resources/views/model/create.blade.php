@@ -19,13 +19,6 @@
                     </div>
 
 
-                    <div class="form-group">
-
-                        <label for=" VIN">
-                            Car VIN
-                        </label>
-                        <input type="text" name="VIN">
-                    </div>
 
                     <div class="form-group">
 

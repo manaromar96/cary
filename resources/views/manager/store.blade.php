@@ -17,7 +17,11 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Your stores</h3>
+                   @if(\Illuminate\Support\Facades\Auth::user()->role_id==1)
+                    <h3 class="card-title">All stores</h3>
+                       @else
+                        <h3 class="card-title">Your stores</h3>
+                        @endif
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

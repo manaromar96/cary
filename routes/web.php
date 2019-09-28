@@ -20,6 +20,7 @@ Route::get('/', 'VisitorController@index');
 Route::get('/page', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('/home', 'HomeController@profile');
 
     Route::get('/profile', 'HomeController@profile');
 //    Route::resource('/store', 'StoreController');
@@ -29,6 +30,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/user', 'UserController');
     Route::resource('/sale', 'SaleController');
     Route::resource('/admin', 'AdminController');
+    Route::get('/adm/showStore', 'AdminController@showAllStore')->name('admin.showStore');
+    Route::get('/newUser','AdminController@register');
+    Route::post('/newUser','AdminController@createRegister')->name('createRegister');
 
 //    Route::get('/profile',function($id){
 //        return view('manager.index',compact('id'));

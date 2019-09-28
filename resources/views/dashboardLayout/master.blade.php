@@ -9,7 +9,7 @@
     <title>@yield('title','Cary') - CaryStore</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="apple-touch-icon" href="{{asset('dashboard/assets/imagesfavicon.png')}}">
     <link rel="shortcut icon" href="{{asset('dashboard/assets/imagesfavicon.png')}}">
 
@@ -860,8 +860,31 @@
 {{--<script src="{{asset('dashboard/assets/calendar/fullcalendar-init.js')}}"></script>--}}
 
 
+<script>
+    $('#dynamic-select').bind('change', function () { // bind change event to select
+        var url = $(this).val(); // get selected value
+        var clas = $('.newBrand').val();
+        var classname = $('select[name="type"] :selected').attr('class')
+        if (classname == 'newBrand') {
+            if (clas != '') { // require a URL
+                window.location = clas; // redirect
+            }
+        }
+        return false;
+    });
+    $('#model').bind('change', function () { // bind change event to select
+        var url = $(this).val(); // get selected value
+        var clas = $('.newModel').val();
+        var classname = $('select[name="model"] :selected').attr('class')
+        if (classname == 'newModel') {
+            if (clas != '') { // require a URL
+                window.location = clas; // redirect
+            }
+        }
+        return false;
+    });
 
-
+</script>
 
 
 {{--<script>--}}

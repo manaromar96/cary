@@ -39,13 +39,13 @@
         <h2> {{\Illuminate\Support\Facades\Auth::user()->name}} Profile</h2>
 
         <br>
-{{--        <div class="col-md-3" >--}}
-{{--            <a href="{{ route('admin.edit',$user->id) }}">--}}
-{{--                 <button type="button" class="btn btn-warning update">--}}
-{{--                Update Profile--}}
-{{--            </button>--}}
-{{--            </a>--}}
-{{--        </div>--}}
+        <div class="col-md-3" >
+            <a href="{{ route('manager.edit',$user->id) }}">
+                 <button type="button" class="btn btn-warning update">
+                Update Profile
+            </button>
+            </a>
+        </div>
 
         <h5> Personal Information :</h5>
 
@@ -82,9 +82,9 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
-                                <a href="{{route('manager.showStore',[$user->id])}}">
+                                <a href="{{route('admin.showStore')}}">
                                     <button type="button" class="btn btn-success">
-                                         View Your Store
+                                         View All Store
                                      </button>
                                 </a>
                             </div>
@@ -92,8 +92,15 @@
                             <div class="col-md-3">
                                 <a href="/admin">
                                     <button type="button" class="btn btn-success">
-                                    show manager
+                                    show Users
                                 </button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/newUser">
+                                    <button type="button" class="btn btn-success">
+                                        add new Users
+                                    </button>
                                 </a>
                             </div>
 {{--                            <div class="col-md-3">--}}
@@ -104,13 +111,13 @@
 {{--                                </a>--}}
 {{--                            </div>--}}
 
-                            <div class="col-md-3">
-                                <a href="car/create">
-                                    <button type="button" class="btn btn-success">
-                                    Add New Car
-                                </button>
-                                </a>
-                            </div>
+{{--                            <div class="col-md-3">--}}
+{{--                                <a href="car/create">--}}
+{{--                                    <button type="button" class="btn btn-success">--}}
+{{--                                    Add New Car--}}
+{{--                                </button>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
 {{--                    <div class="btn-group" role="group">--}}

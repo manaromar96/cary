@@ -37,7 +37,7 @@
 
                                     @if(count($users)>0)
                                          @foreach($users as $user)
-{{--                                             @if($user->role_id == 1)--}}
+                                             @if($user->role_id != 1)
                                               <tr class="col-md-3">
                                                    <td class="serial">{{$user->id}}</td>
                                                     <td class="avatar">
@@ -58,7 +58,7 @@
 {{--                                                     </td>--}}
 
                                                 </tr>
-{{--                                              @endif--}}
+                                              @endif
                                          @endforeach
                                     @else
                                                  <tr class="col-md-4">
