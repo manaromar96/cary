@@ -37,7 +37,10 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/profile',function($id){
 //        return view('manager.index',compact('id'));
 //    })->name('profile');
-    Route::post('edit-profile','ManagerController@update')->name('manager.editProfile');
+//    Route::post('edit_profile','ManagerController@update')->name('editProfile');
+    Route::get('/adm/showClient','AdminController@client');
+    Route::get('/adm/allUser','AdminController@user');
+
     Route::post('editClient','UserController@update')->name('user.clientProfile');
 
     Route::get('/user', 'UserController@index')->name('user.index');

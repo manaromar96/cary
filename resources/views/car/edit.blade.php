@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Car Model :</label>
-                            <input type="date" class="form-control"  name="model" value="{{ $car->model }}"/>
+                            <input type="text" class="form-control"  name="model" value="{{ $car->model }}"/>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Color :</label>

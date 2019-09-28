@@ -6,6 +6,7 @@ use App\Store;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ManagerController extends Controller
 {
@@ -106,12 +107,20 @@ class ManagerController extends Controller
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
+        $user->password = Hash::make($request->input('password'));
         $user->phone = $request->input('phone');
 
 
         $update = $user->save();
-        return redirect('manager');
+            if(Auth::user()->role_id !=1){
+                return redirect('manager');
+
+            }
+            else
+            {
+                return redirect('/adm/allUser');
+
+            }
 
     }
 

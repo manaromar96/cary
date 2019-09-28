@@ -27,6 +27,17 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function client()
+    {
+
+        $users = User::all();
+        return view('admin.client',compact('users'));
+    }
+    public function user()
+    {
+        $users = User::all();
+        return view('admin.all',compact('users'));
+    }
     public function create()
     {
         //

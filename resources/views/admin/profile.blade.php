@@ -92,8 +92,15 @@
                             <div class="col-md-3">
                                 <a href="/admin">
                                     <button type="button" class="btn btn-success">
-                                    show Users
+                                    show manager
                                 </button>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/adm/showClient">
+                                    <button type="button" class="btn btn-success">
+                                        show Client
+                                    </button>
                                 </a>
                             </div>
                             <div class="col-md-3">
