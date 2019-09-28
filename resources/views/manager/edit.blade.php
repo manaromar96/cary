@@ -25,7 +25,7 @@
                 <div class="form-group"><label for="email" class=" form-control-label">Email :</label>
                     <input value="{{$user->email}}" type="email" id="email" name="email" placeholder="Enter Email.." class="form-control"><span class="help-block">Please enter your email</span></div>
                 <div class="form-group"><label for="password" class=" form-control-label">Password :</label>
-                    <input value="{{$user->password}}" type="password" id="password" name="password" placeholder="Enter Password.." class="form-control"><span class="help-block">Please enter your password</span></div>
+                    <input type="password" id="password" name="password" placeholder="Enter Password.." class="form-control"><span class="help-block">Please enter your password</span></div>
                 <div class="form-group"><label for="phone" class=" form-control-label">Phone :</label>
                     <input type="phone" value="{{$user->phone}}" id="phone" name="phone" placeholder="Enter Phone no. .." class="form-control"><span class="help-block">Please enter your phone</span></div>
                 <div class="form-group"><label for="avatar" class=" form-control-label">Avatar:</label><input type="file"  id="avatar" name="avatar"  class="form-control"><span class="help-block">Please choose your Image</span></div>
