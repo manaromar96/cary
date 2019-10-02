@@ -19,7 +19,8 @@ class SaleController extends Controller
     public function index()
     {
         $sales = Sale::all();
-        return view('user.yourCar',compact('sales'));
+        $user = Auth::user();
+        return view('user.yourCar',compact('sales','user'));
     }
 
     /**
@@ -41,13 +42,17 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-  //dd($request );
+
+//  dd($request );
         $sale = new Sale();
         $sale->car_id = $request->car_id ;
         $sale->store_id = $request->store_id;
         $sale->user_id = Auth::id();
         $sale->save();
 
+        $store = Store::where('id',$request->store_id)->decrement('carsNumber',1);;
+        $car = Car::where('id',$request->car_id)->update(['status'=>'Sold']);
+//        dd($store , $car);
         $car = Car::find($request->car_id);
         return view('car.bill',compact('car'));
 

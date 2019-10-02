@@ -52,6 +52,8 @@ class StoreController extends Controller
                     'path' => $image->store('store/images')
                 ]);
             }
+//            store::where('id', '=', $store->cars->car_id)->update(['carsNumber' => $store->cars->with('user')->where('id', '=', $store->cars->car_id)->first()->carsNumber - 1)]);
+
             $store->images()->saveMany($imagesPath);
         }
         return redirect('store')->with('success', 'Store has been added');

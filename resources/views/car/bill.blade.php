@@ -140,7 +140,7 @@
                             <label for="type">Car Type</label>
                             <input type="text" id="type" name="type" value="{{$car->type}}" readonly>
                             <label for="model">Car Model</label>
-                            <input type="date" id="model" name="model" value="{{$car->model}}" readonly>
+                            <input type="number" id="model" name="model" value="{{$car->model}}" readonly>
                             <label for="color">Color</label>
                             <input type="text" id="color" name="color" placeholder="{{$car->color}}" readonly>
                             <label for="price" ><i class="fa fa-money"></i> Price</label>

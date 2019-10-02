@@ -118,7 +118,7 @@ class UserController extends Controller
             $user->phone = $request->input('password');
 
             $update = $user->save();
-            return redirect()->back();
+            return redirect('allUser');
 
     }
 

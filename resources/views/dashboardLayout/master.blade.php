@@ -273,8 +273,13 @@
 
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @if (Auth::check())
                         <img class="user-avatar rounded-circle" src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->avatar )}}" alt="User Avatar">
-                    </a>
+                            @else
+                        <img class="user-avatar rounded-circle" src="{{asset('dashboard/assets/images/avatar/2.jpg' )}}" alt="User Avatar">
+
+                            @endif
+                        </a>
 
                     <div class="user-menu dropdown-menu">
 

@@ -33,11 +33,13 @@ class AdminController extends Controller
         $users = User::all();
         return view('admin.client',compact('users'));
     }
+
     public function user()
     {
         $users = User::all();
         return view('admin.all',compact('users'));
     }
+
     public function create()
     {
         //
@@ -109,17 +111,17 @@ class AdminController extends Controller
         $roles = Role::whereIn('name',['Manager','Client'])->get();
         return view('admin.register', compact('roles'));
     }
+
     protected function createRegister(Request $request)
     {
 //        $users= User::create($request->all());
-
         $user=new User();
         $user->name=$request->get('name');
         $user->email=$request->get('email');
-        $user->password= Hash::make($request->get('password'));
+        $user->password=bcrypt($request->get('password'));
         $user->phone=$request->get('phone');
         $user->role_id=$request->get('role_id');
         $user->save();
-        return redirect('admin')->with('success', 'User has been added');
+        return redirect('/allUser')->with('success', 'User has been added');
     }
 }

@@ -29,6 +29,7 @@
                             <th>Car Model</th>
                             <th>Color</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th width="20%" class="text-center">Actions</th>
                         </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                         <td>{{ $car->model }}</td>
                                         <td>{{ $car->color }}</td>
                                         <td>{{ $car->price }}$</td>
+                                        <td>{{ $car->status }}</td>
 
 
 

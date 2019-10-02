@@ -65,7 +65,8 @@
                                                <a href="{{ route('store.show',$store->id) }}"> 
                                                     {{ $store->name }} 
                                                </a> 
-                                           </td> 
+                                           </td>
+{{--                                           @if(\Illuminate\Support\Facades\Auth::user()->role_id)==3--}}
                                             <td>{{ $store->address }}</td> 
                                             <td class="count">{{ $store->carsNumber }}</td>
 

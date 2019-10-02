@@ -112,13 +112,13 @@ class ManagerController extends Controller
 
 
         $update = $user->save();
-            if(Auth::user()->role_id !=1){
+        if(Auth::user()->role_id !=1){
                 return redirect('manager');
 
             }
             else
             {
-                return redirect('/adm/allUser');
+                return redirect('/allUser');
 
             }
 
