@@ -26,7 +26,7 @@
                         <tr>
                             <th>ID</th>
                             <th>ModelYear</th>
-                            <th>VIN</th>
+{{--                            <th>VIN</th>--}}
                             <th>Brand</th>
 
 
@@ -43,7 +43,7 @@
                                                 {{ $model->modelYear }}
                                             </a>
                                         </td>
-                                        <td>{{ $model->VIN }}</td>
+{{--                                        <td>{{ $model->VIN }}</td>--}}
                                         <td>{{ $model->brand->name }}</td>
 
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
+use App\Store;
 use Illuminate\Http\Request;
 
 class VisitorController extends Controller
@@ -13,7 +15,10 @@ class VisitorController extends Controller
      */
     public function index()
     {
-        return view('siteLayout.index');
+        $stores=Store::all();
+        $cars=Car::all();
+
+        return view('siteLayout.index',compact('stores','cars'));
     }
 
     /**
@@ -21,11 +26,16 @@ class VisitorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function allCar()
     {
-        //
-    }
+        $cars=Car::all();
+        return view('siteLayout.index1',compact('cars'));
 
+    }
+public function showCar($id){
+        $car=Car::find($id);
+        return view('siteLayout.show',compact('car'));
+}
     /**
      * Store a newly created resource in storage.
      *

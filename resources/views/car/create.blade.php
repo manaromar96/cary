@@ -33,9 +33,10 @@
                         </label>
                         <select name="store_id" class="form-control">
                             <option disabled selected>Please Select</option>
-
                             @foreach($stores as $store)
+                                @if($store->user_id==\Illuminate\Support\Facades\Auth::user()->id)
                                 <option value="{{$store->id}}"> {{$store->name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

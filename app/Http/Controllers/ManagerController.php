@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
+use App\Sale;
 use App\Store;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+
+
 
 class ManagerController extends Controller
 {
@@ -107,20 +114,15 @@ class ManagerController extends Controller
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
+        $user->password = bcrypt($request->input('password'));
         $user->phone = $request->input('phone');
 
 
         $update = $user->save();
-        if(Auth::user()->role_id !=1){
-                return redirect('manager');
 
-            }
-            else
-            {
-                return redirect('/allUser');
+                return redirect('/profile');
 
-            }
+
 
     }
 
@@ -154,6 +156,75 @@ class ManagerController extends Controller
         $cars = $user->cars;
         return view('manager.showManagerCars',compact('cars'));
     }
+//    public function dashboard(){
+//
+////        $stores=Auth::user()->stores;
+////        $cars=Auth::user()->cars;
+//        $sale=Sale::all();
+//        dd($sale);
+//        return view('manager.dashboard',compact('stores','cars'));
+//
+//    }
+    public function dashboard()
+    {
+
+           $stores=Auth::user()->stores;
+        $cars=Auth::user()->cars;
+//
+//        dd($cars);
+//        foreach (\Illuminate\Support\Facades\Auth::user()->cars as $car) {
+//                   foreach( $car->sales as $sales){
+//
+//                       dd(count($car->sales));
+//
+//
+//        $sale =Sale::with('cars')->where('user_id','=',Auth::id())->get();
+//                    $sale =Car::with('sales')->where('store_id','=',Auth::user()->stores->id)->get();
+
+//        $sale =Sale::with('car')->where('user_id','=',Auth::id())->get();
+
+//        dd($sale);
+//        foreach ($cars as $car){
+//         $sale= Sale::whereIn('car_id','=',$car->id);
+//           dd($sale);
+//        }
+        $cars=Auth::user()->cars;
+
+        foreach ($cars as $car){
+            dd($car->id);
+            $carSale =Sale::with('car')->where('car_id','=', $car->id)->get();
+            dd(($carSale));
+        }
+
+//    dd(count($sale));
+
+//    $sales=Sale::where('car_id','=',$car->id);
+//    dd($sales);
+//}
+
+//        }
+//        return view('manager.dashboard',compact('stores','cars','sale'));
+    }
+    }
+//       }   @foreach( $car->sales as $sales)
+
+//                                <li><i class="fa fa-table"></i><a href="{{route('showYourCar',[$sales->car->id])}}">
+//                                        {{ $sales->car->type }}
+//                                    </a></li>
+
+//        dd($rows->sales);
+//        return view('manager.dashboard',compact('stores','cars'));
+
+//        {
+//            $unit_types_count = UnitType::where('name', $row[0])->where('project_id', $this->proj_id)->count();
+//            if ($unit_types_count == 0){
+//                UnitType::create([
+//                    'name'       => $row['unit_type'],
+//                    'created_by' => $this->user_id,
+//                    'project_id' => $this->proj_id,
+//                ]);
+//            }
+//        }
 
 
-}
+

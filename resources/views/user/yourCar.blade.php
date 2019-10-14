@@ -1,6 +1,6 @@
 @extends('dashboardLayout.master')
 
-@section('title','List of Cars')
+@section('title','Your Car')
 
 @section('header')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">List of Cars</h3>
+                    <h3 class="card-title">Your Car</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -33,7 +33,7 @@
                             </thead>
                             <tobody>
                                 @if(count($user->sales)>0)
-                                    @foreach($user->sales as $sale)
+                                        @foreach($user->sales as $sale)
                                         <tr>
                                             <td>{{ $sale->id }}</td>
                                             <td>

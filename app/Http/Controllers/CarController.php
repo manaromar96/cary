@@ -7,6 +7,9 @@ use App\CarImages;
 use App\CarModel;
 use App\ImageStore;
 use App\Store;
+use Barryvdh\DomPDF\Facade as PDF;
+
+
 use Illuminate\Http\Request;
 use App\CarBrand;
 
@@ -16,7 +19,9 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
-        return view('car.index', compact('cars'));
+//        $store=Store::all();
+        $stores = \Illuminate\Support\Facades\Auth::user()->stores;
+        return view('car.index', compact('cars','stores'));
     }
 
     /**
@@ -117,6 +122,8 @@ class CarController extends Controller
         $car->price=$price;
         $update = $car->save();
         return redirect('car');
+
+
     }
 
     /**
@@ -143,5 +150,15 @@ class CarController extends Controller
         $store = $car->store;
         return view('car.bill',compact('car'));
     }
+    public function showBill($id){
+        $car = Car::find($id);
+        return view('car.showBill',compact('car'));
+    }
+//    public function pdf(Request $request, $id){
+//        $car=Car::find($id) ;
+//        $pdf = PDF::loadView('car.bill',['car'=>$car] );
+////        dd($pdf);
+//        return $pdf->download('Bill.pdf');
+//    }
 }
 

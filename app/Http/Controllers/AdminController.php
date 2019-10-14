@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\Role;
+use App\Sale;
 use App\Store;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -19,7 +21,7 @@ class AdminController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.index',compact('users'));
+        return view('admin.index', compact('users'));
     }
 
     /**
@@ -31,13 +33,13 @@ class AdminController extends Controller
     {
 
         $users = User::all();
-        return view('admin.client',compact('users'));
+        return view('admin.client', compact('users'));
     }
 
     public function user()
     {
         $users = User::all();
-        return view('admin.all',compact('users'));
+        return view('admin.all', compact('users'));
     }
 
     public function create()
@@ -48,7 +50,7 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,7 +61,7 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -70,7 +72,7 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -81,8 +83,8 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -93,35 +95,50 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
     }
+
     public function showAllStore()
     {
-            $stores =Store::all();
-        return view('manager.store',compact('stores'));
-}
+        $stores = Store::all();
+        return view('manager.store', compact('stores'));
+    }
+
     public function register()
     {
 
-        $roles = Role::whereIn('name',['Manager','Client'])->get();
+        $roles = Role::whereIn('name', ['Manager', 'Client'])->get();
         return view('admin.register', compact('roles'));
     }
 
     protected function createRegister(Request $request)
     {
 //        $users= User::create($request->all());
-        $user=new User();
-        $user->name=$request->get('name');
-        $user->email=$request->get('email');
-        $user->password=bcrypt($request->get('password'));
-        $user->phone=$request->get('phone');
-        $user->role_id=$request->get('role_id');
+        $user = new User();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = bcrypt($request->get('password'));
+        $user->phone = $request->get('phone');
+        $user->role_id = $request->get('role_id');
         $user->save();
         return redirect('/allUser')->with('success', 'User has been added');
+    }
+
+    public function dashboard()
+    {
+
+        $stores = Store::all();
+        $cars = Car::all();
+        $sales=Sale::all();
+        $managers=User::where('role_id','=',2)->get();
+        $clients=User::where('role_id','=',3)->get();
+
+        return view('admin.dashboard', compact('stores', 'cars', 'sales','managers','clients'));
+
     }
 }

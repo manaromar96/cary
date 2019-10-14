@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use App\CarBrand;
+use App\Sale;
 use App\Store;
 use App\User;
 use Illuminate\Http\Request;
@@ -114,11 +116,11 @@ class UserController extends Controller
             }
             $user->name = $request->input('name');
             $user->email = $request->input('email');
-            $user->password = $request->input('password');
-            $user->phone = $request->input('password');
+            $user->password = bcrypt($request->input('password'));
+            $user->phone = $request->input('phone');
 
             $update = $user->save();
-            return redirect('allUser');
+            return redirect('profile');
 
     }
 
@@ -143,4 +145,22 @@ class UserController extends Controller
         return view('user.yourCar',compact('cars','user'));
 
     }
+
+    public function showYourCar(Request $request ,$id)
+    { ////Not done yet
+        //dd($id);
+        $car = Car::find($id);
+        // dd($cars);
+        return view('user.showYourCar', compact('car'));
+
+    }
+    public function dashboard()
+    {
+
+        $user=Auth::user();
+        $sales=$user->sales;
+        return view('user.dashboard', compact('sales'));
+    }
+
+
 }

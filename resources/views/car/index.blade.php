@@ -35,8 +35,11 @@
                         </thead>
                         <tobody>
                             @if(count($cars)>0)
-                                @foreach($cars as $car)
-                                    <tr>
+                                @foreach($stores as $store)
+                                @foreach($cars  ->sortBy('created_at')  as $car)
+                                        @if($car->store_id==$store->id)
+
+                                        <tr>
                                         <td>{{ $car->id }}</td>
                                         <td>
                                             <a href="{{ route('car.show',$car->id) }}">
@@ -68,12 +71,15 @@
                                             </form>
                                         </td>
                                     </tr>
+                                    @endif
+                                @endforeach
                                 @endforeach
                             @else
                                 <tr>
                                     <td colspan="3">No data</td>
                                 </tr>
                             @endif
+
                         </tobody>
                     </table>
                 </div>

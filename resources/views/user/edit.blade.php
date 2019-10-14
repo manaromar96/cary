@@ -13,7 +13,7 @@
 @section('content')
     <div class="card manager_form">
         <div class="card-header">
-            <strong>Manager</strong> Form
+            <strong>Client</strong> Form
         </div>
         <div class="card-body card-block">
 

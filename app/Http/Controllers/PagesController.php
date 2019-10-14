@@ -30,7 +30,9 @@ class PagesController extends Controller
         return view('page.about');
     }
     public function contact() {
+
         return view('page.contact');
+
     }
 
 //    public function store(Request $request)

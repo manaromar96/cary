@@ -11,28 +11,40 @@
 |
 */
 
+Route::get('/manager/dashboard','ManagerController@dashboard')->name('manager.dashboard');
+Route::get('/admin/dashboard','AdminController@dashboard')->name('admin.dashboard');
+Route::get('/admin/dashboard','UserController@dashboard')->name('user.dashboard');
 
+
+Route::get('/showCar/{id}','visitorController@showCar')->name('showCar');
+Route::get('/allCar','visitorController@allCar')->name('allCar');
 
 Auth::routes();
+Route::get('/contact', 'PagesController@contact');
+Route::post('/contact', 'PagesController@store')->name('contact.store');
 Route::get('/', 'VisitorController@index');
 
+Route::resource('/car', 'CarController');
 
 Route::get('/page', 'PagesController@index');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@profile');
-
+    Route::get('/showYourCar/{id}','UserController@showYourCar')->name('showYourCar');
     Route::get('/profile', 'HomeController@profile');
 //    Route::resource('/store', 'StoreController');
+
     Route::resource('/brand', 'BrandController');
     Route::resource('/model', 'ModelController');
-    Route::resource('/car', 'CarController');
     Route::resource('/user', 'UserController');
     Route::resource('/sale', 'SaleController');
     Route::resource('/admin', 'AdminController');
     Route::get('/adm/showStore', 'AdminController@showAllStore')->name('admin.showStore');
     Route::get('/newUser','AdminController@register');
     Route::post('/newUser','AdminController@createRegister')->name('createRegister');
+    Route::get('/AllStore','StoreController@AllStore')->name('AllStore');
+
+    Route::get('/managerSale','SaleController@managerSale')->name('managerSale');
 
 //    Route::get('/profile',function($id){
 //        return view('manager.index',compact('id'));
@@ -85,7 +97,7 @@ Route::post('/yourCar/{id}','UserController@yourCar')->name('yourCar');
 
 Route::get('/car/buy/{id}', 'CarController@buy')->name('car.buyCar');
 Route::get('/car/bill/{id}', 'CarController@bill')->name('car.carBill');
-
+Route::get('/showBill/{id}','CarController@showBill')->name('showBill');
 //Route::resource('/client', 'ClientController')->middleware('isClient');
 
 Route::get('/deploy','deployController@index');
@@ -98,5 +110,4 @@ Route::get('/deploy','deployController@index');
 //Route::get('/manager', function () {
 //    return view('manager.profile');
 //});
-Route::get('/contact', 'PagesController@contact');
-Route::post('/contact', 'PagesController@store')->name('contact.store');
+

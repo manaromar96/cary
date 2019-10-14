@@ -31,7 +31,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
 
-             @foreach($store->images as $image)
+            @foreach($store->images as $image)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                         <img src="{{asset('storage/'.$image->path)}}" alt="store image">
                 </div>

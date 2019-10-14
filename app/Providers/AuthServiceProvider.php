@@ -29,6 +29,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('buy-car', function ($user) {
             return $user->role_id == 3;
         });
+        Gate::define('show-bill', function ($user) {
+            return $user->role_id == 3;
+        });
 
         Passport::routes();
         //

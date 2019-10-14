@@ -43,8 +43,11 @@
                                                    <td>{{$user->id}}</td>
                                                     <td class="avatar">
                                                     <div class="round-img">
-                                                          <a href="#"><img class="rounded-circle" src="{{asset('storage/'.$user->avatar )}}" alt=""></a>
-                                                     </div>
+                                                        @if ($user->avatar!=null)
+                                                            <a href="#"><img class="rounded-circle" src="{{asset('storage/'.$user->avatar )}}" alt=""></a>
+                                                        @else
+                                                            <img class="user-avatar rounded-circle" src="{{asset('dashboard/assets/images/avatar/2.jpg' )}}" alt="User Avatar">
+                                                        @endif                                                      </div>
                                                     </td>
                                                     <td>  <span>{{$user->name}}</span> </td>
                                                     <td>

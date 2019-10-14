@@ -113,17 +113,21 @@
     <div class="row">
         <div class="col-75">
             <div class="container">
-                <form  action="{{route('yourCar',[\Illuminate\Support\Facades\Auth::id()])}}" method="post">
+                <form>
                     @csrf
                     <div class="row">
                         <div class="col-50">
                             <h3>Billing Address</h3>
                             <br>
                             <label for="name"><i class="fa fa-user"></i>Your Name</label>
-                            <input type="text" id="name" name="name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+
+                            <input type="text" id="email" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+
+
                             <label for="email"><i class="fa fa-envelope"></i>Your Email</label>
-                            <input type="text" id="email" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
-{{--                            <label for="name"><i class="fa fa-user"></i>Store Manager</label>--}}
+
+                                        <input type="text" id="email" name="email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" readonly>
+{{--                                                             <label for="name"><i class="fa fa-user"></i>Store Manager</label>--}}
 {{--                            <input type="text" id="name" name="name" value="{{$car->store->user->name}}" readonly>--}}
                             <label for="email"><i class="fa fa-envelope"></i>Store Name</label>
                             <input type="text" id="email" name="email" value="{{$car->store->name}}" readonly>
@@ -152,8 +156,15 @@
                         <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
                     </label>
                     <div class="row">
-                            <button type="submit" value="Done" class="btn btn-success"> Done</button>
+                        <div class="col-md-4 " ></div>
+                        <div class="col-md-4 " >
+                            <button type="button" value="Print"  class="btn btn-warning"
+                                    onclick="window.print()"> Print Bill </button>
+                        </div>
                     </div>
+
+
+
                 </form>
             </div>
         </div>

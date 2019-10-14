@@ -7,10 +7,10 @@
                     <tr>
                         <th>model Year</th>
                         <td>{{ $model->modelYear }}</td>
-                    </tr>
-                        <th>VIN</th>
-                        <td>{{ $model->VIN }}</td>
-                    </tr>
+{{--                    </tr>--}}
+{{--                        <th>VIN</th>--}}
+{{--                        <td>{{ $model->VIN }}</td>--}}
+{{--                    </tr>--}}
                 </table>
             </div>
         </div>

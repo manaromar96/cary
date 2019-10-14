@@ -1,8 +1,6 @@
 @extends('dashboardLayout.master')
 @section('header')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-
     <style>
         #myCarousel{
             width: 1140px;
@@ -67,34 +65,28 @@
                 <div class="container-fluid carDetails">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3>Car Details: </h3>
-                            <hr>
-                            <dl>
-                                <dt>
-                                    <h4>Car Brand : {{$car->type}}</h4> <br>
-                                </dt>
                                 <dt>
                                     <h4>Car Model : {{$car->model}}</h4> <br>
                                 </dt>
                                 <dt>
-                                    <h4>Car Color : {{$car->color}}</h4> <br>
+                                    <h4>Store : {{$car->store->name}}</h4> <br>
                                 </dt>
                                 <dt>
                                     <h4>Car Price : {{$car->price}}$</h4> <br>
                                 </dt>
-                            </dl>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            @canany(['buy-car'])
-                            <a class="btn btn-success btn-block active" href="{{route('car.buyCar',[$car->id]) }}">Buy This Car</a>
-                            @endcanany
-                            <a class="btn btn-success btn-block active" href="{{route('store.showCars',[$car->store->id])}}">Back to store cars</a>
-                        </div>
+                    @canany('show-bill')
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="{{route('showBill',[$car->id])}}">
+                            <button type="button" class="btn btn-success">
+                                    Show Bill
+                            </button>
+                        </a>
                     </div>
                 </div>
-
+@endcanany
 
 
             </div>

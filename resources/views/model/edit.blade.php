@@ -17,10 +17,10 @@
                             <label class="form-label">model Year</label>
                             <input type="text" class="form-control"  name="modelYear" value="{{ $model->modelYear }}"/>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">model VIN</label>
-                            <input type="text" class="form-control"  name="VIN" value="{{ $model->VIN }}"/>
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label class="form-label">model VIN</label>--}}
+{{--                            <input type="text" class="form-control"  name="VIN" value="{{ $model->VIN }}"/>--}}
+{{--                        </div>--}}
 
 
                         <div class="form-footer">

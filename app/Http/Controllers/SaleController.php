@@ -104,4 +104,16 @@ class SaleController extends Controller
     {
         //
     }
+
+
+    public function managerSale()
+    {
+        $manager =Auth::user();
+//        $store=$manager->stores->sales->get();
+        $stores=$manager->stores;
+        foreach ($stores as $store){
+            $sales=$store->sales;
+        }
+        dd($sales);
+    }
 }

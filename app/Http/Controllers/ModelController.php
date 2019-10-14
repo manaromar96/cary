@@ -45,7 +45,7 @@ class ModelController extends Controller
     {
         $model = new CarModel;
         $model->modelYear = $request->modelYear;
-        $model->VIN =$request->VIN;
+//        $model->VIN =$request->VIN;
         $model->brand_id =$request->brand_id;
         $model->save();
         return redirect('model')->with('success', 'Model has been added');
@@ -89,7 +89,7 @@ class ModelController extends Controller
 
         $model = CarModel::find($id);
         $model->modelYear = $modelYear;
-        $model->VIN = $vin;
+//        $model->VIN = $vin;
         $update = $model->save();
         return redirect('model');
     }

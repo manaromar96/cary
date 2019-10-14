@@ -277,14 +277,14 @@
         </nav>
 
         <!-- Search -->
-{{--        <div class="search">--}}
-{{--            <form action="#" class="search_form" id="sidebar_search_form">--}}
-{{--                <input type="text" class="search_input" placeholder="Search" required="required">--}}
-{{--                <button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>--}}
-{{--            </form>--}}
-{{--        </div>--}}
+    {{--        <div class="search">--}}
+    {{--            <form action="#" class="search_form" id="sidebar_search_form">--}}
+    {{--                <input type="text" class="search_input" placeholder="Search" required="required">--}}
+    {{--                <button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>--}}
+    {{--            </form>--}}
+    {{--        </div>--}}
 
-        <!-- Cart -->
+    <!-- Cart -->
         {{--        <div class="cart d-flex flex-row align-items-center justify-content-start">--}}
         {{--            <div class="cart_icon"><a href="cart.html">--}}
         {{--                    <img src="{{asset('aStar/images/bag.png')}}" alt="">--}}
@@ -297,74 +297,6 @@
 
     <!-- Home -->
 
-    <div class="home">
-
-        <!-- Home Slider -->
-        <div class="home_slider_container">
-            <div class="owl-carousel owl-theme home_slider">
-            @foreach($stores as $store)
-                <!-- Slide -->
-                <div class="owl-item">
-                    <div class="background_image">
-
-                        @foreach($store->images as $image)
-                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                <img style="height: 650px !important;" src="{{asset('storage/'.$image->path)}}" alt="store image">
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="home_content_container">
-                        <div class="home_content">
-                            {{--                            <div class="home_discount d-flex flex-row align-items-end justify-content-start">--}}
-                            {{--                                <div class="home_discount_num">20</div>--}}
-                            {{--                                <div class="home_discount_text">Discount on the</div>--}}
-                            {{--                            </div>--}}
-{{--                            <div class="home_title" style="font-family: 'Comic Sans MS'">{{$store->name}}</div>--}}
-{{--                            <div class="button button_1 home_button trans_200"><a href="{{route('store.index')}}">Shop NOW!</a></div>--}}
-                        </div>
-                    </div>
-
-                </div>
-@endforeach
-
-                <!-- Slide -->
-{{--                <div class="owl-item">--}}
-{{--                    <div class="background_image" style="background-image:url({{asset('aStar/images/maincar.jpg')}})"></div>--}}
-{{--                    <div class="home_content_container">--}}
-{{--                        <div class="home_content">--}}
-{{--                            --}}{{--                            <div class="home_discount d-flex flex-row align-items-end justify-content-start">--}}
-{{--                            --}}{{--                                <div class="home_discount_num">20</div>--}}
-{{--                            --}}{{--                                <div class="home_discount_text">Discount on the</div>--}}
-{{--                            --}}{{--                            </div>--}}
-{{--                            <div class="home_title">The Fast and the Furious</div>--}}
-{{--                            <div class="button button_1 home_button trans_200"><a href="categories.html">Shop NOW!</a></div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-                <!-- Slide -->
-{{--                <div class="owl-item">--}}
-{{--                    <div class="background_image" style="background-image:url({{asset('aStar/images/1234.jpg')}})"></div>--}}
-{{--                    <div class="home_content_container">--}}
-{{--                        <div class="home_content">--}}
-{{--                            --}}{{--                            <div class="home_discount d-flex flex-row align-items-end justify-content-start">--}}
-{{--                            --}}{{--                                <div class="home_discount_num">20</div>--}}
-{{--                            --}}{{--                                <div class="home_discount_text">Discount on the</div>--}}
-{{--                            --}}{{--                            </div>--}}
-{{--                            <div class="home_title">The Fast and the Furious</div>--}}
-{{--                            <div class="button button_1 home_button trans_200"><a href="categories.html">Shop NOW!</a></div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-            </div>
-
-            <!-- Home Slider Navigation -->
-            <div class="home_slider_nav home_slider_prev trans_200"><div class=" d-flex flex-column align-items-center justify-content-center"><img src="{{asset('aStar/images/prev.png')}}" alt=""></div></div>
-            <div class="home_slider_nav home_slider_next trans_200"><div class=" d-flex flex-column align-items-center justify-content-center"><img src="{{asset('aStar/images/next.png')}}" alt=""></div></div>
-
-        </div>
-    </div>
 
     <!-- Boxes -->
 
@@ -372,7 +304,7 @@
         <div class="section_container">
 
             <div class="container">
-
+            <h1 align="center" style="font-family: 'SansSerif';color:red">All Cars </h1>
                 <div class="row">
                     <!-- Box -->
                     @foreach($cars as $car)
@@ -382,7 +314,7 @@
                             <div class="box">
                                 <div class="box_image">
 
-                                     @foreach($car->carImages as $carImage)
+                                    @foreach($car->carImages as $carImage)
                                         <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                             <img src="{{asset('storage/'.$carImage->photo)}}" alt="car image">
                                         </div>
@@ -396,214 +328,82 @@
 
                 </div>
 
-
             </div>
-
         </div>
-        <div class="box_title trans_200"> <a href="/allCar">SeeMore</a></div>
-
     </div>
 
     <!-- Categories -->
 
-{{--    <div class="categories">--}}
-{{--        <div class="section_container">--}}
-{{--            <div class="container ">--}}
-{{--                <div class="row options">--}}
-{{--                    <div class="col text-center">--}}
-{{--                        <div class="categories_list_container">--}}
-{{--                            <ul class="categories_list d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                <li><a href="/store">new stores</a></li>--}}
-{{--                                <li><a href="/brand">recommended brands</a></li>--}}
-{{--                                <li><a href="##">Last Offers</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
-
-
-<!-- Newsletter -->
-
-    <div class="newsletter">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('aStar/images/cover.jpg')}}" data-speed="0.8"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="newsletter_content text-center">
-                        <div class="newsletter_title_container">
-                            <div class="newsletter_title">subscribe to our site</div>
-                            <div class="newsletter_subtitle">we won't spam, we promise!</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
 
     <footer class="footer">
-        <div class="footer_content">
-            <div class="section_container" id="aboutUs">
-                <div class="container">
-                    <div class="row">
-
-                        <!-- About -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_about">
-                                <!-- Logo -->
-                                <div class="footer_logo">
-                                    <a href="#"><div>C<span>ary</span></div></a>
-                                </div>
-                                <div class="footer_about_text">
-                                    <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-                                </div>
-                                {{--                                <div class="cards">--}}
-                                {{--                                    <ul class="d-flex flex-row align-items-center justify-content-start">--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_1.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_2.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_3.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_4.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_5.jpg')}}" alt=""></a></li>--}}
-                                {{--                                    </ul>--}}
-                                {{--                                </div>--}}
-                            </div>
-                        </div>
-
-                        <!-- Questions -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_questions">
-                                <div class="footer_title">questions</div>
-                                <div class="footer_list">
-                                    <ul>
-                                        <li><a href="/store">Stores</a></li>
-                                        <li><a href="/car">Cars</a></li>
-                                        <li><a href="/brand">Brands</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Support</a></li>
-                                        <li><a href="#">Terms of Use</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Blog -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_blog">
-                                <div class="footer_title">blog</div>
-                                <div class="footer_blog_container">
-
-                                    <!-- Blog Item -->
-                                    <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
-                                        <div class="footer_blog_image"><a href="blog.html"><img src="{{asset('aStar/images/sport.jpg')}}" alt=""></a></div>
-                                        <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="blog.html">what cars to use</a></div>
-                                            <div class="footer_blog_date">sep 15, 2019</div>
-                                            <div class="footer_blog_link"><a href="blog.html">Read More</a></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Blog Item -->
-                                    <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
-                                        <div class="footer_blog_image"><a href="blog.html"><img src="{{asset('aStar/images/trend.jpg')}}" alt=""></a></div>
-                                        <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="blog.html">trends this year</a></div>
-                                            <div class="footer_blog_date">sep 15, 2019</div>
-                                            <div class="footer_blog_link"><a href="blog.html">Read More</a></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_contact">
-                                <div class="footer_title">contact</div>
-                                <div class="footer_contact_list">
-                                    <ul>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Your Company Ltd</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>+53 345 7953 32453</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>caryLara2019@hotmail.com</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Social -->
-{{--        <div class="footer_social">--}}
-{{--            <div class="section_container">--}}
-{{--                <div class="container">--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col">--}}
-{{--                            <div class="footer_social_container d-flex flex-row align-items-center justify-content-between">--}}
-{{--                                <!-- Instagram -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-instagram" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">instagram</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <!-- Google + -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-google-plus" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">google +</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <!-- Pinterest -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-pinterest" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">pinterest</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <!-- Facebook -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-facebook" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">facebook</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <!-- Twitter -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-twitter" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">twitter</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <!-- YouTube -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-youtube" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">youtube</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <!-- Tumblr -->--}}
-{{--                                <a href="#">--}}
-{{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
-{{--                                        <div class="footer_social_icon"><i class="fa fa-tumblr-square" aria-hidden="true"></i></div>--}}
-{{--                                        <div class="footer_social_title">tumblr</div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+    {{--        <div class="footer_social">--}}
+    {{--            <div class="section_container">--}}
+    {{--                <div class="container">--}}
+    {{--                    <div class="row">--}}
+    {{--                        <div class="col">--}}
+    {{--                            <div class="footer_social_container d-flex flex-row align-items-center justify-content-between">--}}
+    {{--                                <!-- Instagram -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-instagram" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">instagram</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                                <!-- Google + -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-google-plus" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">google +</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                                <!-- Pinterest -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-pinterest" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">pinterest</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                                <!-- Facebook -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-facebook" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">facebook</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                                <!-- Twitter -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-twitter" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">twitter</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                                <!-- YouTube -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-youtube" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">youtube</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                                <!-- Tumblr -->--}}
+    {{--                                <a href="#">--}}
+    {{--                                    <div class="footer_social_item d-flex flex-row align-items-center justify-content-start">--}}
+    {{--                                        <div class="footer_social_icon"><i class="fa fa-tumblr-square" aria-hidden="true"></i></div>--}}
+    {{--                                        <div class="footer_social_title">tumblr</div>--}}
+    {{--                                    </div>--}}
+    {{--                                </a>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
 
-        <!-- Credits -->
+    <!-- Credits -->
         <div class="credits">
             <div class="section_container">
                 <div class="container">

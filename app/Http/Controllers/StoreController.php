@@ -19,10 +19,17 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $stores = Store::all();
+        $stores = \Illuminate\Support\Facades\Auth::user()->stores;
 
 //        $stores = Store::where('user_id', Auth::id())->get();
         return view('store.index', compact('stores'));
+    }
+    public function AllStore()
+    {
+
+        $stores = Store::all();
+        return view('store.index', compact('stores'));
+
     }
 
     /**
