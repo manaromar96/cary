@@ -46,13 +46,35 @@ class HomeController extends Controller
 
         if ($user && $user->role_id==1){
             return view('admin.profile',compact('user'));
+//            return redirect('/admin/dashboard');
         }
         elseif ($user && $user->role_id==2){
             return view('manager.profile',compact('user'));
+//            return redirect('/manager/dashboard');
 
         }
         else {
             return view('user.profile',compact('user'));
+//            return redirect('/User/dashboard');
+        }
+//        return view('user.profile',compact('user'));
+
+    }
+    public function dashboard(){
+        $user = auth()->user();
+
+        if ($user && $user->role_id==1){
+//            return view('admin.profile',compact('user'));
+            return redirect('/admin/dashboard');
+        }
+        elseif ($user && $user->role_id==2){
+//            return view('manager.profile',compact('user'));
+            return redirect('/manager/dashboard');
+
+        }
+        else {
+//            return view('user.profile',compact('user'));
+            return redirect('/User/dashboard');
         }
 //        return view('user.profile',compact('user'));
 

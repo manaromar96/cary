@@ -19,10 +19,15 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $stores = \Illuminate\Support\Facades\Auth::user()->stores;
-
-//        $stores = Store::where('user_id', Auth::id())->get();
+        if (Auth::user()->role_id == 2){
+            $stores = \Illuminate\Support\Facades\Auth::user()->stores;
         return view('store.index', compact('stores'));
+    }
+    elseif (Auth::user()->role_id==1){
+        $stores = Store::all();
+        return view('store.index', compact('stores'));
+    }
+
     }
     public function AllStore()
     {
@@ -140,10 +145,12 @@ class StoreController extends Controller
         Store::find($id)->delete();
         return redirect('store')->with(['success' => 'Item has been deleted']);
     }
+
+
     public function cars($id){
         $store = Store::find($id);
         $cars = $store->cars ;
-        return view('car.index',compact('cars'));
+        return view('store.showCar',compact('cars'));
     }
    /* function getStores(Request $request)
     {

@@ -1,15 +1,4 @@
-{{--@extends('dashboardLayout.master')--}}
 
-{{--@section('title'," About Us ")--}}
-{{--@section('nav')--}}
-{{--    @endsection--}}
-{{--@section('content')--}}
-
-{{--    <h1> <em>Who are we ?!</em></h1>--}}
-{{--    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.--}}
-{{--        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently--}}
-{{--        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>--}}
-{{--@endsection--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -308,130 +297,66 @@
     </div>
 
     <!-- Home -->
-<div >
-    <div class="container" style="color: #59a869 ; margin-left: 200px ">
+
+    <div class="home">
         <BR>
         <br>
-        <h1> <em>Who are we ?!</em></h1>
-
-
-        <div  class="home_title" >
-
-       <p style="color: #000000">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-           <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-           <br>when an unknown printer took a galley of type and scrambled it to make a type specimen book .
+        <h1> <em>Why use the car?</em></h1>
+       <p> The reason we use cars is for transportation.
            <br>
-       It has survived not only five centuries, but also the leap into electronic typesetting,
-           <br>remaining essentially unchanged.
-           <br>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-           <br>and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+           While we could install railways, trolley cars, subways, etc.,
+           <br>
+           we would rather choose cars as they are more convenient.
+           <br>
+           Instead of having to wait for the 2:00 train or something like that,
+           <br>
+           we can get in our car and drive out to the place without waiting for others.
+           <br>
+           Not only that, but cars hive an added sense of security as you know that you are the only person in the car
+           <br>(or with people you choose to drive with) and not with a bunch of strangers.
+           <br>
+           Also, cars create a new industry with many jobs.
+           <br> While railways and planes are often used for long distance traveling, cars are mostly for short distance with a couple long distance trips.
+           <br>This way, there are multiple industries used for transportation.
+
+           <br>Finally, cars are easier to add luxury features onto as all seats need them, not just a select amount that will have to be controlled.
+
+       </p>
+    </div>
                     <!-- Home Slider -->
                 </div>
+
+                <!-- Boxes -->
+
+
+                <!-- Categories -->
+
+            {{--    <div class="categories">--}}
+{{--        <div class="section_container">--}}
+{{--            <div class="container ">--}}
+{{--                <div class="row options">--}}
+{{--                    <div class="col text-center">--}}
+{{--                        <div class="categories_list_container">--}}
+{{--                            <ul class="categories_list d-flex flex-row align-items-center justify-content-start">--}}
+{{--                                <li><a href="/store">new stores</a></li>--}}
+{{--                                <li><a href="/brand">recommended brands</a></li>--}}
+{{--                                <li><a href="##">Last Offers</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+
+
 <!-- Newsletter -->
-    <div class="newsletter">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('aStar/images/cover.jpg')}}" data-speed="0.8"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="newsletter_content text-center">
-                        <div class="newsletter_title_container">
-                            <div class="newsletter_title">Wellcom To Cary Website ...</div>
-                            {{--                            <div class="newsletter_subtitle">we won't spam, we promise!</div>--}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <footer class="footer">
-        <div class="footer_content">
-            <div class="section_container" id="aboutUs">
-                <div class="container">
-                    <div class="row">
 
-                        <!-- About -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_about">
-                                <!-- Logo -->
-                                <div class="footer_logo">
-                                    <a href="#"><div>C<span>ary</span></div></a>
-                                </div>
-                                <div class="footer_about_text">
-                                    <p>
-                                        Welcome to our website, here you find the best types of good cars, here is the company's website, and if you encounter any problem or any queries you can contact us through our page through the site .</p>
-                                </div>
-                                {{--                                <div class="cards">--}}
-                                {{--                                    <ul class="d-flex flex-row align-items-center justify-content-start">--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_1.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_2.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_3.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_4.jpg')}}" alt=""></a></li>--}}
-                                {{--                                        <li><a href="#"><img src="{{asset('aStar/images/card_5.jpg')}}" alt=""></a></li>--}}
-                                {{--                                    </ul>--}}
-                                {{--                                </div>--}}
-                            </div>
-                        </div>
+    <!-- Footer -->
 
-                        <!-- Questions -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_questions">
-                                <div class="footer_title">questions</div>
-                                <div class="footer_list">
-                                    <ul>
-                                        <li><a href="/login">Login</a></li>
 
-                                        <li><a href="/register">Register</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Blog -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_blog">
-                                <div class="footer_title">blog</div>
-                                <div class="footer_blog_container">
-
-                                    <!-- Blog Item -->
-                                    <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
-                                        <div class="footer_blog_image"><a href="blog.html"><img src="{{asset('aStar/images/sport.jpg')}}" alt=""></a></div>
-                                        <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="{{route('whatCar')}}">what cars to use</a></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Blog Item -->
-                                    <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
-                                        <div class="footer_blog_image"><a href="blog.html"><img src="{{asset('aStar/images/trend.jpg')}}" alt=""></a></div>
-                                        <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="/about">Who are we </a></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_contact">
-                                <div class="footer_title">contact</div>
-                                <div class="footer_contact_list">
-                                    <ul>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Gaza Sky Geeks Co.</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>Gaza Srtipe - Palestian</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>00972 5951 90381</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>caryLara2019@gmail.com</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Social -->
     {{--        <div class="footer_social">--}}
@@ -513,7 +438,6 @@
             </div>
         </div>
     </footer>
-
 
 </div>
 

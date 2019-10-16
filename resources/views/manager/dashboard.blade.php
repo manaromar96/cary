@@ -16,7 +16,7 @@
                     <img src="{{asset('aStar/images/car.png')}}">
                     <div class="card-footer"  style="background-color: #d6f695">
                         <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'"> Number Of My Sale :{{count($sale)}}</i>
+                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'"> Number Of My Sale : {{count($data)}}</i>
                         </div>
                     </div>
                 </div>

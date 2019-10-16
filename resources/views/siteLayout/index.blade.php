@@ -271,7 +271,7 @@
 
                 <li><a href="/register">Register<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 <li><a href="/login">Login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#aboutUs">about<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/about">about<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 <li><a href="/contact">contact<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
             </ul>
         </nav>
@@ -392,15 +392,19 @@
                             <div class="box_title trans_200"> <a href="{{route('showCar',[$car->id])}}">{{$car->type}}</a></div>
 
                         </div>
+                        <br>
                     @endforeach
 
                 </div>
-
+<br>
 
             </div>
 
         </div>
-        <div class="box_title trans_200"> <a href="/allCar">SeeMore</a></div>
+        <div class="col-lg-8 offset-lg-2" align="center">
+        <div class="footer_blog_link"><a href="/allCar">SeeMore</a></div>
+        </div>
+{{--        <div class="box_title trans_200"> <a href="/allCar">SeeMore</a></div>--}}
 
     </div>
 
@@ -435,8 +439,8 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="newsletter_content text-center">
                         <div class="newsletter_title_container">
-                            <div class="newsletter_title">subscribe to our site</div>
-                            <div class="newsletter_subtitle">we won't spam, we promise!</div>
+                            <div class="newsletter_title">Wellcom To Cary Website ...</div>
+{{--                            <div class="newsletter_subtitle">we won't spam, we promise!</div>--}}
                         </div>
                     </div>
                 </div>
@@ -460,7 +464,8 @@
                                     <a href="#"><div>C<span>ary</span></div></a>
                                 </div>
                                 <div class="footer_about_text">
-                                    <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
+                                    <p>
+                                        Welcome to our website, here you find the best types of good cars, here is the company's website, and if you encounter any problem or any queries you can contact us through our page through the site .</p>
                                 </div>
                                 {{--                                <div class="cards">--}}
                                 {{--                                    <ul class="d-flex flex-row align-items-center justify-content-start">--}}
@@ -480,12 +485,10 @@
                                 <div class="footer_title">questions</div>
                                 <div class="footer_list">
                                     <ul>
-                                        <li><a href="/store">Stores</a></li>
-                                        <li><a href="/car">Cars</a></li>
-                                        <li><a href="/brand">Brands</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Support</a></li>
-                                        <li><a href="#">Terms of Use</a></li>
+                                        <li><a href="/login">Login</a></li>
+
+                                        <li><a href="/register">Register</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -501,9 +504,7 @@
                                     <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
                                         <div class="footer_blog_image"><a href="blog.html"><img src="{{asset('aStar/images/sport.jpg')}}" alt=""></a></div>
                                         <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="blog.html">what cars to use</a></div>
-                                            <div class="footer_blog_date">sep 15, 2019</div>
-                                            <div class="footer_blog_link"><a href="blog.html">Read More</a></div>
+                                            <div class="footer_blog_title"><a href="{{route('whatCar')}}">what cars to use</a></div>
                                         </div>
                                     </div>
 
@@ -511,9 +512,7 @@
                                     <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
                                         <div class="footer_blog_image"><a href="blog.html"><img src="{{asset('aStar/images/trend.jpg')}}" alt=""></a></div>
                                         <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="blog.html">trends this year</a></div>
-                                            <div class="footer_blog_date">sep 15, 2019</div>
-                                            <div class="footer_blog_link"><a href="blog.html">Read More</a></div>
+                                            <div class="footer_blog_title"><a href="/about">Who are we </a></div>
                                         </div>
                                     </div>
 
@@ -527,10 +526,10 @@
                                 <div class="footer_title">contact</div>
                                 <div class="footer_contact_list">
                                     <ul>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Your Company Ltd</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>+53 345 7953 32453</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>caryLara2019@hotmail.com</div></li>
+                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Gaza Sky Geeks Co.</div></li>
+                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>Gaza Srtipe - Palestian</div></li>
+                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>00972 5951 90381</div></li>
+                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>caryLara2019@gmail.com</div></li>
                                     </ul>
                                 </div>
                             </div>
@@ -611,7 +610,7 @@
                         <div class="col">
                             <div class="credits_content d-flex flex-row align-items-center justify-content-end">
                                 <div class="credits_text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Manar & Esraa</a>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
                             </div>
                         </div>

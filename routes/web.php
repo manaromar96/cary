@@ -10,10 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/AllStore','StoreController@AllStore')->name('AllStore');
 
-Route::get('/manager/dashboard','ManagerController@dashboard')->name('manager.dashboard');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/whatCar',function () {
+return view('car');
+}) ->name('whatCar');
 Route::get('/admin/dashboard','AdminController@dashboard')->name('admin.dashboard');
-Route::get('/admin/dashboard','UserController@dashboard')->name('user.dashboard');
+Route::get('/manager/dashboard','ManagerController@dashboard')->name('manager.dashboard');
+Route::get('/User/dashboard','UserController@dashboard')->name('user.dashboard');
 
 
 Route::get('/showCar/{id}','visitorController@showCar')->name('showCar');
@@ -32,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@profile');
     Route::get('/showYourCar/{id}','UserController@showYourCar')->name('showYourCar');
     Route::get('/profile', 'HomeController@profile');
+    Route::get('/dash', 'HomeController@dashboard');
+
 //    Route::resource('/store', 'StoreController');
 
     Route::resource('/brand', 'BrandController');
@@ -41,8 +48,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/admin', 'AdminController');
     Route::get('/adm/showStore', 'AdminController@showAllStore')->name('admin.showStore');
     Route::get('/newUser','AdminController@register');
-    Route::post('/newUser','AdminController@createRegister')->name('createRegister');
-    Route::get('/AllStore','StoreController@AllStore')->name('AllStore');
+    Route::post('/newUser','AdminController@
+    createRegister')->name('createRegister');
 
     Route::get('/managerSale','SaleController@managerSale')->name('managerSale');
 
@@ -67,7 +74,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('currency','BrandController@currency');
     Route::get('prayer','BrandController@prayerTimes');
     Route::get('/page','PagesController@index');
-    Route::get('/about', 'PagesController@about')->name('about');
     Route::get('sendEmail','PagesController@sendEmail');
 //    Route::get('/user', 'UserController@index');
 //    Route::get('/user/create', 'UserController@create');

@@ -61,40 +61,40 @@
                                    @foreach($stores as $store)
                                        <tr>
                                           <td>{{ $store->id }}</td>
-                                           <td> 
-                                               <a href="{{ route('store.show',$store->id) }}"> 
-                                                    {{ $store->name }} 
-                                               </a> 
+                                           <td>
+                                               <a href="{{ route('store.show',$store->id) }}">
+                                                    {{ $store->name }}
+                                               </a>
                                            </td>
 {{--                                           @if(\Illuminate\Support\Facades\Auth::user()->role_id)==3--}}
-                                            <td>{{ $store->address }}</td> 
+                                            <td>{{ $store->address }}</td>
                                             <td class="count">{{ $store->carsNumber }}</td>
 
                                             <td>
-                                                <a href="{{ route('store.edit',$store->id) }}" 
+                                                <a href="{{ route('store.edit',$store->id) }}"
                                                   class="btn btn-sm btn-warning">
                                                     <i class="fe fe-edit  form-check-inline"></i>
-                                                </a> 
-                                                <a href="{{ route('store.show',$store->id) }}" 
+                                                </a>
+                                                <a href="{{ route('store.show',$store->id) }}"
                                                  class="btn btn-sm btn-primary">
                                                     <i class="fe fe-eye form-check-inline"></i>
-                                                </a> 
+                                                </a>
                                                <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-check-inline">
-                                                     @csrf 
-                                                     {{ method_field('delete') }} 
+                                                     @csrf
+                                                     {{ method_field('delete') }}
                                                      <button class="btn btn-sm btn-danger" type="submit">
                                                          <i class="fe fe-trash form-check-inline"></i>
-                                                     </button> 
-                                                 </form> 
-                                             </td> 
-                                         </tr> 
-                                     @endforeach 
-                                 @else 
-                                     <tr> 
-                                         <td colspan="3">No data</td> 
-                                     </tr> 
-                                 @endif 
-                             </tobody> 
+                                                     </button>
+                                                 </form>
+                                             </td>
+                                         </tr>
+                                     @endforeach
+                                 @else
+                                     <tr>
+                                         <td colspan="3">No data</td>
+                                     </tr>
+                                 @endif
+                             </tobody>
                         </table>
                     </div>
 

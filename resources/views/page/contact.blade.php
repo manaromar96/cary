@@ -57,7 +57,7 @@
     <div class="container">
         <div class="login-content">
             <div class="login-logo">
-                <a href="index.html">
+                <a href="/">
                     <img class="align-content" src="{{asset('dashboard/assets/images/cary.logo.png')}}" alt="">
                 </a>
             </div>

@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Managers Table</strong>
+                            <strong class="card-title">ALL User </strong>
                         </div>
                         <div class="table-stats order-table ov-h">
                             <table class="table">

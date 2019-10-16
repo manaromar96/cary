@@ -171,12 +171,16 @@ class ManagerController extends Controller
            $stores=Auth::user()->stores;
         $cars=Auth::user()->cars;
 //
-//        dd($cars);
-//        foreach (\Illuminate\Support\Facades\Auth::user()->cars as $car) {
-//                   foreach( $car->sales as $sales){
-//
-//                       dd(count($car->sales));
-//
+//        dd($cars);\
+        $data = Sale::whereHas('car',function ($e){
+           return $e->where('user_id',auth()->id());
+        })->get();
+
+//        dd($cars->sales);
+//        foreach ($cars->sales as $sale) {
+////                dd(count($sale));
+//            }
+
 //
 //        $sale =Sale::with('cars')->where('user_id','=',Auth::id())->get();
 //                    $sale =Car::with('sales')->where('store_id','=',Auth::user()->stores->id)->get();
@@ -185,25 +189,11 @@ class ManagerController extends Controller
 
 //        dd($sale);
 //        foreach ($cars as $car){
-//         $sale= Sale::whereIn('car_id','=',$car->id);
 //           dd($sale);
+//         $sale= Sale::whereIn('car_id','=',$car->id);
 //        }
-        $cars=Auth::user()->cars;
 
-        foreach ($cars as $car){
-            dd($car->id);
-            $carSale =Sale::with('car')->where('car_id','=', $car->id)->get();
-            dd(($carSale));
-        }
-
-//    dd(count($sale));
-
-//    $sales=Sale::where('car_id','=',$car->id);
-//    dd($sales);
-//}
-
-//        }
-//        return view('manager.dashboard',compact('stores','cars','sale'));
+        return view('manager.dashboard',compact('stores','cars','data'));
     }
     }
 //       }   @foreach( $car->sales as $sales)

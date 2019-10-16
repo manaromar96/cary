@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-md-6">
 
-                <a class="btn btn-success btn-block active" href="{{ route('store.index') }}">Back to store list</a>
+                <a class="btn btn-success btn-block active" href="{{ route('AllStore') }}">Back to store list</a>
             </div>
             <div class="col-md-6">
 {{--                <a class="btn btn-success btn-block active" href="{{url('car/{{$id}}')}}">Cars List</a>--}}

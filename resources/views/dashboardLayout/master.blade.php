@@ -183,9 +183,41 @@
 
                     </ul>
                 </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Add Store</a>
+                    <ul class="sub-menu children dropdown-menu">
+
+                                <li><i class="fa fa-table"></i><a href="/store/create">
+                                        Add Store
+                                    </a></li>
+
+                        {{--                        <li><i class="fa fa-table"></i><a href="/brand">Car Brands</a></li>--}}
+                        {{--                        <li><i class="fa fa-table"></i><a href="/model">Car Models</a></li>--}}
+                        {{--                        <li><i class="fa fa-table"></i><a href="/car">Cars</a></li>--}}
+                        {{--                        <li><i class="fa fa-table"></i><a href="/store">Stores</a></li>--}}
 
 
-                    {{--                <li class="menu-item-has-children dropdown">--}}
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Add Car</a>
+                    <ul class="sub-menu children dropdown-menu">
+
+                        <li><i class="fa fa-table"></i><a href="/car/create">
+                                Add Car
+                            </a></li>
+
+                        {{--                        <li><i class="fa fa-table"></i><a href="/brand">Car Brands</a></li>--}}
+                        {{--                        <li><i class="fa fa-table"></i><a href="/model">Car Models</a></li>--}}
+                        {{--                        <li><i class="fa fa-table"></i><a href="/car">Cars</a></li>--}}
+                        {{--                        <li><i class="fa fa-table"></i><a href="/store">Stores</a></li>--}}
+
+
+                    </ul>
+                </li>
+
+
+                {{--                <li class="menu-item-has-children dropdown">--}}
 {{--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>--}}
 {{--                    <ul class="sub-menu children dropdown-menu">--}}
 {{--                        <li><i class="menu-icon fa fa-th"></i><a href="/manager/create">Manager Form</a></li>--}}
@@ -229,6 +261,7 @@
 <!-- Left Panel -->
 
 @endif
+
 @if(\Illuminate\Support\Facades\Auth::check()&&\Illuminate\Support\Facades\Auth::user()->role_id==1)
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
@@ -236,8 +269,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                            <a href="{{route('admin.dashboard')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-
+                        <a href="/admin/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Infromation About Me</li><!-- /.menu-title -->
                     {{--                <li class="menu-item-has-children dropdown">--}}
@@ -301,7 +333,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             @foreach(\App\User::all() as $user)
                                 @if($user->role_id==2)
-                                <li><i class="fa fa-table"></i><a href="{{route('manager.show',[$user->id])}}">{{$user->name}}</a></li>
+                                    <li><i class="fa fa-table"></i><a href="{{route('manager.show',[$user->id])}}">{{$user->name}}</a></li>
                                 @endif
                             @endforeach
                             {{--                        <li><i class="fa fa-table"></i><a href="/brand">Car Brands</a></li>--}}
@@ -320,6 +352,21 @@
                                     <li><i class="fa fa-table"></i><a href="{{route('manager.show',[$user->id])}}">{{$user->name}}</a></li>
                                 @endif
                             @endforeach
+                            {{--                        <li><i class="fa fa-table"></i><a href="/brand">Car Brands</a></li>--}}
+                            {{--                        <li><i class="fa fa-table"></i><a href="/model">Car Models</a></li>--}}
+                            {{--                        <li><i class="fa fa-table"></i><a href="/car">Cars</a></li>--}}
+                            {{--                        <li><i class="fa fa-table"></i><a href="/store">Stores</a></li>--}}
+
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Add New User</a>
+                        <ul class="sub-menu children dropdown-menu">
+
+                            <li><i class="fa fa-table"></i><a href="/newUser">Add User</a></li>
+
                             {{--                        <li><i class="fa fa-table"></i><a href="/brand">Car Brands</a></li>--}}
                             {{--                        <li><i class="fa fa-table"></i><a href="/model">Car Models</a></li>--}}
                             {{--                        <li><i class="fa fa-table"></i><a href="/car">Cars</a></li>--}}
@@ -366,15 +413,7 @@
                     {{--                        <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>--}}
                     {{--                    </ul>--}}
                     {{--                </li>--}}
-                    <li class="menu-title">Sales</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="/login">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="{{route('register')}}">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="{{asset('dashboard/assets/pages/pages-forget.html')}}">Forget Pass</a></li>
-                        </ul>
-                    </li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -382,6 +421,8 @@
     <!-- Left Panel -->
 
 @endif
+
+
 @if(\Illuminate\Support\Facades\Auth::check()&&\Illuminate\Support\Facades\Auth::user()->role_id==3)
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">

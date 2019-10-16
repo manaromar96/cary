@@ -66,50 +66,50 @@
         </ul>
 
     </div>
-    <div class="actions">
+{{--    <div class="actions">--}}
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header">
-                        <h3>
-                            {{\Illuminate\Support\Facades\Auth::user()->name}}! <small>Do Your Action : </small>
-                        </h3>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <a href="{{route('manager.showStore',[$user->id])}}">
-                                    <button type="button" class="btn btn-success">
-                                         View Your Store
-                                     </button>
-                                </a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="/store/create">
-                                    <button type="button" class="btn btn-success">
-                                    Add New Store
-                                </button>
-                                </a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="{{route('managerShowCars',[$user->id])}}">
-                                    <button type="button" class="btn btn-success">
-                                    View Your Cars
-                                </button>
-                                </a>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="car/create">
-                                    <button type="button" class="btn btn-success">
-                                    Add New Car
-                                </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <div class="page-header">--}}
+{{--                        <h3>--}}
+{{--                            {{\Illuminate\Support\Facades\Auth::user()->name}}! <small>Do Your Action : </small>--}}
+{{--                        </h3>--}}
+{{--                    </div>--}}
+{{--                    <br>--}}
+{{--                    <br>--}}
+{{--                    <div class="container-fluid">--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-md-3">--}}
+{{--                                <a href="{{route('manager.showStore',[$user->id])}}">--}}
+{{--                                    <button type="button" class="btn btn-success">--}}
+{{--                                         View Your Store--}}
+{{--                                     </button>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-3">--}}
+{{--                                <a href="/store/create">--}}
+{{--                                    <button type="button" class="btn btn-success">--}}
+{{--                                    Add New Store--}}
+{{--                                </button>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-3">--}}
+{{--                                <a href="{{route('managerShowCars',[$user->id])}}">--}}
+{{--                                    <button type="button" class="btn btn-success">--}}
+{{--                                    View Your Cars--}}
+{{--                                </button>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-md-3">--}}
+{{--                                <a href="car/create">--}}
+{{--                                    <button type="button" class="btn btn-success">--}}
+{{--                                    Add New Car--}}
+{{--                                </button>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 {{--                    <div class="btn-group" role="group">--}}
 
 {{--                        <a href="/store">--}}
@@ -137,9 +137,9 @@
 {{--                        </button>--}}
 {{--                        </a>--}}
 {{--                    </div>--}}
-                </div>
-            </div>
-        </div>
-        
-    </div>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        --}}
+{{--    </div>--}}
 @endsection

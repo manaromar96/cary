@@ -22,6 +22,21 @@
                 </div>
             </div>
 
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-chart"  style="background-color: #d6f695">
+                    <div class="card-header">
+                        <h5 class="card-category" style="font-family: 'Comic Sans MS'">weather</h5>
+                        <h4 class="card-title" style="font-family:'Comic Sans MS'">weather Now</h4>
+                    </div>
+                    <img src="{{asset('aStar/images/weth.png')}}">
+                    <div class="card-footer"  style="background-color: #d6f695">
+                        <div class="stats">
+                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'">the temperature={{number_format((($weather->currently->temperature)-32)/1.8,0)}}°
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 

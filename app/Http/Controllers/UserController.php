@@ -9,6 +9,8 @@ use App\Store;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Client;
+
 
 
 class UserController extends Controller
@@ -159,8 +161,20 @@ class UserController extends Controller
 
         $user=Auth::user();
         $sales=$user->sales;
-        return view('user.dashboard', compact('sales'));
+        $client = new Client();
+        $request = $client->request('get', 'https://api.darksky.net/forecast/1e13a3cfa21b5c8af2e02ee8f8b1f53a/31.5017765,34.1866839');
+        $response = $request->getBody()->getContents();
+        $weather  = json_decode($response);
+
+//        $request_currancy = $client->request('get', 'https://api.exchangeratesapi.io/latest?base=USD');
+//        $response_currancy = $request_currancy->getBody()->getContents();
+//        $currancy= dd(json_decode($response_currancy));
+//        dd($currancy);
+
+        return view('user.dashboard', compact('sales','weather'));
     }
+
+
 
 
 }

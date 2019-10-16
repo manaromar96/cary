@@ -70,11 +70,11 @@ class PagesController extends Controller
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
                 'user_message' => $request->get('message')
-            ), function($message)
+            ), function($message) use($request)
             {
 
                 $message->from('carylara2019@gmail.com');
-                $message->to(Auth::user()->email, 'Admin')->subject(' Feedback');
+                $message->to($request->get('email'), 'Admin')->subject(' Feedback');
             });
         return back()->with('success', 'Thanks for contacting us!');
     }
