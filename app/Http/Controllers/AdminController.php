@@ -7,6 +7,7 @@ use App\Role;
 use App\Sale;
 use App\Store;
 use App\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -137,8 +138,11 @@ class AdminController extends Controller
         $sales=Sale::all();
         $managers=User::where('role_id','=',2)->get();
         $clients=User::where('role_id','=',3)->get();
-
-        return view('admin.dashboard', compact('stores', 'cars', 'sales','managers','clients'));
+        $client = new Client();
+        $request = $client->request('get', 'https://api.darksky.net/forecast/1e13a3cfa21b5c8af2e02ee8f8b1f53a/31.5017765,34.1866839');
+        $response = $request->getBody()->getContents();
+        $weather  = json_decode($response);
+        return view('admin.dashboard', compact('stores', 'cars', 'sales','managers','clients','weather'));
 
     }
 }

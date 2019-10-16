@@ -7,36 +7,40 @@
     </div>
     <div class="content">
         <div class="row">
-            <div class="col-lg-4" >
-                <div class="card card-chart" style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h5 class="card-category" style="font-family: 'Comic Sans MS'"> Car</h5>
-                        <h4 class="card-title" style="font-family: 'Comic Sans MS'" >My Car</h4>
-                    </div>
-                    <img src="{{asset('aStar/images/car.png')}}">
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'"> Number Of My Car :{{count($sales)}}</i>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-2">
+                            <i class="pe-7f-cart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                                <div class="stat-text"><span class="count">{{count($sales)}}</span></div>
+                                <div class="stat-heading">Sales</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-chart"  style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h5 class="card-category" style="font-family: 'Comic Sans MS'">weather</h5>
-                        <h4 class="card-title" style="font-family:'Comic Sans MS'">weather Now</h4>
-                    </div>
-                    <img src="{{asset('aStar/images/weth.png')}}">
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'">the temperature={{number_format((($weather->currently->temperature)-32)/1.8,0)}}°
-                            </i>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-1">
+                            <i class="wi wi-horizon-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                                <div class="stat-text"><span class="">{{number_format((($weather->currently->temperature)-32)/1.8,0)}}°</span></div>
+                                <div class="stat-heading">Temperature</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
         </div>
 

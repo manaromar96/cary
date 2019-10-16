@@ -73,17 +73,17 @@
                                             <td>
                                                 <a href="{{ route('store.edit',$store->id) }}"
                                                   class="btn btn-sm btn-warning">
-                                                    <i class="fe fe-edit  form-check-inline"></i>
+                                                    <i class="fa fa-edit  form-check-inline"></i>
                                                 </a>
                                                 <a href="{{ route('store.show',$store->id) }}"
                                                  class="btn btn-sm btn-primary">
-                                                    <i class="fe fe-eye form-check-inline"></i>
+                                                    <i class="fa fa-eye form-check-inline"></i>
                                                 </a>
                                                <form action="{{ route('store.destroy',$store->id) }}" method="post" class="form-check-inline">
                                                      @csrf
                                                      {{ method_field('delete') }}
                                                      <button class="btn btn-sm btn-danger" type="submit">
-                                                         <i class="fe fe-trash form-check-inline"></i>
+                                                         <i class="fa fa-trash form-check-inline"></i>
                                                      </button>
                                                  </form>
                                              </td>

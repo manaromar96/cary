@@ -7,79 +7,111 @@
     </div>
     <div class="content">
         <div class="row">
-            <div class="col-lg-4" >
-                <div class="card card-chart" style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h4 class="card-title" style="font-family: 'Comic Sans MS'" > Sales</h4>
-                    </div>
-                    <img src="{{asset('aStar/images/car.png')}}">
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'"> Number Of Sales :{{count($sales)}}</i>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-1">
+                                <i class="pe-7f-browser"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">{{count($stores)}}</span></div>
+                                    <div class="stat-heading">Stores</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-chart"  style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h5 class="card-category" style="font-family: 'Comic Sans MS'">Stores</h5>
-                    </div>
-                    <img src="{{asset('aStar/images/store.PNG')}}">
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'">Number of Stores : {{count($stores)}}</i>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-2">
+                                <i class="pe-7f-cart"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">{{count($sales)}}</span></div>
+                                    <div class="stat-heading">Sales</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-chart"  style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h5 class="card-category"style="font-family: 'Comic Sans MS'">Cars</h5>
-                    </div>
-                    <img src="{{asset('aStar/images/cars.png')}}">
-
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'">Number Cars :{{count($cars)}}</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4" >
-                <div class="card card-chart" style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h4 class="card-title" style="font-family: 'Comic Sans MS'" > Managers</h4>
-                    </div>
-                    <img src="{{asset('aStar/images/man-icon.png')}}">
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'"> Number Of Managers :{{count($managers)}}</i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-chart"  style="background-color: #d6f695">
-                    <div class="card-header">
-                        <h5 class="card-category" style="font-family: 'Comic Sans MS'">Clients</h5>
-                    </div>
-                    <img src="{{asset('aStar/images/client-im.PNG')}}">
-                    <div class="card-footer"  style="background-color: #d6f695">
-                        <div class="stats">
-                            <i class="now-ui-icons arrows-1_refresh-69" style="font-family: 'Comic Sans MS'">Number of Clients : {{count($clients)}}</i>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-3">
+                                <i class="fa fa-taxi"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">{{count($cars)}}</span></div>
+                                    <div class="stat-heading">Cars</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+            <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-4">
+                                <i class="pe-7f-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">{{count($managers)}}</span></div>
+                                    <div class="stat-heading">Managers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                            <div class="stat-icon dib flat-color-4">
+                                <i class="pe-7f-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="text-left dib">
+                                    <div class="stat-text"><span class="count">{{count($clients)}}</span></div>
+                                    <div class="stat-heading">Clients</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-five">
+                                <div class="stat-icon dib flat-color-1">
+                                    <i class="wi wi-horizon-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="text-left dib">
+                                        <div class="stat-text"><span class="">{{number_format((($weather->currently->temperature)-32)/1.8,0)}}°</span></div>
+                                        <div class="stat-heading">Temperature</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     </div>
     @endsection
